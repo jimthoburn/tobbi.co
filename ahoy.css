@@ -1,0 +1,522 @@
+
+
+  /* =Elements
+  ----------------------------------------------- */
+  html, body {
+    min-height: 100%;
+  }
+
+  /*
+  @font-face {
+    font-family: "Mate";
+    src: url("/fonts/mate.woff2") format("woff2"), url("/fonts/mate.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  */
+
+  @font-face {
+    font-family: "Goudy Bookletter 1911";
+    src: url("/fonts/goudybookletter1911.woff2") format("woff2"), url("/fonts/goudybookletter1911.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font: 100%/1.4 "Mate", "Goudy Bookletter 1911", Georgia, serif;
+    margin: 0;
+    padding: 0;
+
+    /* Wrap long words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+
+    background-color: rgb(252, 254, 249);  /* @snow */
+    color: rgb(51, 51, 51);
+
+    /*
+    background-position: 50% 100%;
+    background-attachment: fixed;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(ocean.jpg);
+    */
+  }
+  @media (min-width: 300px), (min-height: 300px) {
+    body {
+      font-size: 125%;
+      font-size: 112.5%;
+    }
+  }
+  @media (min-width: 600px), (min-height: 600px) {
+    body {
+      font-size: 150%;
+      font-size: 125%;
+    }
+  }
+  @media (min-width: 900px), (min-height: 900px) {
+    body {
+      font-size: 175%;
+      font-size: 150%;
+    }
+  }
+  @media (min-width: 1200px), (min-height: 1200px) {
+    body {
+      font-size: 200%;
+      font-size: 175%;
+    }
+  }
+  @media (min-width: 1500px), (min-height: 1500px) {
+    body {
+      font-size: 200%;
+      font-size: 175%;
+    }
+  }
+  .container {
+    padding: 1.4em 0.7em 2.8em; /* base line height */    /* base line height / 2 */    /* base line height x 2 */
+    margin: 0 auto;
+    max-width: 36em;
+
+    /* Test the vertical rhythm.
+       KUDOS: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
+
+    background-image: linear-gradient(rgba(0, 0, 0, .1) 50%, transparent 50%, transparent);
+    background-size: 1.4em 1.4em;
+    */
+  }
+  @media (min-width: 20em) {
+    .container {
+      padding: 2.8em 1.4em; /* double the usual padding */
+    }
+    .banner + .container {
+      padding-top: 1.4em;
+    }
+  }
+  @media (min-width: 30em) {
+    .banner + .container {
+      padding-top: 2.8em;
+    }
+  }
+  /*
+  @media (min-width: 40em) {
+    .container {
+      padding-bottom: 5.6em;
+    }
+  }
+  */
+  .container + .container > h1:first-child {
+    margin-top: 0;
+  }
+
+  h1, h2, h3 {
+    font-family: "Goudy Bookletter 1911", Georgia, serif;
+    font-weight: normal;
+    line-height: 1;
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.4em;
+    line-height: 1.5;
+    margin-top: 1.5em;
+  }
+  h3 {
+    margin-top: 1.25em;
+    font-size: 0.85em;
+    line-height: 1;
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+  p,
+  ol,
+  ul {
+    margin-top: 0.7em; /* base line height (1.4) / 2 */
+    margin-bottom: 0;
+  }
+  li {
+    margin-bottom: 0;
+  }
+  ol, ul, li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  h3 + ul,
+  h3 + p {
+    margin-top: 0.35em; /* base line height (1.4) / 4 */
+  }
+
+  a {
+    color: rgb(1, 115, 175);
+    text-decoration: underline;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    background-color: rgb(1, 115, 175);
+    color: white;
+  }
+  small {
+    display: inline-block;
+    font-size: 0.75em;
+    line-height: 0.9333333334; /* base line height (1.4) / font size (0.75em) / 2 */
+  }
+  small a {
+    color: inherit;
+  }
+
+  b, strong {
+    font-weight: inherit;
+    /*
+    text-decoration: underline;
+    */
+  }
+
+  i, em {
+    font-style: inherit;
+  }
+
+  /* Ship */
+  svg {
+    height: 2.8em; /* base line height (1.4) x 2 */
+    width: 3.7333333333em; /* height x 4/3 */
+    fill: currentColor;
+  }
+
+  /* KUDOS: http://www.justinaguilar.com/animations/ */
+  @-webkit-keyframes tossing {
+    0% {
+      -webkit-transform: rotate(-2deg); 
+    }
+    50% {
+      -webkit-transform: rotate(2deg);
+    }
+    100% {
+      -webkit-transform: rotate(-2deg); 
+    }           
+  }
+  @keyframes tossing {
+    0% {
+      transform: rotate(-2deg); 
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(-2deg); 
+    }           
+  }
+  svg {
+    -webkit-animation-name: tossing;
+    -webkit-animation-duration: 8s; 
+    -webkit-animation-iteration-count: infinite;
+    animation-name: tossing;
+    animation-duration: 8s; 
+    animation-iteration-count: infinite;
+  }
+
+  figure {
+    margin: 2.8em 0 0 0;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    font-size: 0.75em;
+  }
+  figure.screenshot img {
+    border: 1px solid rgb(204, 204, 204);
+    margin-right: 1.4em;
+    margin-bottom: 1.4em;
+  }
+
+  ul.action {
+    margin-top: 1.4em;
+  }
+  h2 + ul.action {
+    margin-top: 0.7em;
+  }
+  .action a {
+    font-family: "Goudy Bookletter 1911", Georgia, serif;
+    display: inline-block;
+    padding: 0.7em 1em;
+    background-color: rgba(1, 115, 175, 0.2);
+    border-radius: 0.25em;
+    /*
+    font-size: 0.75em;
+    */
+    margin-bottom: 0.375em;
+    text-decoration: none;
+  }
+  .action a:hover,
+  .action a:active,
+  .action a:focus {
+    background-color: rgba(1, 115, 175, 0.8);
+    color: white;
+  }
+
+  .action li {
+    display: inline;
+  }
+
+
+
+
+  .ahoy {
+    position: absolute;
+    z-index: 1;
+    padding: 0.7em 1.4em;
+    color: white;
+    background: rgb(51, 51, 51);
+    text-decoration: none;
+  }
+  .ahoy:hover,
+  .ahoy:active,
+  .ahoy:focus {
+    color: white;
+  }
+  .ahoy h2 {
+    display: inline;
+    font-size: 0.75em;
+  }
+  .ahoy svg {
+    font-size: 0.5em;
+    vertical-align: top;
+    margin-right: 1.4em;
+  }
+
+
+  .banner {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 80%;
+    padding-bottom: 80vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .banner:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .banner h2 {
+    margin-top: 0;
+  }
+  .banner div {
+    background: rgb(252, 252, 249); /* @snow */
+    position: absolute;
+    top: 55%;
+    padding: 0.375em 0.7em;
+  }
+
+  /* Avoid breaking team names into two lines */
+  .banner div a {
+    display: inline-block;
+  }
+
+  @media (min-width: 30em) {
+    .banner div {
+      left: 16%;
+    }
+  }
+  .banner div h1 {
+    margin-top: 0;
+  }
+  .banner .credit {
+    background: rgb(51, 51, 51);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: rgb(252, 252, 249); /* @snow */
+    margin: 0;
+    font-size: 0.75em;
+  }
+  .banner .credit a {
+    display: block;
+    padding: 0.7em 1.4em;
+    color: inherit;
+    text-decoration: none;
+  }
+  /*
+  .banner .credit a:hover,
+  .banner .credit a:active,
+  .banner .credit a:focus {
+    text-decoration: underline;
+  }
+  */
+  .banner .credit a b {
+    text-decoration: underline;
+  }
+  a.banner {
+    color: inherit;
+  }
+  a.banner:last-child {
+    margin-top: 1.4em;
+  }
+  /*
+  a.banner div:first-child {
+    color: white;
+    background-color: rgb(51, 51, 51);
+  }
+  */
+  a.banner div:last-child {
+    transition: background-color 0.2s, color 0.2s;
+    background: rgba(1, 115, 175, 0.1);
+    background: #BFDAE5;
+    color: rgb(1, 115, 175);
+    background-color: rgb(1, 115, 175);
+    color: white;
+    background-color: rgb(51, 51, 51);
+    background-color: rgb(252, 252, 249); /* @snow */
+    color: rgb(51, 51, 51);
+  }
+  a.banner:hover  div:last-child,
+  a.banner:active div:last-child,
+  a.banner:focus  div:last-child {
+    background-color: rgb(1, 115, 175);
+    color: white;
+  }
+  .container {
+    padding-bottom: 2.8em;
+  }
+  a.banner {
+    padding-bottom: 40%;
+    padding-bottom: 40vh;
+  }
+  a.banner div:first-child {
+    top: 25%;
+  }
+  a.banner div:last-child {
+    top: 50%;
+  }
+  @media (min-width: 40em) {
+    a.banner div:first-child {
+      top: 25%;
+    }
+    a.banner div:last-child {
+      top: 25%;
+      left: 50%;
+    }
+  }
+
+  .container > div a {
+    text-decoration: none;
+  }
+  /*
+  .container > div a:hover,
+  .container > div a:active,
+  .container > div a:focus {
+    text-decoration: underline;
+  }
+  */
+
+  @media (min-width: 25em) {
+    .container > div {
+      display: inline-block;
+      vertical-align: top;
+      width: 12em;
+      margin-right: 2.8em;
+    }
+  }
+
+
+  /* =Home
+  ----------------------------------------------- */
+  .home > .container:last-child {
+    padding-bottom: 5.6em;
+  }
+  .home .hello {
+    margin: 0;
+    position: absolute;
+    top: 1.4em;
+    right: 1.4em;
+  }
+  .home a.banner {
+    padding-top: 5em;
+    padding-top: 15vh;
+    padding-bottom: 5em;
+    padding-bottom: 15vh;
+    min-height: 70vh;
+    box-sizing: border-box;
+  }
+  .home .banner:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .home a.banner div:nth-child(n) {
+    background: transparent;
+    max-width: 33em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .home a.banner div h3,
+  .home a.banner div p {
+    background: rgb(252, 252, 249); /* @snow */
+    display: table;
+    padding: 0.375em 0.7em;
+  }
+  .home a.banner {
+    text-decoration: none;
+    color: inherit;
+  }
+  .home a.banner div {
+    color: inherit !important;
+    background: none !important;
+  }
+  .home a.banner div h3 {
+    margin-top: 0;
+    font-size: 2em;
+    background-color: rgb(252, 252, 249); /* @snow */
+    color: rgb(51, 51, 51);
+    transition: background-color 0.2s, color 0.2s;
+    font-variant: inherit;
+    text-transform: inherit;
+  }
+  .home a.banner:hover h3,
+  .home a.banner:active h3,
+  .home a.banner:focus h3 {
+    background: rgb(1, 115, 175);
+    color: white;
+  }
+  .home a.banner:hover p:last-child,
+  .home a.banner:active p:last-child,
+  .home a.banner:focus p:last-child {
+    text-decoration: none;
+  }
+
+  .social {
+    margin-top: 4.2em;
+  }
+  .social ul,
+  .social li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .social li {
+    display: inline;
+    margin-right: 0.7em;
+  }
