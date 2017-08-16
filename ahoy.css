@@ -86,7 +86,7 @@
   }
   @media (min-width: 20em) {
     .container {
-      padding: 2.8em 1.4em; /* double the usual padding */
+      padding: 2.8em 1.4em 5.6em; /* double the usual padding */
     }
     .banner + .container {
       padding-top: 1.4em;
