@@ -191,6 +191,7 @@
   svg {
     height: 2.8em; /* base line height (1.4) x 2 */
     width: 3.7333333333em; /* height x 4/3 */
+    fill: rgb(1, 115, 175);
     fill: currentColor;
   }
 
