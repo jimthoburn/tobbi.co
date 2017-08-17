@@ -93,6 +93,12 @@
     }
   }
   @media (min-width: 30em) {
+    .container {
+      padding-bottom: 2.8em;
+    }
+    .container::last-child {
+      padding-bottom: 5.6em;
+    }
     .banner + .container {
       padding-top: 2.8em;
     }
@@ -387,9 +393,6 @@
   a.banner:focus  div:last-child {
     background-color: rgb(1, 115, 175);
     color: white;
-  }
-  .container {
-    padding-bottom: 2.8em;
   }
   a.banner {
     padding-bottom: 40%;
