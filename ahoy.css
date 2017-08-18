@@ -86,7 +86,10 @@
   }
   @media (min-width: 20em) {
     .container {
-      padding: 2.8em 1.4em 5.6em; /* double the usual padding */
+      padding: 2.8em 1.4em;
+    }
+    .container:last-child {
+      padding-bottom: 5.6em; /* double the usual padding */
     }
     .banner + .container {
       padding-top: 1.4em;
@@ -96,7 +99,7 @@
     .container {
       padding-bottom: 2.8em;
     }
-    .container::last-child {
+    .container:last-child {
       padding-bottom: 5.6em;
     }
     .banner + .container {
