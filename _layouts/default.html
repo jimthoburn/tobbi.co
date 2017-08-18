@@ -19,6 +19,10 @@
   <!-- for Windows 8 -->
   <meta name="msapplication-TileImage" content="/images/ship.png" />
   <meta name="msapplication-TileColor" content="rgb(240, 240, 240)" />
+
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+  {% endif %}
 </head>
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
 
