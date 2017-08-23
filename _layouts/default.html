@@ -4,9 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta property="og:image" content="/images/ship-240-240-240.png" />
-
   <title>{{ page.title | escape_once }}</title>
+
+  {% comment %}
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="Jim Thoburn">
+
+  <!-- https://dev.twitter.com/cards/getting-started -->
+  <meta name="twitter:creator" content="@jimthoburn" />
+  <meta property="og:image" content="/images/ship-240-240-240.png" />
+  <meta property="og:description" content="{{ site.description }}" />
+  {% endcoment %}
 
   <link rel="stylesheet" href="/ahoy.css" />
 
