@@ -170,6 +170,12 @@
     background-color: rgb(1, 115, 175);
     color: white;
   }
+  figure a:hover,
+  figure a:active,
+  figure a:focus {
+    background-color: transparent;
+    color: inherit;
+  }
   small {
     display: inline-block;
     font-size: 0.75em;
