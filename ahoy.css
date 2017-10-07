@@ -98,15 +98,17 @@
       margin-bottom: 1.5em;
     }
   }
-  .banner + .container p:first-child + p:first-letter {
-    -webkit-initial-letter: 2;
-    initial-letter: 2;
-    margin-right: 0.25em;
-  }
-  .banner + .container p:first-child + p a:first-letter {
-    -webkit-initial-letter: unset;
-    initial-letter: unset;
-    margin-right: unset;
+  @supports (-webkit-initial-letter: 1) or (initial-letter: 1) {
+    .banner + .container p:first-child + p:first-letter {
+      -webkit-initial-letter: 2;
+      initial-letter: 2;
+      margin-right: 0.25em;
+    }
+    .banner + .container p:first-child + p a:first-letter {
+      -webkit-initial-letter: unset;
+      initial-letter: unset;
+      margin-right: unset;
+    }
   }
   @media (min-width: 20em) {
     .container {
@@ -185,14 +187,34 @@
 
   a {
     color: rgb(1, 115, 175);
-    text-decoration: underline;
     transition: background-color 0.2s, color 0.2s;
   }
+
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    a {
+      color: inherit;
+      text-decoration: none;
+      /* background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(1, 115, 175)" d="M 0 0, Q 50 25, 100 0, L 100 100, L 0 100, L 0 0"></path></svg>'); */
+
+
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(1, 115, 175, 1)" d="M 0 0 Q 50 25, 100 0 L 100 10 Q 50 35, 0 10"></path></svg>');
+      /* background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYmEoMSwgMTE1LCAxNzUsIDAuNSkiIGQ9Ik0gMCAwLCBRIDUwIDI1LCAxMDAgMCwgTCAxMDAgMTAsIFEgNTAgMzUsIDAsIDEwIj48L3BhdGg+PC9zdmc+Cg=='); */
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 1em auto;
+
+      display: inline-block;
+    }
+  }
+
   a:hover,
   a:active,
   a:focus {
     background-color: rgb(1, 115, 175);
     color: white;
+  }
+  figure a {
+    background-image: none;
   }
   figure a:hover,
   figure a:active,
@@ -286,6 +308,7 @@
     font-family: "Goudy Bookletter 1911", Georgia, serif;
     display: inline-block;
     padding: 0.7em 1em;
+    background-image: none;
     background-color: rgba(1, 115, 175, 0.2);
     border-radius: 0.25em;
     /*
@@ -293,6 +316,7 @@
     */
     margin-bottom: 0.375em;
     text-decoration: none;
+    color: rgb(1, 115, 175);
   }
   .action a:hover,
   .action a:active,
@@ -450,6 +474,7 @@
 
   .container > div a {
     text-decoration: none;
+    background-image: none;
   }
   /*
   .container > div a:hover,
