@@ -197,7 +197,7 @@
       /* background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(1, 115, 175)" d="M 0 0, Q 50 25, 100 0, L 100 100, L 0 100, L 0 0"></path></svg>'); */
 
 
-      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(1, 115, 175, 1)" d="M 0 0 Q 50 25, 100 0 L 100 10 Q 50 35, 0 10"></path></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(1, 115, 175)" d="M 0 0 Q 50 25, 100 0 L 100 10 Q 50 35, 0 10"></path></svg>');
       /* background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYmEoMSwgMTE1LCAxNzUsIDAuNSkiIGQ9Ik0gMCAwLCBRIDUwIDI1LCAxMDAgMCwgTCAxMDAgMTAsIFEgNTAgMzUsIDAsIDEwIj48L3BhdGg+PC9zdmc+Cg=='); */
       background-repeat: repeat-x;
       background-position: bottom;
@@ -466,6 +466,20 @@
   */
   .banner .credit a b {
     text-decoration: underline;
+  }
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    .banner .credit a b {
+      text-decoration: none;
+      /* background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(1, 115, 175)" d="M 0 0, Q 50 25, 100 0, L 100 100, L 0 100, L 0 0"></path></svg>'); */
+
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M 0 0 Q 50 25, 100 0 L 100 10 Q 50 35, 0 10"></path></svg>');
+      /* background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYmEoMSwgMTE1LCAxNzUsIDAuNSkiIGQ9Ik0gMCAwLCBRIDUwIDI1LCAxMDAgMCwgTCAxMDAgMTAsIFEgNTAgMzUsIDAsIDEwIj48L3BhdGg+PC9zdmc+Cg=='); */
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 0.75em auto;
+
+      display: inline-block;
+    }
   }
   a.banner {
     color: inherit;
