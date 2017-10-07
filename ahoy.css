@@ -158,6 +158,19 @@
     line-height: 1.5;
     margin-top: 1.5em;
   }
+  h1#hello {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  h1#hello + p {
+    margin-top: 0;
+  }
+  .social h2 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
   h3 {
     margin-top: 1.25em;
     font-size: 0.85em;
