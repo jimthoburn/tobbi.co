@@ -7,20 +7,23 @@ class: home
 
   <div class="container">
 
-    <span class="ahoy">
-      <svg width="100" height="76" viewBox="0 0 100 75.985">
-        <use xlink:href="/images/ship.svg#ship"></use>
-      </svg>
-    </span>
-
     <!--
     <p>Ahoy there! <span style="display: inline-block">I’m Jim, a user interface developer,</span> <span style="display: inline-block">based in <span style="display: inline-block">Los Angeles.</span></span></p>
     -->
-    <h1>Ahoy there! <span style="display: inline-block">I’m Jim, a <!-- web design engineer -->user interface developer,</span> <span style="display: inline-block">based in <span style="display: inline-block">Los Angeles.</span></span></h1>
+    <h1>Ahoy there! I’m Jim, a <!-- web design engineer -->user interface developer, based in <span style="display: inline-block">Los Angeles.</span></h1>
+
+    <a href="#projects" class="ahoy">
+      <svg width="100" height="76" viewBox="0 0 100 75.985">
+        <switch>
+          <use xlink:href="/images/ship.svg#ship"></use>
+          <foreignObject>Projects</foreignObject>
+        </switch>
+      </svg>
+    </a>
 
     <h2>I partner with <!-- business owners,--> designers &amp; engineers to create products for the Web that are pleasing to users and built to last.</h2>
 
-    <p>If you’re making a web site or application, <a href="#services">I can assist</a> with prototypes, universal design, iterative development, pattern libraries, and more. Here are some example projects…</p>
+    <p>If you’re making a web site or application, I can assist with <a href="#services">prototypes</a>, universal design, iterative development, pattern libraries, and more. Here are some example projects…</p>
 
     <!--
     <h2>I also like to bake 🍞 🍪 and take pictures 📷 🖼</h2>
@@ -53,10 +56,10 @@ class: home
 
   </div>
 
-  <a href="/good-fest" class="banner" style="background-image: url(/images/projects/goodfest-shows.png);">
+  <a id="projects" href="/good-fest" class="banner" style="background-image: url(/images/projects/goodfest-shows.png); background-position: bottom;">
     <div>
       <h3>GOOD Fest</h3>
-      <p>Google</p>
+      <p>Google &amp; GOOD Worldwide</p>
     </div>
   </a>
 
@@ -70,7 +73,7 @@ class: home
   <a href="/kiva" class="banner" style="background-image: url(/images/projects/kiva-timeline.png);">
     <div>
       <h3>10 Days of Lending</h3>
-      <p>PayPal &amp; Kiva</p>
+      <p>PayPal, Kiva, &amp; GOOD Worldwide</p>
     </div>
   </a>
 
@@ -165,7 +168,7 @@ class: home
       -->
       <li>
         <h2>Universal design</h2>
-        <p>From your ideas, sketches or high-fidelity compositions, I’ll make a fast, responsive, lightweight and <a href="https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/">robust user interface</a>–that’s accessible to anyone in your audience, with production-quality HTML, CSS and JavaScript.</p>
+        <p>From your ideas, sketches or high-fidelity compositions, I’ll make a fast, responsive, lightweight and <a href="https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/">robust</a> user interface–that’s accessible to anyone in your audience, with production-quality HTML, CSS and JavaScript.</p>
       </li>
       <li>
         <h2>Pattern libraries</h2>
