@@ -670,14 +670,14 @@
     .home a.banner p {
       font-size: 4vmax;
     }
-    */
     .home a.banner h3 {
       font-size: 6vmax;
     }
     .home a.banner h3 + p {
       font-size: 3vmax;
-      padding: 0.35em 2.1vmax 0; /* 6vmax * 0.35 */
+      padding: 0.35em 2.1vmax 0;
     }
+    */ /* 6vmax * 0.35 */
   }
   a.banner div:last-child {
     background-color: transparent;
