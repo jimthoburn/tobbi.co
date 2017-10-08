@@ -484,8 +484,8 @@
     }
   }
   a.banner:last-child {
-    padding-bottom: 50%;
-    padding-bottom: 50vh;
+    padding-bottom: 60%;
+    padding-bottom: 60vh;
   }
   .banner:before {
     content: "";
@@ -508,9 +508,11 @@
     bottom: 10%;
     padding: 0.375em 1.4em;
   }
+  /*
   a.banner div:last-child {
     padding: 0.375em 0.7em;
   }
+  */
   @supports (transform: translateY(0)) {
     .banner div {
       bottom: 50%;
@@ -561,11 +563,17 @@
   }
   .banner .credit {
     position: absolute;
+    top: auto;
+    left: auto;
     bottom: 0;
     right: 0;
+    background: rgb(51, 51, 51);
+    background: rgba(51, 51, 51, 0.85);
+    background: transparent;
     color: rgb(252, 252, 249); /* @snow */
     margin: 0;
     font-size: 0.75em;
+    padding: 0 !important;
   }
   .banner .credit a {
     display: block;
@@ -666,8 +674,9 @@
     .home a.banner h3 {
       font-size: 6vmax;
     }
-    .home a.banner p {
+    .home a.banner h3 + p {
       font-size: 3vmax;
+      padding: 0.35em 2.1vmax 0; /* 6vmax * 0.35 */
     }
   }
   a.banner div:last-child {
@@ -717,7 +726,24 @@
     top: 50%;
     transform: translateY(-50%);
     bottom: auto;
+
+    /*
+    top: auto;
+    bottom: 0;
+    transform: none;
+    padding: 0;
+    left: auto;
+    margin: 0;
+    margin-bottom: -1px;
+    height: 100%;
+    width: 100%;
+    */
   }
+  /*
+  .home a.banner h3 {
+    padding-top: 55vh !important;
+  }
+  */
 
   .container > div a {
     text-decoration: none;
@@ -771,14 +797,45 @@
     background: rgba(0, 0, 0, 0.375);
   }
   .banner div {
+    /*
     background-image: radial-gradient(rgba(0, 0, 0, 0.1875) 0%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 100%);
+    */
   }
   .banner h1,
   .banner h2,
   .banner h3,
   .banner p {
+    /*
     text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.375);
+    */
+    background: rgb(51, 51, 51);
+    background: rgba(51, 51, 51, 0.85);
+    padding: 0.7rem 1.4rem !important;
   }
+  .unused body > a.ahoy {
+    /*
+    background-color: rgb(51, 51, 51) !important;
+    background-color: rgba(51, 51, 51, 0.85) !important;
+    */
+    padding: 0.375em 0.7em 0;
+    border-bottom: 0.25em solid rgb(40, 155, 215);
+  }
+  .unused body > a.ahoy,
+  .banner h1,
+  .banner h2,
+  .banner h3 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(40, 155, 215)" d="M -10 0 Q 50 25, 110 0, L 110 35, -10 35 Z"></path></svg>') !important;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 1em auto;
+  }
+  .banner p {
+    position: relative;
+    margin-top: 0;
+    top: -1px;
+    background: rgb(40, 155, 215);
+  }
+
   /*
   .banner:before {
     background: rgba(0, 0, 0, 0.25);
