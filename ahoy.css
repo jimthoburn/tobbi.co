@@ -201,7 +201,7 @@
       /* background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M 0 0, Q 50 25, 100 0, L 100 100, L 0 100, L 0 0"></path></svg>'); */
 
 
-      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(40, 155, 215)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       /* background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYmEoMSwgMTE1LCAxNzUsIDAuNSkiIGQ9Ik0gMCAwLCBRIDUwIDI1LCAxMDAgMCwgTCAxMDAgMTAsIFEgNTAgMzUsIDAsIDEwIj48L3BhdGg+PC9zdmc+Cg=='); */
       background-repeat: repeat-x;
       background-position: bottom;
@@ -357,15 +357,26 @@
     .action a:hover,
     .action a:active,
     .action a:focus {
-      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      color: white;
+      background-color: rgb(40, 155, 215);
+    }
+    .action a {
       background-image: none;
     }
     .action a,
     .action a:hover,
     .action a:active,
     .action a:focus {
-      color: white;
+      background-color: rgba(80, 195, 255, 0.25);
+      color: rgb(40, 155, 215);
+      background-position: bottom;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 55 L -10 55 Z"></path></svg>');
+    }
+    .action a:hover,
+    .action a:active,
+    .action a:focus {
       background-color: rgb(40, 155, 215);
+      color: white;
     }
 
   }
@@ -379,22 +390,16 @@
   a.ahoy {
     position: absolute;
     z-index: 1;
-    padding: 0.375em 0.7em 0;
+    padding: 0.375em 0.7em 0.7em;
     margin: 0.7em;
     color: white;
     text-decoration: none;
     text-align: center;
   }
-  a.ahoy:hover,
-  a.ahoy:active,
-  a.ahoy:focus {
-    background-color: transparent;
-    color: white;
-  }
   a.ahoy svg {
     font-size: 0.5em;
-    vertical-align: top;
-    margin-right: 1.4em;
+    vertical-align: bottom;
+    margin-left: 0.7em;
   }
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
@@ -407,9 +412,8 @@
     }
   }
   a.ahoy {
-    padding: 0;
     margin: 1.4em;
-    background-position: bottom;
+    background-position: 50% 75%;
   }
   @media (min-width: 45em) {
     a.ahoy {
@@ -419,7 +423,7 @@
   a.ahoy h2 {
     font-size: 0.75em;
     line-height: 1.8666666667;
-    margin-top: 0.375em;
+    padding: 0.7em;
 
     display: inline;
   }
@@ -443,7 +447,7 @@
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
     .home a.ahoy {
-      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(40, 155, 215)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(51, 51, 51, 0.1)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       background-position: bottom;
       background-size: 1.4em auto;
 
@@ -547,7 +551,12 @@
   }
   .banner div h1 {
     margin-top: 0;
-    font-size: 3em;
+    font-size: 2em;
+  }
+  @media (min-width: 22em) {
+    .banner div h1 {
+      font-size: 3em;
+    }
   }
 
   .home a.banner h3,
@@ -759,6 +768,13 @@
   */
 
   .container > div a {
+    background-image: none;
+  }
+  /*
+  .container > div a {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(51, 51, 51, 0.1)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+  }
+  .container > div a {
     text-decoration: none;
     background-image: none;
     color: rgb(40, 155, 215);
@@ -769,6 +785,7 @@
     text-decoration: none;
     color: white;
   }
+  */
 
   @media (min-width: 25em) {
     .container > div {
@@ -862,6 +879,10 @@
   div.banner h1 {
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(252, 254, 249, 0.1)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>') !important;
     background-image: none !important;
+  }
+  div.banner div h1,
+  div.banner div p {
+    padding-left: 0 !important;
   }
   .container + a.banner div:first-child h2 {
     background-image: none !important;
