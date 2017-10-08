@@ -391,11 +391,6 @@
     background-color: transparent;
     color: white;
   }
-  a.ahoy h2 {
-    font-size: 0.75em;
-    line-height: 1.8666666667;
-    margin-top: 0.375em;
-  }
   a.ahoy svg {
     font-size: 0.5em;
     vertical-align: top;
@@ -410,6 +405,19 @@
       background-position: 50% 47%;
       background-size: 1em auto;
     }
+  }
+  a.ahoy {
+    padding: 0;
+    margin: 1.4em;
+    margin-left: calc(50vw - 16.5em);
+    background-position: bottom;
+  }
+  a.ahoy h2 {
+    font-size: 0.75em;
+    line-height: 1.8666666667;
+    margin-top: 0.375em;
+
+    display: inline;
   }
 
   .home a.ahoy {
@@ -647,6 +655,12 @@
       font-size: 4vmax;
     }
     */
+    .home a.banner h3 {
+      font-size: 6vmax;
+    }
+    .home a.banner p {
+      font-size: 3vmax;
+    }
   }
   a.banner div:last-child {
     background-color: transparent;
