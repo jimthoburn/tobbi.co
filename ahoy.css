@@ -68,8 +68,14 @@
   }
   @media (min-width: 1500px), (min-height: 1500px) {
     body {
+      font-size: 225%;
       font-size: 200%;
-      font-size: 175%;
+    }
+  }
+  @media (min-width: 2000px), (min-height: 2000px) {
+    body {
+      font-size: 250%;
+      font-size: 225%;
     }
   }
   .container {
@@ -84,16 +90,14 @@
     background-size: 1.4em 1.4em;
     */
   }
-  @media (min-width: 45em) {
-    .banner + .container p:first-child {
-      font-size: 1.2em;
-      margin-bottom: 1.1666666667em;
-    }
+  .banner + .container p:first-child {
+    font-size: 1.2em;
+    margin-bottom: 1.1666666667em;
   }
   @media (min-width: 60em) {
     .banner + .container p:first-child {
-      font-size: 1.4em;
-      line-height: 1.5;
+      font-size: 1.6em;
+      line-height: 1.4;
       margin-top: 0;
       margin-bottom: 1.5em;
     }
@@ -423,7 +427,7 @@
     margin: 1.4em;
     background-position: 50% 75%;
   }
-  @media (min-width: 45em) {
+  @media (min-width: 55em) {
     a.ahoy {
       margin-left: calc(50vw - 16.5em);
     }
@@ -552,7 +556,7 @@
   }
 
 
-  @media (min-width: 45em) {
+  @media (min-width: 55em) {
     .banner div {
       left: calc(50vw - 17.9em);
     }
