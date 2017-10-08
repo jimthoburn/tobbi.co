@@ -94,7 +94,7 @@
     .banner + .container p:first-child {
       font-size: 1.4em;
       line-height: 1.5;
-      margin-top: 1.5em;
+      margin-top: 0;
       margin-bottom: 1.5em;
     }
   }
@@ -477,6 +477,10 @@
     .banner {
       padding-bottom: 60%;
       padding-bottom: 60vh;
+    }
+    .ahoy + .banner {
+      padding-bottom: 80%;
+      padding-bottom: 80vh;
     }
   }
   a.banner:last-child {
