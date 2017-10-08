@@ -409,8 +409,12 @@
   a.ahoy {
     padding: 0;
     margin: 1.4em;
-    margin-left: calc(50vw - 16.5em);
     background-position: bottom;
+  }
+  @media (min-width: 45em) {
+    a.ahoy {
+      margin-left: calc(50vw - 16.5em);
+    }
   }
   a.ahoy h2 {
     font-size: 0.75em;
