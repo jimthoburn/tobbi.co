@@ -720,13 +720,12 @@
     background-image: none;
     color: rgb(40, 155, 215);
   }
-  /*
   .container > div a:hover,
   .container > div a:active,
   .container > div a:focus {
-    text-decoration: underline;
+    text-decoration: none;
+    color: white;
   }
-  */
 
   @media (min-width: 25em) {
     .container > div {
