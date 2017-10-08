@@ -721,12 +721,20 @@
       text-align: center;
     }
     */
+  }  
+  .home a.banner div:last-child {
+    left: 0;
+    right: auto;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
   }
   .home a.banner div:last-child {
+    padding: 0;
+    bottom: auto;
     top: 50%;
     transform: translateY(-50%);
-    bottom: auto;
-
     /*
     top: auto;
     bottom: 0;
@@ -738,6 +746,11 @@
     height: 100%;
     width: 100%;
     */
+  }
+  .home a.banner h3 {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
   }
   /*
   .home a.banner h3 {
@@ -794,7 +807,7 @@
     margin-bottom: 1em;
   }
   .banner:before {
-    background: rgba(0, 0, 0, 0.375);
+    background: rgba(0, 0, 0, 0.375), rgba(51, 51, 51, 0.5);
   }
   .banner div {
     /*
@@ -809,7 +822,8 @@
     text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.375);
     */
     background: rgb(51, 51, 51);
-    background: rgba(51, 51, 51, 0.85);
+    background: rgba(51, 51, 51, 0.5);
+    background-color: transparent;
     padding: 0.7rem 1.4rem !important;
   }
   .unused body > a.ahoy {
@@ -841,11 +855,13 @@
     background: rgb(40, 155, 215);
   }
   .banner p {
-    background-color: rgba(51, 51, 51, 0.85);  /* @snow */
+    background-color: rgba(51, 51, 51, 0.5);
+    background-color: transparent;
     color: white;
   }
   div.banner h1 {
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(252, 254, 249, 0.1)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>') !important;
+    background-image: none !important;
   }
   .container + a.banner div:first-child h2 {
     background-image: none !important;
