@@ -264,7 +264,7 @@
   .container > .clouds {
     display: flex;
     position: absolute;
-    top: 1.4em;
+    top: 0em;
     left: 0;
     width: 100vw;
     overflow: hidden;
@@ -279,9 +279,6 @@
     position: absolute;
     top: 2.8em;
     margin-left: 1.4em;
-  }
-  .home .clouds + .ahoy {
-    margin-top: 3em;
   }
 
   .cloud {
