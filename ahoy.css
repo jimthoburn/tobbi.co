@@ -754,6 +754,24 @@
       }
     }
   }
+  .home a.banner div,
+  .container + .banner div h1,
+  .container + .banner div h1 + p {
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .home a.banner:active div,
+  .home a.banner:focus div,
+  .home a.banner div:hover,
+  .container + .banner:active div h1,
+  .container + .banner:active div h1 + p,
+  .container + .banner:focus div h1,
+  .container + .banner:focus div h1 + p,
+  .container + .banner div:hover h1,
+  .container + .banner div:hover h1 + p,
+  .container + .banner div:hover ~ div h1,
+  .container + .banner div:hover ~ div h1 + p {
+    background-color: rgb(40, 155, 215);
+  }
   a.banner {
     color: inherit;
   }
@@ -874,7 +892,8 @@
     width: 100%;
     */
   }
-  .home a.banner h3 {
+  .home a.banner h3,
+  .home a.banner p {
     display: table;
     margin-left: auto;
     margin-right: auto;
