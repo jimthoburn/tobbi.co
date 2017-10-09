@@ -94,6 +94,7 @@
     font-size: 1.2em;
     margin-bottom: 1.1666666667em;
   }
+  /*
   @media (min-width: 60em) {
     .banner + .container p:first-child {
       font-size: 1.6em;
@@ -102,6 +103,7 @@
       margin-bottom: 1.5em;
     }
   }
+  */
   @supports (-webkit-initial-letter: 1) or (initial-letter: 1) {
     .banner + .container p:first-child + p:first-letter {
       -webkit-initial-letter: 2;
@@ -754,14 +756,18 @@
       }
     }
   }
-  .home a.banner div,
+  .home a.banner div h3,
+  .home a.banner div p,
   .container + .banner div h1,
   .container + .banner div h1 + p {
     transition: background-color 0.2s, color 0.2s;
   }
-  .home a.banner:active div,
-  .home a.banner:focus div,
-  .home a.banner div:hover,
+  .home a.banner:active div h3,
+  .home a.banner:active div p,
+  .home a.banner:focus div h3,
+  .home a.banner:focus div p,
+  .home a.banner div:hover h3,
+  .home a.banner div:hover p,
   .container + .banner:active div h1,
   .container + .banner:active div h1 + p,
   .container + .banner:focus div h1,
@@ -993,7 +999,15 @@
     margin-bottom: 1em;
   }
   .banner:before {
-    background: rgba(0, 0, 0, 0.375), rgba(51, 51, 51, 0.5);
+    background: linear-gradient(to top right, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
+  }
+  @media(min-width: 45em) {
+    .banner:last-child:before {
+      background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
+    }
+  }
+  .home .banner:before {
+    background: rgba(25, 25, 25, 0.75);
   }
   .banner div {
     /*
