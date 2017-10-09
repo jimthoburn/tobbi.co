@@ -324,35 +324,35 @@
 
   .cloud {
     color: rgba(51, 51, 51, 0.02);
-    animation-duration: 100s;
+    animation-duration: 200s;
   }
   .cloud:nth-child(2n) {
     color: rgba(51, 51, 51, 0.1);
-    animation-duration: 150s;
+    animation-duration: 250s;
   }
   .cloud:nth-child(3n) {
     color: rgba(51, 51, 51, 0.025);
-    animation-duration: 130s; 
+    animation-duration: 230s; 
   }
   .cloud:nth-child(3n+1) {
     color: rgba(51, 51, 51, 0.01);
-    animation-duration: 145s; 
+    animation-duration: 245s; 
   }
   .cloud:nth-child(5n) {
     color: rgba(51, 51, 51, 0.075);
-    animation-duration: 135s; 
+    animation-duration: 235s; 
   }
 
   .cloud:nth-child(2n+5) {
-    animation-delay: -90s;
+    animation-delay: -140s;
   }
 
   .cloud:nth-child(3n+5) {
-    animation-delay: -30s;
+    animation-delay: -80s;
   }
 
   .cloud:nth-child(5n+3) {
-    animation-delay: -65s;
+    animation-delay: -105s;
   }
 
 
@@ -920,6 +920,16 @@
   .home > .container:last-child {
     padding-bottom: 5.6em;
   }
+  /*
+  .hello {
+    position: absolute;
+    top: 1.4em;
+    right: 1.5em;
+    margin: 0;
+    z-index: 9999;
+    font-size: 0.75em;
+  }
+  */
   /*
   .home .hello {
     margin: 0;
