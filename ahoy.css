@@ -252,8 +252,115 @@
     font-style: inherit;
   }
 
+  @keyframes floating {
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+
+  .container > .clouds {
+    display: flex;
+    position: absolute;
+    top: 1.4em;
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .home .ahoy::before {
+    content: "";
+    display: block;
+    background: rgb(255, 235, 80);
+    width: 2.1em;
+    height: 2.1em;
+    border-radius: 100%;
+    position: absolute;
+    top: 2.8em;
+    margin-left: 1.4em;
+  }
+  .home .clouds + .ahoy {
+    margin-top: 3em;
+  }
+
+  .cloud {
+    position: relative;
+    z-index: 1;
+    animation-name: floating;
+    animation-duration: 160s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
+  svg.cloud path {
+    fill: currentColor;
+  }
+
+  .cloud {
+    height: 4em;
+    width: 4em;
+  }
+  .cloud:nth-child(2n+1) {
+    height: 6em;
+    width: 6em;
+  }
+  .cloud:nth-child(5n+1) {
+    height: 8em;
+    width: 8em;
+  }
+
+  @media (min-width: 45em) {
+    .cloud {
+      height: 5vmax;
+      width: 5vmax;
+    }
+    .cloud:nth-child(2n+1) {
+      height: 7.5vmax;
+      width: 7.5vmax;
+    }
+    .cloud:nth-child(5n+1) {
+      height: 10vmax;
+      width: 10vmax;
+    }
+  }
+
+  .cloud {
+    color: rgba(51, 51, 51, 0.02);
+    animation-duration: 100s;
+  }
+  .cloud:nth-child(2n) {
+    color: rgba(51, 51, 51, 0.1);
+    animation-duration: 150s;
+  }
+  .cloud:nth-child(3n) {
+    color: rgba(51, 51, 51, 0.025);
+    animation-duration: 130s; 
+  }
+  .cloud:nth-child(3n+1) {
+    color: rgba(51, 51, 51, 0.01);
+    animation-duration: 145s; 
+  }
+  .cloud:nth-child(5n) {
+    color: rgba(51, 51, 51, 0.075);
+    animation-duration: 135s; 
+  }
+
+  .cloud:nth-child(2n+5) {
+    animation-delay: -90s;
+  }
+
+  .cloud:nth-child(3n+5) {
+    animation-delay: -30s;
+  }
+
+  .cloud:nth-child(5n+3) {
+    animation-delay: -65s;
+  }
+
+
   /* Ship */
-  svg {
+  .ahoy svg {
     height: 2.8em; /* base line height (1.4) x 2 */
     width: 3.7333333333em; /* height x 4/3 */
     fill: rgb(40, 155, 215);
@@ -816,6 +923,7 @@
   .home > .container:last-child {
     padding-bottom: 5.6em;
   }
+  /*
   .home .hello {
     margin: 0;
     position: absolute;
@@ -842,6 +950,7 @@
     bottom: 2em;
     left: 2em;
   }
+  */
 
   .home .container:first-of-type {
     padding-top: 2.1em;
