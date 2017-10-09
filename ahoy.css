@@ -300,11 +300,11 @@
     height: 4em;
     width: 4em;
   }
-  .cloud:nth-child(2n+1) {
+  .cloud:nth-child(3n-5) {
     height: 6em;
     width: 6em;
   }
-  .cloud:nth-child(5n+1) {
+  .cloud:nth-child(2+3) {
     height: 8em;
     width: 8em;
   }
@@ -314,11 +314,11 @@
       height: 5vmax;
       width: 5vmax;
     }
-    .cloud:nth-child(2n+1) {
+    .cloud:nth-child(3n-5) {
       height: 7.5vmax;
       width: 7.5vmax;
     }
-    .cloud:nth-child(5n+1) {
+    .cloud:nth-child(2+3) {
       height: 10vmax;
       width: 10vmax;
     }
@@ -326,35 +326,39 @@
 
   .cloud {
     color: rgba(51, 51, 51, 0.02);
-    animation-duration: 200s;
+    animation-duration: 800s;
   }
-  .cloud:nth-child(2n) {
+  .cloud:nth-child(2n+1) {
     color: rgba(51, 51, 51, 0.1);
-    animation-duration: 250s;
+    animation-duration: 1000s;
   }
-  .cloud:nth-child(3n) {
+  .cloud:nth-child(3n+2) {
     color: rgba(51, 51, 51, 0.025);
-    animation-duration: 230s; 
+    animation-duration: 920s; 
   }
-  .cloud:nth-child(3n+1) {
-    color: rgba(51, 51, 51, 0.01);
-    animation-duration: 245s; 
-  }
-  .cloud:nth-child(5n) {
-    color: rgba(51, 51, 51, 0.075);
-    animation-duration: 235s; 
-  }
-
-  .cloud:nth-child(2n+5) {
-    animation-delay: -140s;
-  }
-
-  .cloud:nth-child(3n+5) {
-    animation-delay: -80s;
-  }
-
   .cloud:nth-child(5n+3) {
-    animation-delay: -105s;
+    color: rgba(51, 51, 51, 0.01);
+    animation-duration: 980s; 
+  }
+  .cloud:nth-child(2n+5) {
+    color: rgba(51, 51, 51, 0.075);
+    animation-duration: 940s; 
+  }
+
+  .cloud:nth-child(2n) {
+    animation-delay: -560s;
+  }
+
+  .cloud:nth-child(3n-5) {
+    animation-delay: -320s;
+  }
+
+  .cloud:nth-child(5n-3) {
+    animation-delay: -420s;
+  }
+
+  .cloud:nth-child(3n-2) {
+    animation-delay: -820s;
   }
 
 
