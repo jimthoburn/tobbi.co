@@ -459,7 +459,9 @@
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
     .home a.ahoy {
+      /*
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(51, 51, 51, 0.1)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      */
       background-position: bottom;
       background-size: 1.4em auto;
 
@@ -817,8 +819,28 @@
   .home .hello {
     margin: 0;
     position: absolute;
-    top: 1.4em;
-    right: 1.4em;
+    top: -3.5em;
+    right: -1em;
+  }
+  .home .hello a {
+    width: 7.5em;
+    height: 7.5em;
+    background: rgb(255, 235, 80);
+    border-radius: 50%;
+    background-image: none;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .home .hello a:hover,
+  .home .hello a:active,
+  .home .hello a:focus {
+    background: rgb(255, 215, 80);
+    color: rgb(51, 51, 51);
+  }
+  .home .hello a span {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
   }
 
   .home .container:first-of-type {
