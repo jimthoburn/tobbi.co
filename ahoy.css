@@ -569,7 +569,7 @@
   }
 
   .home a.ahoy {
-    position: static;
+    position: relative;
     padding: 0;
     margin: 1.4em 0 2.8em;
     color: inherit;
