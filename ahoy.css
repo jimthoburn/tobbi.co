@@ -271,6 +271,7 @@
     width: 100vw;
     overflow: hidden;
   }
+  /*
   .home .ahoy::before {
     content: "";
     display: block;
@@ -281,6 +282,18 @@
     position: absolute;
     top: 2.8em;
     margin-left: 1.4em;
+  }
+  */
+  .sun circle,
+  .sun path {
+    fill: rgb(255, 235, 80);
+  }
+  .sun {
+    width: 3.5em;
+    height: 3.5em;
+    position: absolute;
+    top: 1.4em;
+    margin-left: 0.7em;
   }
 
   .cloud {
@@ -326,22 +339,27 @@
 
   .cloud {
     color: rgba(51, 51, 51, 0.02);
+    color: rgb(245, 245, 245);
     animation-duration: 800s;
   }
   .cloud:nth-child(2n+1) {
     color: rgba(51, 51, 51, 0.1);
+    color: rgb(242, 242, 242);
     animation-duration: 1000s;
   }
   .cloud:nth-child(3n+2) {
     color: rgba(51, 51, 51, 0.025);
+    color: rgb(244, 244, 244);
     animation-duration: 920s; 
   }
   .cloud:nth-child(5n+3) {
     color: rgba(51, 51, 51, 0.01);
+    color: rgb(241, 241, 241);
     animation-duration: 980s; 
   }
   .cloud:nth-child(2n+5) {
     color: rgba(51, 51, 51, 0.075);
+    color: rgb(243, 243, 243);
     animation-duration: 940s; 
   }
 
