@@ -35,13 +35,21 @@
       var now = new Date();
       var hours = now.getHours() + (now.getMinutes() / 60);
 
-      var sunPosition = (hours - 6) % 12; // The animation only supports 0-12 hours, at present // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
+      var sunPosition = ((hours - 6) % 12) * 60 * 60; // The animation only supports 0-12 hours, at present // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
+
+      sunPosition = 43200;
 
       //document.documentElement.style.setProperty('--cloud-brightness', brightness);
       //document.documentElement.style.setProperty('--cloud-position', position);
       document.documentElement.style.setProperty('--cloud-delay', cloudDelay + 's');
-      document.documentElement.style.setProperty('--sun-position', (sunPosition * 60 * 60 * -1) + 's');
+      document.documentElement.style.setProperty('--sun-position', sunPosition);
 
+
+      if (sunPosition >= 21600) {
+        document.documentElement.style.setProperty('--sun-position-vertical', (((sunPosition / 21600) * (4.5)) - (4.5)) + 'em');
+      } else {
+        document.documentElement.style.setProperty('--sun-position-vertical', ((4.5) - ((sunPosition / 21600) * (4.5))) + 'em');
+      }
 
     })();
   </script>

@@ -5,6 +5,7 @@
   :root {
     --cloud-delay: 0s;
     --sun-position: calc(-3 * 60 * 60s);
+    --sun-position-vertical: 0.375em;
   }
 
 
@@ -339,6 +340,7 @@
     transform: translate(16.5em, -5.75em);
     transform: translate(31.25em, 0.25em);
     */
+    /*
     animation-name: sun-path;
     animation-duration: calc(12 * 60 * 60s);
     animation-iteration-count: infinite;
@@ -346,6 +348,43 @@
     animation-fill-mode: both;
     animation-delay: calc(-3 * 60 * 60s);
     animation-delay: var(--sun-position);
+    */
+
+    top: 0.375em;
+    left: 1.4em;
+
+    /*
+    top: calc(var(--sun-position) / 21600 * 4.5em);
+    */
+    top: var(--sun-position-vertical);
+
+    margin-left: calc(var(--sun-position) / 43200 * -3.5em); /* A range from zero to -3.5em (to keep the sun on stage, at sunset) */
+    left: calc(var(--sun-position) / 43200 * 100%);
+  }
+
+  @supports(false) {
+    .sun svg {
+
+      /* Sunrise */
+      top: 4.5em;
+      left: 1.4em;
+
+      /* Nine o’clock */
+      top: 0.375em;
+      left: calc(25% - 1.75em);
+
+      /* Noon */
+      top: -1.4em;
+      left: calc(50% - 1.75em);
+
+      /* Three o’clock */
+      top: 0.375em;
+      left: calc(75% - 1.75em);
+
+      /* Sunset */
+      top: 4.5em;
+      left: calc(100% - 3.5em - 1.4em);
+    }
   }
 
   .cloud {
