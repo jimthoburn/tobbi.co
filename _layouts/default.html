@@ -34,9 +34,8 @@
       //var sunPosition = Math.floor(Math.random() * 12) + 0;
       var now = new Date();
       var hours = now.getHours() + (now.getMinutes() / 60);
-      hours = hours % 12; // The animation runs from 0-12 hours
 
-      var sunPosition = hours - 6; // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
+      var sunPosition = (hours - 6) % 12; // The animation only supports 0-12 hours, at present // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
 
       //document.documentElement.style.setProperty('--cloud-brightness', brightness);
       //document.documentElement.style.setProperty('--cloud-position', position);
