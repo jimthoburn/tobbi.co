@@ -1,5 +1,13 @@
 
 
+  /* =Variables
+  ----------------------------------------------- */
+  :root {
+    --cloud-brightness: 245;
+    --cloud-delay: 0s;
+  }
+
+
   /* =Elements
   ----------------------------------------------- */
   html, body {
@@ -346,6 +354,9 @@
     color: rgba(51, 51, 51, 0.1);
     color: rgb(242, 242, 242);
     animation-duration: 1000s;
+    /*
+    animation-duration: var(--cloud-duration + 1000s);  ??
+    */
   }
   .cloud:nth-child(3n+2) {
     color: rgba(51, 51, 51, 0.025);
@@ -360,23 +371,35 @@
   .cloud:nth-child(2n+5) {
     color: rgba(51, 51, 51, 0.075);
     color: rgb(243, 243, 243);
+    /*
+    color: rgb(calc(var(--cloud-brightness) - 2), calc(var(--cloud-brightness) - 2), calc(var(--cloud-brightness) - 2));
+    */
     animation-duration: 940s; 
+  }
+
+  .cloud {
+    animation-delay: 0;
+    animation-delay: calc(var(--cloud-delay) - 1000s);
   }
 
   .cloud:nth-child(2n) {
     animation-delay: -560s;
+    animation-delay: calc(var(--cloud-delay) - 1560s);
   }
 
   .cloud:nth-child(3n-5) {
     animation-delay: -320s;
+    animation-delay: calc(var(--cloud-delay) - 1320s);
   }
 
   .cloud:nth-child(5n-3) {
     animation-delay: -420s;
+    animation-delay: calc(var(--cloud-delay) - 1420s);
   }
 
   .cloud:nth-child(3n-2) {
     animation-delay: -820s;
+    animation-delay: calc(var(--cloud-delay) - 1820s);
   }
 
 

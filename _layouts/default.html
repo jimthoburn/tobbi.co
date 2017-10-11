@@ -16,6 +16,27 @@
   <meta property="og:description" content="{{ site.description }}" />
   {% endcomment %}
 
+  <script>
+    (function() {
+
+      // KUDOS https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript#answer-4960020
+
+      // Generate a random number between 1 and 255
+      //var brightness = Math.floor(Math.random() * 255) + 1;
+
+      // Generate a random number between 1 and 1000
+      //var position = Math.floor(Math.random() * 1000) + 1;
+
+      // Generate a random number between 1 and 1000
+      var delay = Math.floor(Math.random() * 1000) + 1;
+
+      //document.documentElement.style.setProperty('--cloud-brightness', brightness);
+      //document.documentElement.style.setProperty('--cloud-position', position);
+      document.documentElement.style.setProperty('--cloud-delay', delay + 's');
+
+    })();
+  </script>
+
   <!-- https://www.zachleat.com/web/preload/ -->
   <link rel="preload" href="/fonts/goudybookletter1911.woff2" as="font" type="font/woff2" crossorigin />
 
