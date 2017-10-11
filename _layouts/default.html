@@ -28,11 +28,21 @@
       //var position = Math.floor(Math.random() * 1000) + 1;
 
       // Generate a random number between 1 and 1000
-      var delay = Math.floor(Math.random() * 1000) + 1;
+      var cloudDelay = Math.floor(Math.random() * 1000) + 1;
+
+      // Generate a random number between 0 and 12
+      //var sunPosition = Math.floor(Math.random() * 12) + 0;
+      var now = new Date();
+      var hours = now.getHours() + (now.getMinutes() / 60);
+      hours = hours % 12; // The animation runs from 0-12 hours
+
+      var sunPosition = hours - 6; // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
 
       //document.documentElement.style.setProperty('--cloud-brightness', brightness);
       //document.documentElement.style.setProperty('--cloud-position', position);
-      document.documentElement.style.setProperty('--cloud-delay', delay + 's');
+      document.documentElement.style.setProperty('--cloud-delay', cloudDelay + 's');
+      document.documentElement.style.setProperty('--sun-position', (sunPosition * 60 * 60 * -1) + 's');
+
 
     })();
   </script>
