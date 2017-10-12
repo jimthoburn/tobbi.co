@@ -47,6 +47,8 @@
 
         if (hours >= 18 || hours < 6) {
           document.documentElement.classList.add('night');
+        } else {
+          document.documentElement.classList.remove('night');
         }
 
         if (hours < 6) {
