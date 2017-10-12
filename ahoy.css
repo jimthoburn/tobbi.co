@@ -281,6 +281,7 @@
   .container > .clouds {
     display: flex;
     position: absolute;
+    z-index: 1;
     top: 0em;
     left: 0;
     width: 100vw;
@@ -1406,6 +1407,28 @@
   */
   .night body .sun svg circle {
     fill: rgb(252, 254, 249);  /* @snow */
+  }
+  .night body .sun::after {
+    content: "";
+    display: block;
+    background-color: rgb(31, 41, 51);
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: 100%;
+    position: absolute;
+
+    transform: translate(80%, -10%);
+
+    top: 0.375em;
+    left: 1.4em;
+
+    /*
+    top: calc(var(--sun-position) / 21600 * 4.5em);
+    */
+    top: calc(var(--sun-position-vertical) + 0.875em);
+
+    margin-left: calc(var(--sun-position) / 43200 * -3.5em); /* A range from zero to -3.5em (to keep the sun on stage, at sunset) */
+    left: calc(var(--sun-position) / 43200 * 100%);
   }
   .night body .sun svg path {
     fill: transparent;
