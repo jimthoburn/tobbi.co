@@ -57,10 +57,6 @@
     background-image: url(ocean.jpg);
     */
   }
-  .night body {
-    background-color: rgb(51, 51, 51);
-    color: rgb(252, 254, 249);  /* @snow */
-  }
   @media (min-width: 300px), (min-height: 300px) {
     body {
       font-size: 125%;
@@ -315,16 +311,6 @@
   .sun svg path {
     fill: rgb(255, 235, 80);
   }
-  .night body .sun svg circle {
-    fill: rgb(252, 254, 249);  /* @snow */
-  }
-  .night body .sun svg path {
-    fill: transparent;
-  }
-  .night body .clouds {
-    opacity: 0.025;
-  }
-
   @keyframes sun-path {
     0% {
 
@@ -1401,3 +1387,32 @@
     display: inline;
     margin-right: 0.7em;
   }
+
+
+  .night .home {
+    background-image: linear-gradient(to bottom, rgba(31, 41, 51, 1), rgba(31, 41, 51, 1) 40em, rgba(31, 41, 51, 0) 40em, rgba(31, 41, 51, 0));
+  }
+  .night .home > .container:first-child {
+    background-color: rgb(31, 41, 51);
+    color: rgb(252, 254, 249);  /* @snow */
+  }
+  /*
+  .night body {
+    background-image: linear-gradient(to bottom, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1) 6.125em, rgba(51, 51, 51, 0) 6.125em, rgba(51, 51, 51, 0));
+  }
+  .night .home .ahoy svg {
+    color: white;
+  }
+  */
+  .night body .sun svg circle {
+    fill: rgb(252, 254, 249);  /* @snow */
+  }
+  .night body .sun svg path {
+    fill: transparent;
+  }
+  .night body .clouds {
+    opacity: 0.05;
+  }
+
+
+
