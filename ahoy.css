@@ -1405,10 +1405,10 @@
     color: white;
   }
   */
-  .night body .sun svg circle {
+  .night .sun svg circle {
     fill: rgb(252, 254, 249);  /* @snow */
   }
-  .night body .sun::after {
+  .night .sun::after {
     content: "";
     display: block;
     background-color: rgb(31, 41, 51);
@@ -1430,12 +1430,154 @@
     margin-left: calc(var(--sun-position) / 43200 * -3.5em); /* A range from zero to -3.5em (to keep the sun on stage, at sunset) */
     left: calc(var(--sun-position) / 43200 * 100%);
   }
-  .night body .sun svg path {
+  .night .sun svg path {
     fill: transparent;
   }
-  .night body .clouds {
-    opacity: 0.05;
+  .night .cloud {
+    opacity: 0;
+    animation: none;
   }
 
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.75;
+    }
+    49% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 1;
+    }
+    51% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 0.75;
+    }
+  }
+
+  .night .stars div {
+    position: absolute;
+    z-index: 1;
+    top: 2.1em;
+    left: 55%;
+  }
+  .night .stars div:nth-child(2n) {
+    top: 0.375em;
+  }
+  .night .stars div:nth-child(3n) {
+    top: 1em;
+  }
+  .night .stars div:nth-child(5n) {
+    top: 0.7em;
+  }
+  .night .stars div::after,
+  .night .stars div::before {
+    content: "";
+    display: block;
+    width: 0.1em;
+    height: 0.1em;
+    background-color: rgb(252, 254, 249);
+    border-radius: 100%;
+    position: relative;
+    left: -1.4em;
+    top: 0.7em;
+
+    animation-name: twinkle;
+    animation-duration: 24s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+  .night .stars div::after {
+    left: 0.7em;
+    top: 0.375em;
+  }
+  .night .stars div:nth-child(2n)::before {
+    left: 1em;
+    top: 0.27em;
+  }
+  .night .stars div:nth-child(2n)::after {
+    left: -0.1em;
+    top: 1.1em;
+  }
+  .night .stars div:nth-child(3n)::before {
+    left: -1.5em;
+    top: 1.8em;
+  }
+  .night .stars div:nth-child(3n)::after {
+    left: 2.1em;
+    top: 1.2em;
+  }
+  .night .stars div:nth-child(5n)::before {
+    left: .2em;
+    top: 2em;
+  }
+  .night .stars div:nth-child(5n)::after {
+    left: 0.4em;
+    top: 2.5em;
+  }
+
+
+  .night .stars div:nth-child(2n-1)::before {
+    animation-delay: -5s;
+  }
+  .night .stars div:nth-child(2n+1)::after {
+    animation-delay: -10s;
+  }
+  .night .stars div:nth-child(3n-1)::before {
+    animation-delay: -15s;
+  }
+  .night .stars div:nth-child(3n+1)::after {
+    animation-delay: -20s;
+  }
+  .night .stars div:nth-child(5n-1)::before {
+    animation-delay: -25s;
+  }
+  .night .stars div:nth-child(5n+1)::after {
+    animation-delay: -30s;
+  }
+
+  .night .stars div:nth-child(1) {
+    left: 12%;
+    opacity: 0.99;
+  }
+  .night .stars div:nth-child(2) {
+    left: 28%;
+    opacity: 0.73;
+  }
+  .night .stars div:nth-child(3) {
+    left: 34%;
+    opacity: 0.82;
+  }
+  .night .stars div:nth-child(4) {
+    left: 45%;
+    opacity: 0.57;
+  }
+  .night .stars div:nth-child(5) {
+    left: 57%;
+    opacity: 0.31;
+  }
+  .night .stars div:nth-child(6) {
+    left: 69%;
+    opacity: 0.92;
+  }
+  .night .stars div:nth-child(7) {
+    left: 73%;
+    opacity: 0.73;
+  }
+  .night .stars div:nth-child(8) {
+    left: 85%;
+    opacity: 0.84;
+  }
+  .night .stars div:nth-child(9) {
+    left: 92%;
+    opacity: 0.46;
+  }
+  .night .stars div:nth-child(10) {
+    left: 100%;
+    opacity: 0.5;
+  }
 
 
