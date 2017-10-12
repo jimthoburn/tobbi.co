@@ -3,7 +3,11 @@
   /* =Variables
   ----------------------------------------------- */
   :root {
-    --cloud-delay: 0s;
+    --cloud-delay-one: 0s;
+    --cloud-delay-two: 0s;
+    --cloud-delay-three: 0s;
+    --cloud-delay-four: 0s;
+    --cloud-delay-five: 0s;
     --sun-position: calc(-3 * 60 * 60s);
     --sun-position-vertical: 0.375em;
   }
@@ -401,41 +405,41 @@
   }
 
   .cloud {
+    height: 2em;
+    width: 2em;
+  }
+  .cloud:nth-child(2n) {
+    height: 3em;
+    width: 3em;
+  }
+  .cloud:nth-child(3n) {
     height: 4em;
     width: 4em;
-  }
-  .cloud:nth-child(3n-5) {
-    height: 6em;
-    width: 6em;
-  }
-  .cloud:nth-child(2+3) {
-    height: 8em;
-    width: 8em;
   }
 
   @media (min-width: 45em) {
     .cloud {
+      height: 2.5vmax;
+      width: 2.5vmax;
+    }
+    .cloud:nth-child(2n) {
       height: 5vmax;
       width: 5vmax;
     }
-    .cloud:nth-child(3n-5) {
+    .cloud:nth-child(3n) {
       height: 7.5vmax;
       width: 7.5vmax;
-    }
-    .cloud:nth-child(2+3) {
-      height: 10vmax;
-      width: 10vmax;
     }
   }
 
   .cloud {
     color: rgba(51, 51, 51, 0.02);
-    color: rgb(245, 245, 245);
+    color: rgb(249, 249, 249);
     animation-duration: 800s;
   }
   .cloud:nth-child(2n+1) {
     color: rgba(51, 51, 51, 0.1);
-    color: rgb(242, 242, 242);
+    color: rgb(240, 240, 240);
     animation-duration: 1000s;
     /*
     animation-duration: var(--cloud-duration + 1000s);  ??
@@ -443,12 +447,12 @@
   }
   .cloud:nth-child(3n+2) {
     color: rgba(51, 51, 51, 0.025);
-    color: rgb(244, 244, 244);
+    color: rgb(237, 237, 237);
     animation-duration: 920s; 
   }
   .cloud:nth-child(5n+3) {
     color: rgba(51, 51, 51, 0.01);
-    color: rgb(241, 241, 241);
+    color: rgb(246, 246, 246);
     animation-duration: 980s; 
   }
   .cloud:nth-child(2n+5) {
@@ -462,27 +466,27 @@
 
   .cloud {
     animation-delay: 0;
-    animation-delay: calc(var(--cloud-delay) - 1000s);
+    animation-delay: calc(var(--cloud-delay-one) - 1000s);
   }
 
   .cloud:nth-child(2n) {
     animation-delay: -560s;
-    animation-delay: calc(var(--cloud-delay) - 1560s);
+    animation-delay: calc(var(--cloud-delay-two) - 1560s);
   }
 
   .cloud:nth-child(3n-5) {
     animation-delay: -320s;
-    animation-delay: calc(var(--cloud-delay) - 1320s);
+    animation-delay: calc(var(--cloud-delay-three) - 1320s);
   }
 
   .cloud:nth-child(5n-3) {
     animation-delay: -420s;
-    animation-delay: calc(var(--cloud-delay) - 1420s);
+    animation-delay: calc(var(--cloud-delay-four) - 1420s);
   }
 
   .cloud:nth-child(3n-2) {
     animation-delay: -820s;
-    animation-delay: calc(var(--cloud-delay) - 1820s);
+    animation-delay: calc(var(--cloud-delay-five) - 1820s);
   }
 
 

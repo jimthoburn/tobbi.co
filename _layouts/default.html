@@ -28,7 +28,14 @@
       //var position = Math.floor(Math.random() * 1000) + 1;
 
       // Generate a random number between 1 and 1000
-      var cloudDelay = Math.floor(Math.random() * 1000) + 1;
+      function getRandomCloudDelay() {
+        return Math.floor(Math.random() * 1000) + 1;
+      }
+      document.documentElement.style.setProperty('--cloud-delay-one', getRandomCloudDelay() + 's');
+      document.documentElement.style.setProperty('--cloud-delay-two', getRandomCloudDelay() + 's');
+      document.documentElement.style.setProperty('--cloud-delay-three', getRandomCloudDelay() + 's');
+      document.documentElement.style.setProperty('--cloud-delay-four', getRandomCloudDelay() + 's');
+      document.documentElement.style.setProperty('--cloud-delay-five', getRandomCloudDelay() + 's');
 
       // Generate a random number between 0 and 12
       //var sunPosition = Math.floor(Math.random() * 12) + 0;
@@ -41,7 +48,6 @@
 
       //document.documentElement.style.setProperty('--cloud-brightness', brightness);
       //document.documentElement.style.setProperty('--cloud-position', position);
-      document.documentElement.style.setProperty('--cloud-delay', cloudDelay + 's');
       document.documentElement.style.setProperty('--sun-position', sunPosition);
 
 
