@@ -1441,19 +1441,127 @@
 
   @keyframes twinkle {
     0% {
-      opacity: 0.75;
+      opacity: 0.8;
     }
-    49% {
-      opacity: 0.75;
+    4.5% {
+      opacity: 0.8;
+    }
+    5% {
+      opacity: 1;
+    }
+    5.5% {
+      opacity: 0.8;
+    }
+    14.5% {
+      opacity: 0.625;
+    }
+    15% {
+      opacity: 1;
+    }
+    15.5% {
+      opacity: 0.625;
+    }
+    19.5% {
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 1;
+    }
+    20.5% {
+      opacity: 0.8;
+    }
+    24.5% {
+      opacity: 0.625;
+    }
+    25% {
+      opacity: 1;
+    }
+    25.5% {
+      opacity: 0.625;
+    }
+    29.5% {
+      opacity: 0.8;
+    }
+    30% {
+      opacity: 1;
+    }
+    30.5% {
+      opacity: 0.8;
+    }
+    39.5% {
+      opacity: 0.9;
+    }
+    40% {
+      opacity: 1;
+    }
+    40.5% {
+      opacity: 0.9;
+    }
+    49.5% {
+      opacity: 0.95;
     }
     50% {
       opacity: 1;
     }
-    51% {
-      opacity: 0.75;
+    50.5% {
+      opacity: 0.95;
+    }
+    54.5% {
+      opacity: 0.625;
+    }
+    55% {
+      opacity: 1;
+    }
+    55.5% {
+      opacity: 0.625;
+    }
+    59.5% {
+      opacity: 0.8;
+    }
+    60% {
+      opacity: 1;
+    }
+    60.5% {
+      opacity: 0.8;
+    }
+    79.5% {
+      opacity: 0.8;
+    }
+    80% {
+      opacity: 1;
+    }
+    80.5% {
+      opacity: 0.8;
+    }
+    84.5% {
+      opacity: 0.625;
+    }
+    85% {
+      opacity: 1;
+    }
+    85.5% {
+      opacity: 0.625;
+    }
+    89.5% {
+      opacity: 0.9;
+    }
+    90% {
+      opacity: 1;
+    }
+    90.5% {
+      opacity: 0.9;
+    }
+    94.5% {
+      opacity: 0.625;
+    }
+    95% {
+      opacity: 1;
+    }
+    95.5% {
+      opacity: 0.625;
     }
     100% {
-      opacity: 0.75;
+      opacity: 0.625;
     }
   }
 
@@ -1494,9 +1602,13 @@
     left: 0.7em;
     top: 0.375em;
   }
-  .night .stars div:nth-child(2n)::before {
-    left: 1em;
+  .night .stars div:nth-child(2n+1)::before {
+    left: -5em;
     top: 0.27em;
+  }
+  .night .stars div:nth-child(3n+5)::before {
+    left: -2.8em;
+    top: .27em;
   }
   .night .stars div:nth-child(2n)::after {
     left: -0.1em;
@@ -1520,23 +1632,42 @@
   }
 
 
-  .night .stars div:nth-child(2n-1)::before {
-    animation-delay: -5s;
+  .night .stars div:nth-child(2n-3)::before {
+    animation-delay: -.9s;
+  }
+  .night .stars div:nth-child(4n+3)::after {
+    animation-delay: -.5s;
+  }
+  .night .stars div:nth-child(3n-5)::before {
+    animation-delay: -.824s;
+  }
+  .night .stars div:nth-child(2n+9)::after {
+    animation-delay: -.9s;
+  }
+  .night .stars div:nth-child(3n-7)::before {
+    animation-delay: -.34s;
+  }
+  .night .stars div:nth-child(7n+3)::after {
+    animation-delay: -.4s;
+  }
+
+  .night .stars div:nth-child(7n-1)::before {
+    animation-delay: -1.2s;
   }
   .night .stars div:nth-child(2n+1)::after {
-    animation-delay: -10s;
+    animation-delay: -1s;
   }
-  .night .stars div:nth-child(3n-1)::before {
-    animation-delay: -15s;
+  .night .stars div:nth-child(2n-1)::before {
+    animation-delay: -1.4s;
   }
   .night .stars div:nth-child(3n+1)::after {
-    animation-delay: -20s;
+    animation-delay: -.9s;
   }
-  .night .stars div:nth-child(5n-1)::before {
-    animation-delay: -25s;
+  .night .stars div:nth-child(8n-1)::before {
+    animation-delay: -.4s;
   }
   .night .stars div:nth-child(5n+1)::after {
-    animation-delay: -30s;
+    animation-delay: -.5s;
   }
 
   .night .stars div:nth-child(1) {
