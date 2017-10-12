@@ -37,25 +37,42 @@
       document.documentElement.style.setProperty('--cloud-delay-four', getRandomCloudDelay() + 's');
       document.documentElement.style.setProperty('--cloud-delay-five', getRandomCloudDelay() + 's');
 
-      // Generate a random number between 0 and 12
-      //var sunPosition = Math.floor(Math.random() * 12) + 0;
-      var now = new Date();
-      var hours = now.getHours() + (now.getMinutes() / 60);
+      function updateTime() {
+        // Generate a random number between 0 and 12
+        //var sunPosition = Math.floor(Math.random() * 12) + 0;
+        var now = new Date();
+        var hours = now.getHours() + (now.getMinutes() / 60);
 
-      var sunPosition = ((hours - 6) % 12) * 60 * 60; // The animation only supports 0-12 hours, at present // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
+        //hours = 5.999;
 
-      //sunPosition = 43200;
+        if (hours >= 18 || hours < 6) {
+          document.documentElement.classList.add('night');
+        }
 
-      //document.documentElement.style.setProperty('--cloud-brightness', brightness);
-      //document.documentElement.style.setProperty('--cloud-position', position);
-      document.documentElement.style.setProperty('--sun-position', sunPosition);
+        if (hours < 6) {
+          hours = hours + 6;
+        } else {
+          hours = hours - 6;
+        }
+
+        var sunPosition = (hours % 12) * 60 * 60; // The animation only supports 0-12 hours, at present // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
+
+        //sunPosition = 43200;
+
+        //document.documentElement.style.setProperty('--cloud-brightness', brightness);
+        //document.documentElement.style.setProperty('--cloud-position', position);
+        document.documentElement.style.setProperty('--sun-position', sunPosition);
 
 
-      if (sunPosition >= 21600) {
-        document.documentElement.style.setProperty('--sun-position-vertical', (((sunPosition / 21600) * (4.5)) - (4.5)) + 'em');
-      } else {
-        document.documentElement.style.setProperty('--sun-position-vertical', ((4.5) - ((sunPosition / 21600) * (4.5))) + 'em');
+        if (sunPosition >= 21600) {
+          document.documentElement.style.setProperty('--sun-position-vertical', (((sunPosition / 21600) * (4.5)) - (4.5)) + 'em');
+        } else {
+          document.documentElement.style.setProperty('--sun-position-vertical', ((4.5) - ((sunPosition / 21600) * (4.5))) + 'em');
+        }
       }
+
+      setInterval(updateTime, 60 * 1000); // Once per minute
+      updateTime();
 
     })();
   </script>
