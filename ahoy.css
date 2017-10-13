@@ -1146,6 +1146,7 @@
   div.banner div p {
     padding-left: 0 !important;
   }
+  div.banner div h1,
   .container + a.banner div:first-child h2 {
     background-image: none !important;
   }
