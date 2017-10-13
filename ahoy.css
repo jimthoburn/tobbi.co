@@ -1390,10 +1390,7 @@
   }
 
 
-  .night .home {
-    background-image: linear-gradient(to bottom, rgba(31, 41, 51, 1), rgba(31, 41, 51, 1) 40em, rgba(31, 41, 51, 0) 40em, rgba(31, 41, 51, 0));
-  }
-  .night .home > .container:first-child {
+  .night body {
     background-color: rgb(31, 41, 51);
     color: rgb(252, 254, 249);  /* @snow */
   }
@@ -1408,16 +1405,18 @@
   .night .sun svg circle {
     fill: rgb(252, 254, 249);  /* @snow */
   }
+
   .night .sun::after {
     content: "";
     display: block;
     background-color: rgb(31, 41, 51);
-    width: 1.75em;
-    height: 1.75em;
+    width: 1.5em;
+    height: 1.5em;
     border-radius: 100%;
     position: absolute;
 
-    transform: translate(80%, -10%);
+    /* Moon phase */
+    transform: translate(32.5%, -17.5%);
 
     top: 0.375em;
     left: 1.4em;
@@ -1425,10 +1424,13 @@
     /*
     top: calc(var(--sun-position) / 21600 * 4.5em);
     */
-    top: calc(var(--sun-position-vertical) + 0.875em);
 
     margin-left: calc(var(--sun-position) / 43200 * -3.5em); /* A range from zero to -3.5em (to keep the sun on stage, at sunset) */
     left: calc(var(--sun-position) / 43200 * 100%);
+
+    /* (3.5 - 1.5) / 2 = 0.875 */
+    top: calc(var(--sun-position-vertical) + 1em);
+    left: calc(var(--sun-position) / 43200 * 100% + 1em);
   }
   .night .sun svg path {
     fill: transparent;
