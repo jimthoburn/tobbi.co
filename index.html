@@ -100,9 +100,9 @@ class: home
         */
 
         if (gamma > 15) {
-          document.documentElement.style.setProperty('--device-gamma', (beta > 90 ?) 1 : -1);
+          document.documentElement.style.setProperty('--device-gamma', (beta > 90) ? -1 : 1);
         } else if (gamma < -15) {
-          document.documentElement.style.setProperty('--device-gamma', (beta > 90 ?) -1 : 1);
+          document.documentElement.style.setProperty('--device-gamma', (beta > 90) ? 1 : -1);
         } else {
           document.documentElement.style.setProperty('--device-gamma', 0);
         }
