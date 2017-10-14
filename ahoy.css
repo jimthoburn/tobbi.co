@@ -549,12 +549,12 @@
   .movable-ship {
     display: block;
     position: relative;
-    transition: left 32s linear;
-    left: 0;
-    left: calc(var(--ship-position) * 50% - var(--ship-position) * 1.8666666667em);
+    transition: all 4s;
+    transform: translateX(calc(var(--ship-position) * 33.333% - var(--ship-position) * 1.8666666667em));
 
     /*
-    transform: translateX(var(--ship-position));
+    left: 0;
+    left: calc(var(--ship-position) * 50% - var(--ship-position) * 1.8666666667em);
     left: var(--ship-position);
     */
 
@@ -567,18 +567,6 @@
     animation-play-state: paused;
     animation-play-state: var(--ship-play-state);
     */
-  }
-
-  @keyframes churning {
-    0% {
-      background-position: 50% 82.5%;
-    }
-    50% {
-      background-position: 47.5% 85%;
-    }
-    100% {
-      background-position: 50% 82.5%; 
-    }           
   }
 
   figure {
@@ -714,10 +702,41 @@
     background-color: transparent;
   }
 
+  /*
+  @keyframes churning {
+    0% {
+      background-position: 50% 82.5%;
+    }
+    50% {
+      background-position: 47.5% 85%;
+    }
+    100% {
+      background-position: 50% 82.5%; 
+    }           
+  }
+  */
+
+  @keyframes waving {
+    0% {
+      background-position: -100% 100%;
+    }
+    100% {
+      background-position: 100% 100%%;
+    }
+  }
+
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
     .home a.ahoy {
       background-position: bottom;
       background-size: 1.4em auto;
+
+      /*
+      animation-name: waving;
+      animation-duration: 1000s; 
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      */
     }
   }
 
