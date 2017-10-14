@@ -10,6 +10,17 @@
     --cloud-delay-five: 0s;
     --sun-position: calc(-3 * 60 * 60s);
     --sun-position-vertical: 0.375em;
+
+    --device-beta: 0;
+    --device-gamma: 0;
+    --ship-position: var(--device-gamma);
+
+  }
+
+  @media (orientation: landscape) {
+    :root {
+      --ship-position: var(--device-beta);
+    }
   }
 
 
@@ -490,7 +501,6 @@
     animation-delay: calc(var(--cloud-delay-five) - 1820s);
   }
 
-
   /* Ship */
   .ahoy svg {
     height: 2.8em; /* base line height (1.4) x 2 */
@@ -500,17 +510,6 @@
   }
 
   /* KUDOS: http://www.justinaguilar.com/animations/ */
-  @-webkit-keyframes tossing {
-    0% {
-      -webkit-transform: rotate(-2deg); 
-    }
-    50% {
-      -webkit-transform: rotate(2deg);
-    }
-    100% {
-      -webkit-transform: rotate(-2deg); 
-    }           
-  }
   @keyframes tossing {
     0% {
       transform: rotate(-2deg); 
@@ -522,13 +521,52 @@
       transform: rotate(-2deg); 
     }           
   }
+
   .ahoy svg {
-    -webkit-animation-name: tossing;
-    -webkit-animation-duration: 8s; 
-    -webkit-animation-iteration-count: infinite;
     animation-name: tossing;
     animation-duration: 8s; 
     animation-iteration-count: infinite;
+  }
+
+  @keyframes ship-left {
+    100% {
+      left: calc(-50% + 1.8666666667em);
+    }
+  }
+
+  @keyframes ship-center {
+    100% {
+      left: 0;
+    }
+  }
+
+  @keyframes ship-right {
+    100% {
+      left: calc(50% - 1.8666666667em);
+    }
+  }
+
+  .movable-ship {
+    display: block;
+    position: relative;
+    transition: left 32s linear;
+    left: 0;
+    left: calc(var(--ship-position) * 50% - var(--ship-position) * 1.8666666667em);
+
+    /*
+    transform: translateX(var(--ship-position));
+    left: var(--ship-position);
+    */
+
+    /*
+    animation-name: var(--ship-animation);
+    animation-duration: 16s;
+    animation-fill-mode: both;
+    */
+    /*
+    animation-play-state: paused;
+    animation-play-state: var(--ship-play-state);
+    */
   }
 
   @keyframes churning {
