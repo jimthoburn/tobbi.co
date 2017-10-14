@@ -550,7 +550,7 @@
     display: block;
     position: relative;
     transition: all 4s;
-    transform: translateX(calc(var(--ship-position) * 33.333% - var(--ship-position) * 1.8666666667em));
+    transform: translateX(calc(var(--ship-position) * 15% - var(--ship-position) * 1.8666666667em));
 
     /*
     left: 0;
