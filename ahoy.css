@@ -68,37 +68,37 @@
     background-image: url(ocean.jpg);
     */
   }
-  @media (min-width: 300px), (min-height: 300px) {
+  @media (min-width: 300px) {
     body {
       font-size: 125%;
       font-size: 112.5%;
     }
   }
-  @media (min-width: 600px), (min-height: 600px) {
+  @media (min-width: 600px) {
     body {
       font-size: 150%;
       font-size: 125%;
     }
   }
-  @media (min-width: 900px), (min-height: 900px) {
+  @media (min-width: 900px) {
     body {
       font-size: 175%;
       font-size: 150%;
     }
   }
-  @media (min-width: 1200px), (min-height: 1200px) {
+  @media (min-width: 1200px) {
     body {
       font-size: 200%;
       font-size: 175%;
     }
   }
-  @media (min-width: 1500px), (min-height: 1500px) {
+  @media (min-width: 1500px) {
     body {
       font-size: 225%;
       font-size: 200%;
     }
   }
-  @media (min-width: 2000px), (min-height: 2000px) {
+  @media (min-width: 2000px) {
     body {
       font-size: 250%;
       font-size: 225%;
