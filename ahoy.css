@@ -57,7 +57,7 @@
 
     background-color: rgb(252, 254, 249);  /* @snow */
     color: rgb(51, 51, 51);
-    transition: color 1s, background-color 1s;
+    transition: color 0.2s, background-color 0.2s;
     transition-timing-function: ease-in;
 
     /*
@@ -549,7 +549,7 @@
   .movable-ship {
     display: block;
     position: relative;
-    transition: all 4s;
+    transition: translate 4s;
     transform: translateX(calc(var(--ship-position) * 15% - var(--ship-position) * 1.8666666667em));
 
     /*
