@@ -549,7 +549,7 @@
   .movable-ship {
     display: block;
     position: relative;
-    transition: translate 4s;
+    transition: transform 4s;
     transform: translateX(calc(var(--ship-position) * 15% - var(--ship-position) * 1.8666666667em));
 
     /*
