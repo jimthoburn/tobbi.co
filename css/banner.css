@@ -10,7 +10,8 @@
     padding-bottom: 60vh;
     background-size: cover;
     background-position: center;
-    color: inherit;
+    background-color: black;
+    color: white;
     box-sizing: border-box;
   }
   .banner:before {
@@ -25,24 +26,24 @@
     z-index: 0;
   }
 
-  .banner > div {
-    background: rgb(252, 252, 249); /* @snow */
-    background: transparent;
-    color: white;
+  .banner__title-container,
+  .banner__next-project-container {
     position: absolute;
     bottom: 10%;
     padding: 0.375em 1.4em;
   }
 
   @supports (transform: translateY(0)) {
-    .banner > div {
+    .banner__title-container,
+    .banner__next-project-container {
       bottom: 50%;
       transform: translateY(50%);
 
       bottom: 2.4em;
       transform: none;
     }
-    .banner > div {
+    .banner__title-container,
+    .banner__next-project-container {
       bottom: 10%;
       transform: none;
     }
@@ -50,14 +51,16 @@
 
 
   @media (min-width: 55em) {
-    .banner > div {
+    .banner__title-container,
+    .banner__next-project-container {
       left: calc(50vw - 17.9em);
     }
   }
 
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
-    .banner > div > a {
+    .banner__title-container > a,
+    .banner__next-project-container > a {
       /* --wave-outline-light-blue */
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
@@ -67,29 +70,29 @@
 
   /* =Banner (Projects List)
   ----------------------------------------------- */
-  .projects .banner {
+  .banner_list {
     padding-bottom: 40%;
     padding-bottom: 40vh;
   }
   @media (min-aspect-ratio: 1/1) {
-    .projects .banner {
+    .banner_list {
       padding-bottom: 60%;
       padding-bottom: 60vh;
       min-height: 70vh;
     }
   }
-  .projects .banner:before {
+  .banner_list:before {
     background: rgba(25, 25, 25, 0.75);
   }
-  .projects .banner h3 {
+  .banner_list h3 {
     margin-top: 0;
   }
   @media (min-width: 45em) {
-    .projects .banner > div {
+    .banner_list > div {
       margin-left: -17.9em;
     }
   }
-  .projects .banner > div {
+  .banner_list > div {
     left: 0;
     right: auto;
     width: 100%;
@@ -101,8 +104,8 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  .projects .banner h3,
-  .projects .banner p {
+  .banner_list h3,
+  .banner_list p {
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -123,13 +126,13 @@
 
   /* =Banner (Next Project)
   ----------------------------------------------- */
-  .banner.next {
+  .banner_next {
     padding-bottom: 60%;
     padding-bottom: 60vh;
     margin-top: 1.4em;
   }
   @media (min-aspect-ratio: 1/1) {
-    .banner.next {
+    .banner_next {
       padding-top: 5em;
       padding-top: 15vh;
       padding-bottom: 5em;
@@ -138,21 +141,21 @@
       box-sizing: border-box;
     }
   }
-  .banner.next div:first-child {
+  .banner_next div:first-child {
     top: 10%;
     bottom: auto;
   }
   @media (min-width: 45em) {
-    .banner.next div:first-child {
+    .banner_next div:first-child {
       top: 25%;
     }
-    .banner.next .banner__title-container {
+    .banner_next .banner__title-container {
       top: 25%;
       bottom: auto;
       left: 50%;
       left: calc(50vw - 2.9em);
     }
-    .banner.next:before {
+    .banner_next:before {
       background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
     }
   }

@@ -31,7 +31,7 @@
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
     .banner h3,
-    .banner.next h1 {
+    .banner_next h1 {
       /* --wave-outline-light-blue */
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
@@ -43,13 +43,13 @@
       padding: 0 0.35em 0.35em;
     }
     .banner h3 + p,
-    .banner.next .banner__with {
+    .banner_next .banner__with {
       margin-top: 0;
       padding: 0.35em 0.7em 0;
     }
     @media (min-width: 45em) {
       .banner h3 + p,
-      .banner.next .banner__with {
+      .banner_next .banner__with {
         padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
       }
     }
@@ -59,20 +59,20 @@
     transition: background-color 0.2s, color 0.2s;
   }
 
-  .banner__title-container:hover,
-  .banner__title-container:active,
-  .banner__title-container:focus {
+  a .banner__title-container:hover,
+  a .banner__title-container:active,
+  a .banner__title-container:focus {
     background-color: rgb(40, 155, 215);
   }
 
   .banner h3,
-  .banner.next h1 {
+  .banner_next h1 {
     text-transform: none;
     font-variant: normal;
   }
   @media (min-width: 45em) {
     .banner h3,
-    .banner.next h1 {
+    .banner_next h1 {
       font-size: 4vmax;
     }
   }
@@ -114,6 +114,6 @@
     padding-left: 0;
   }
   .ahoy + .banner h1,
-  .banner.next div:first-child h2 {
+  .banner_next div:first-child h2 {
     background-image: none;
   }
