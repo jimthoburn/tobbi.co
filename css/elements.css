@@ -1,57 +1,9 @@
 
   /* =Elements
   ----------------------------------------------- */
-  @font-face {
-    font-family: "Goudy Bookletter 1911";
-    src: url("/fonts/goudybookletter1911.woff2") format("woff2"), url("/fonts/goudybookletter1911.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
   body {
-    font: 100%/1.4 "Goudy Bookletter 1911", "Hoefler Text", "Times New Roman", Georgia, serif;
-
     margin: 0;
     padding: 0;
-
-    /* Wrap long words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-
-    background-color: rgb(252, 254, 249);  /* @snow */
-    color: rgb(51, 51, 51);
-    transition: color 0.2s, background-color 0.2s;
-    transition-timing-function: ease-in;
-  }
-  @media (min-width: 300px) {
-    body {
-      font-size: 112.5%;
-    }
-  }
-  @media (min-width: 600px) {
-    body {
-      font-size: 125%;
-    }
-  }
-  @media (min-width: 900px) {
-    body {
-      font-size: 150%;
-    }
-  }
-  @media (min-width: 1200px) {
-    body {
-      font-size: 175%;
-    }
-  }
-  @media (min-width: 1500px) {
-    body {
-      font-size: 200%;
-    }
-  }
-  @media (min-width: 2000px) {
-    body {
-      font-size: 225%;
-    }
   }
 
   h1, h2, h3 {
@@ -81,57 +33,10 @@
     margin-top: 0.7em; /* base line height (1.4) / 2 */
     margin-bottom: 0;
   }
-  li {
-    margin-bottom: 0;
-  }
-  ol, ul, li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
 
   h3 + ul,
   h3 + p {
     margin-top: 0.35em; /* base line height (1.4) / 4 */
-  }
-
-  a {
-    color: rgb(40, 155, 215);
-    transition: background-color 0.2s, color 0.2s;
-  }
-
-  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
-    a {
-      color: inherit;
-      text-decoration: none;
-
-      /* --wave-outline-light-blue */
-      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
-      background-repeat: repeat-x;
-      background-position: bottom;
-      background-size: 1em auto;
-
-      display: inline-block;
-    }
-  }
-
-  a:hover,
-  a:active,
-  a:focus {
-    background-color: rgb(40, 155, 215);
-    color: white;
-  }
-  
-  figure a {
-    background-image: none;
-  }
-  figure a:hover,
-  figure a:active,
-  figure a:focus {
-    background-color: transparent;
-    background-image: none;
-    color: inherit;
   }
   small {
     display: inline-block;
@@ -140,18 +45,6 @@
   }
   small a {
     color: inherit;
-  }
-
-  /* “Goudy Bookletter 1911” only contains a normal face */
-  b, strong {
-    font-weight: inherit;
-    color: rgb(80, 195, 255);
-    text-decoration: underline;
-  }
-
-  i, em {
-    font-style: inherit;
-    color: rgb(80, 195, 255);
   }
 
   figure {
@@ -163,9 +56,4 @@
   }
   figcaption {
     font-size: 0.75em;
-  }
-  figure.screenshot img {
-    border: 1px solid rgb(204, 204, 204);
-    margin-right: 1.4em;
-    margin-bottom: 1.4em;
   }

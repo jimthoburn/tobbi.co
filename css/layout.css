@@ -1,4 +1,6 @@
 
+  /* =Layout
+  ----------------------------------------------- */
   .container {
     padding: 1.4em 0.7em 2.8em; /* base line height */    /* base line height / 2 */    /* base line height x 2 */
     margin: 0 auto;
@@ -52,3 +54,28 @@
   .container + .container > h1:first-child {
     margin-top: 0;
   }
+
+
+  /* =Crew & Tools
+  ----------------------------------------------- */
+  .container > div a {
+    background-image: none;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (min-width: 25em) {
+    .container > div {
+      display: inline-block;
+      vertical-align: top;
+      width: 12em;
+      margin-right: 2.8em;
+    }
+  }
+  .container > div ul,
+  .container > div li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+

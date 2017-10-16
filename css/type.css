@@ -1,0 +1,60 @@
+
+  /* =Type
+  ----------------------------------------------- */
+  @font-face {
+    font-family: "Goudy Bookletter 1911";
+    src: url("/fonts/goudybookletter1911.woff2") format("woff2"), url("/fonts/goudybookletter1911.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font: 100%/1.4 "Goudy Bookletter 1911", "Hoefler Text", "Times New Roman", Georgia, serif;
+
+    /* Wrap long words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+
+  @media (min-width: 300px) {
+    body {
+      font-size: 112.5%;
+    }
+  }
+  @media (min-width: 600px) {
+    body {
+      font-size: 125%;
+    }
+  }
+  @media (min-width: 900px) {
+    body {
+      font-size: 150%;
+    }
+  }
+  @media (min-width: 1200px) {
+    body {
+      font-size: 175%;
+    }
+  }
+  @media (min-width: 1500px) {
+    body {
+      font-size: 200%;
+    }
+  }
+  @media (min-width: 2000px) {
+    body {
+      font-size: 225%;
+    }
+  }
+
+  /* “Goudy Bookletter 1911” only contains a normal face */
+  b, strong {
+    font-weight: inherit;
+    color: rgb(80, 195, 255);
+    text-decoration: underline;
+  }
+
+  i, em {
+    font-style: inherit;
+    color: rgb(80, 195, 255);
+  }

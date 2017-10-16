@@ -1,0 +1,48 @@
+
+  /* =Color
+  ----------------------------------------------- */
+  body {
+    background-color: rgb(252, 254, 249);  /* @snow */
+    color: rgb(51, 51, 51);
+    transition: color 0.2s, background-color 0.2s;
+    transition-timing-function: ease-in;
+  }
+
+  a {
+    color: rgb(40, 155, 215);
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      /* --wave-outline-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 1em auto;
+
+      display: inline-block;
+    }
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    background-color: rgb(40, 155, 215);
+    color: white;
+  }
+
+  figure a {
+    background-image: none;
+  }
+  figure a:hover,
+  figure a:active,
+  figure a:focus {
+    background-color: transparent;
+    background-image: none;
+    color: inherit;
+  }
