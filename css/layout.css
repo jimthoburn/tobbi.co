@@ -17,18 +17,6 @@
     font-size: 1.2em;
     margin-bottom: 1.1666666667em;
   }
-  @supports (-webkit-initial-letter: 1) or (initial-letter: 1) {
-    .banner + .container p:first-child + p:first-letter {
-      -webkit-initial-letter: 2;
-      initial-letter: 2;
-      margin-right: 0.25em;
-    }
-    .banner + .container p:first-child + p a:first-letter {
-      -webkit-initial-letter: unset;
-      initial-letter: unset;
-      margin-right: unset;
-    }
-  }
   @media (min-width: 20em) {
     .container {
       padding: 2.8em 1.4em;
