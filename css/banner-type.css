@@ -24,6 +24,9 @@
   }
 
   @media (min-width: 22em) {
+    .banner__title_link {
+      font-size: 2.5em;
+    }
     .banner__title_details {
       font-size: 3em;
     }
@@ -42,7 +45,7 @@
   }
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
-    a .banner__title {
+    .banner__title_link {
       /* --wave-outline-light-blue */
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
@@ -53,12 +56,17 @@
 
       padding: 0 0.35em 0.35em;
     }
-    a .banner__with {
+    .banner__with_link {
       margin-top: 0;
       padding: 0.35em 0.7em 0;
     }
+    @media (min-width: 22em) {
+      .banner__with_link  {
+        padding: 0.35em 1em 0;
+      }
+    }
     @media (min-width: 45em) {
-      a .banner__with {
+      .banner__with_link {
         padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
       }
     }
@@ -68,14 +76,14 @@
     transition: background-color 0.2s, color 0.2s;
   }
 
-  a .banner__title-container:hover,
-  a .banner__title-container:active,
-  a .banner__title-container:focus {
+  .banner__title-container_link:hover,
+  .banner__title-container_link:active,
+  .banner__title-container_link:focus {
     background-color: rgb(40, 155, 215);
   }
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
-    .banner__title {
+    .banner__title_link {
       /* --wave-outline-light-blue */
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
