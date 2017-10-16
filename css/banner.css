@@ -81,36 +81,27 @@
   .projects .banner:before {
     background: rgba(25, 25, 25, 0.75);
   }
-  .banner h3 {
+  .projects .banner h3 {
     margin-top: 0;
   }
   @media (min-width: 45em) {
-    .banner.next div + div {
-      top: 25%;
-      bottom: auto;
-      left: 50%;
-      left: calc(50vw - 2.9em);
-    }
-    .projects .banner div:last-child {
-      left: 50%;
+    .projects .banner div {
       margin-left: -17.9em;
     }
   }
-  .projects .banner div:last-child {
+  .projects .banner div {
     left: 0;
     right: auto;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
     text-align: center;
-  }
-  .projects .banner div:last-child {
     padding: 0;
     bottom: auto;
     top: 50%;
     transform: translateY(-50%);
   }
-  .banner h3,
+  .projects .banner h3,
   .projects .banner p {
     display: table;
     margin-left: auto;
@@ -150,26 +141,24 @@
     top: 10%;
     bottom: auto;
   }
+  .banner.next div + div {
+    transition: background-color 0.2s, color 0.2s;
+    background-color: transparent;
+    color: white;
+  }
   @media (min-width: 45em) {
     .banner.next div:first-child {
       top: 25%;
     }
-  }
-  @media(min-width: 45em) {
+    .banner.next div + div {
+      top: 25%;
+      bottom: auto;
+      left: 50%;
+      left: calc(50vw - 2.9em);
+    }
     .banner.next:before {
       background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
     }
-  }
-  .banner.next div + div {
-    transition: background-color 0.2s, color 0.2s;
-    background-color: rgb(51, 51, 51);
-    background-color: rgb(252, 252, 249); /* @snow */
-    color: rgb(51, 51, 51);
-  }
-
-  .banner.next div + div {
-    background-color: transparent;
-    color: white;
   }
 
 
