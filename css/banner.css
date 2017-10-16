@@ -11,17 +11,6 @@
     background-size: cover;
     background-position: center;
   }
-  @media (min-aspect-ratio: 1/1) {
-    .projects .banner,
-    .banner {
-      padding-bottom: 60%;
-      padding-bottom: 60vh;
-    }
-    .ahoy + .banner {
-      padding-bottom: 80%;
-      padding-bottom: 80vh;
-    }
-  }
   .banner:before {
     content: "";
     background: rgba(0, 0, 0, 0.75);
@@ -32,6 +21,7 @@
     height: 100%;
     z-index: 0;
   }
+
   .banner h2 {
     margin-top: 0;
   }
@@ -52,16 +42,10 @@
       bottom: 2.4em;
       transform: none;
     }
-    a.banner div {
+    .banner div {
       bottom: 10%;
       transform: none;
     }
-  }
-
-
-  /* Avoid breaking team names into two lines */
-  .banner div a {
-    display: inline-block;
   }
 
 
@@ -89,19 +73,19 @@
     }
   }
 
-  .projects a.banner h3,
+  .projects .banner h3,
   .banner.next h1 {
     font-size: 1.75em;
   }
 
   @media (min-width: 45em) {
-    .projects a.banner h3,
+    .projects .banner h3,
     .banner div h1 {
       font-size: 5vmax;
     }
   }
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
-    .projects a.banner h3,
+    .projects .banner h3,
     .banner.next div h1 {
       /* --wave-outline-light-blue */
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
@@ -113,13 +97,13 @@
 
       padding: 0 0.35em 0.35em;
     }
-    .projects a.banner h3 + p,
+    .projects .banner h3 + p,
     .banner.next div h1 + p {
       margin-top: 0;
       padding: 0.35em 0.7em 0;
     }
     @media (min-width: 45em) {
-      .projects a.banner h3 + p,
+      .projects .banner h3 + p,
       .banner.next div h1 + p {
         padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
       }
@@ -127,18 +111,18 @@
   }
 
 
-  .projects a.banner div h3,
-  .projects a.banner div p,
+  .projects .banner div h3,
+  .projects .banner div p,
   .banner.next div h1,
   .banner.next div h1 + p {
     transition: background-color 0.2s, color 0.2s;
   }
-  .projects a.banner:active div h3,
-  .projects a.banner:active div p,
-  .projects a.banner:focus div h3,
-  .projects a.banner:focus div p,
-  .projects a.banner div:hover h3,
-  .projects a.banner div:hover p,
+  .projects .banner:active div h3,
+  .projects .banner:active div p,
+  .projects .banner:focus div h3,
+  .projects .banner:focus div p,
+  .projects .banner div:hover h3,
+  .projects .banner div:hover p,
   .banner.next:active div h1,
   .banner.next:active div h1 + p,
   .banner.next:focus div h1,
@@ -149,34 +133,27 @@
   .banner.next div:hover ~ div h1 + p {
     background-color: rgb(40, 155, 215);
   }
-  a.banner {
-    color: inherit;
-  }
 
-  a.banner div:last-child {
+  .banner div + div {
     transition: background-color 0.2s, color 0.2s;
     background-color: rgb(51, 51, 51);
     background-color: rgb(252, 252, 249); /* @snow */
     color: rgb(51, 51, 51);
   }
-  .projects a.banner h3,
-  a.banner div:last-child h1 {
+  .projects .banner h3,
+  .banner div + div h1 {
     text-transform: none;
     font-variant: normal;
   }
   @media (min-width: 45em) {
-    .projects a.banner h3,
-    a.banner div:last-child h1 {
+    .projects .banner h3,
+    .banner div + div h1 {
       font-size: 4vmax;
     }
   }
-  a.banner div:last-child {
+  .banner div + div {
     background-color: transparent;
     color: white;
-  }
-  a.banner div:first-child {
-    top: 10%;
-    bottom: auto;
   }
 
   .banner:before {
@@ -219,6 +196,9 @@
     color: white;
   }
 
+  a.banner {
+    color: inherit;
+  }
   @media (min-aspect-ratio: 1/1) {
     a.banner {
       padding-top: 5em;
@@ -237,25 +217,31 @@
     padding-bottom: 40%;
     padding-bottom: 40vh;
   }
+  @media (min-aspect-ratio: 1/1) {
+    .projects .banner {
+      padding-bottom: 60%;
+      padding-bottom: 60vh;
+    }
+  }
   .projects .banner:before {
     background: rgba(25, 25, 25, 0.75);
   }
-  .projects a.banner h3 {
+  .projects .banner h3 {
     margin-top: 0;
   }
   @media (min-width: 45em) {
-    a.banner div:last-child {
+    .banner div + div {
       top: 25%;
       bottom: auto;
       left: 50%;
       left: calc(50vw - 2.9em);
     }
-    .projects a.banner div:last-child {
+    .projects .banner div:last-child {
       left: 50%;
       margin-left: -17.9em;
     }
   }
-  .projects a.banner div:last-child {
+  .projects .banner div:last-child {
     left: 0;
     right: auto;
     width: 100%;
@@ -263,14 +249,14 @@
     box-sizing: border-box;
     text-align: center;
   }
-  .projects a.banner div:last-child {
+  .projects .banner div:last-child {
     padding: 0;
     bottom: auto;
     top: 50%;
     transform: translateY(-50%);
   }
-  .projects a.banner h3,
-  .projects a.banner p {
+  .projects .banner h3,
+  .projects .banner p {
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -279,11 +265,18 @@
 
   /* =Banner (Project Details)
   ----------------------------------------------- */
-  div.banner div h1,
-  div.banner div p {
+  /* SHIM: Make the banner taller on portrait size screens, so it will be more likely to fit the title. */
+  @media (min-aspect-ratio: 1/1) {
+    .ahoy + .banner {
+      padding-bottom: 80%;
+      padding-bottom: 80vh;
+    }
+  }
+  .ahoy + .banner div h1,
+  .ahoy + .banner div p {
     padding-left: 0 !important;
   }
-  div.banner div h1,
+  .ahoy + .banner div h1,
   .banner.next div:first-child h2 {
     background-image: none !important;
   }
@@ -291,12 +284,14 @@
 
   /* =Banner (Next Project)
   ----------------------------------------------- */
-  a.banner.next {
+  .banner.next {
     padding-bottom: 60%;
     padding-bottom: 60vh;
-  }
-  a.banner.next {
     margin-top: 1.4em;
+  }
+  .banner.next div:first-child {
+    top: 10%;
+    bottom: auto;
   }
   @media (min-width: 45em) {
     .banner.next div:first-child {
