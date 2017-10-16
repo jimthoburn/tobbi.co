@@ -78,8 +78,10 @@
     align-items: center;
     justify-content: center;
   }
-  .banner_list .banner__title-container {
+  .banner__title-container_list {
     position: relative;
+    left: auto;
+    text-align: center;
   }
   @media (min-aspect-ratio: 1/1) {
     .banner_list {

@@ -13,6 +13,8 @@
     margin-top: 0;
     text-transform: inherit;
     font-variant: inherit;
+  }
+  .banner__title {
     font-size: 1.75em;
   }
   .banner__with {
@@ -22,13 +24,19 @@
   }
 
   @media (min-width: 22em) {
-    .banner__title {
+    .banner__title_details {
       font-size: 3em;
     }
   }
 
   @media (min-width: 45em) {
     .banner__title {
+      font-size: 4vmax;
+    }
+  }
+
+  @media (min-width: 45em) {
+    .banner__title_details {
       font-size: 5vmax;
     }
   }
