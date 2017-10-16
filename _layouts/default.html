@@ -6,6 +6,10 @@
 
   <title>{{ page.title | escape_once }}</title>
 
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+  {% endif %}
+
   {% comment %}
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="Jim Thoburn">
@@ -16,18 +20,24 @@
   <meta property="og:description" content="{{ site.description }}" />
   {% endcomment %}
 
-  <!-- for Windows 8 -->
-  <meta name="msapplication-TileImage" content="/images/ship.png" />
-  <meta name="msapplication-TileColor" content="rgb(240, 240, 240)" />
-
-  {% if page.redirect %}
-  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
-  {% endif %}
-
   <!-- https://www.zachleat.com/web/preload/ -->
   <link rel="preload" href="/fonts/goudybookletter1911.woff2" as="font" type="font/woff2" crossorigin />
 
-  <link rel="stylesheet" href="/ahoy.css" />
+  <script>
+  {% include space-time.js %}
+  </script>
+
+  <link rel="stylesheet" href="/css/elements.css" />
+  <link rel="stylesheet" href="/css/button.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/banner.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/sky.css" />
+
+  <!-- for Windows 8 -->
+  <meta name="msapplication-TileImage" content="/images/ship.png" />
+  <meta name="msapplication-TileColor" content="rgb(240, 240, 240)" />
 
   <!-- for general use -->
   <link rel="icon" type="image/png"    href="/images/anchor.png" />
@@ -35,7 +45,6 @@
   <!-- for iOS -->
   <link rel="apple-touch-icon"         href="/images/ship-240-240-240.png" />
 
-  <script src="ahoy.js" async></script>
 </head>
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
 

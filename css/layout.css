@@ -1,0 +1,54 @@
+
+  .container {
+    padding: 1.4em 0.7em 2.8em; /* base line height */    /* base line height / 2 */    /* base line height x 2 */
+    margin: 0 auto;
+    max-width: 33em;
+
+    /* Test the vertical rhythm.
+       KUDOS: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
+
+    background-image: linear-gradient(rgba(0, 0, 0, .1) 50%, transparent 50%, transparent);
+    background-size: 1.4em 1.4em;
+    */
+  }
+  .banner + .container p:first-child {
+    font-size: 1.2em;
+    margin-bottom: 1.1666666667em;
+  }
+  @supports (-webkit-initial-letter: 1) or (initial-letter: 1) {
+    .banner + .container p:first-child + p:first-letter {
+      -webkit-initial-letter: 2;
+      initial-letter: 2;
+      margin-right: 0.25em;
+    }
+    .banner + .container p:first-child + p a:first-letter {
+      -webkit-initial-letter: unset;
+      initial-letter: unset;
+      margin-right: unset;
+    }
+  }
+  @media (min-width: 20em) {
+    .container {
+      padding: 2.8em 1.4em;
+    }
+    .container:last-child {
+      padding-bottom: 5.6em; /* double the usual padding */
+    }
+    .banner + .container {
+      padding-top: 1.4em;
+    }
+  }
+  @media (min-width: 30em) {
+    .container {
+      padding-bottom: 2.8em;
+    }
+    .container:last-child {
+      padding-bottom: 5.6em;
+    }
+    .banner + .container {
+      padding-top: 2.8em;
+    }
+  }
+  .container + .container > h1:first-child {
+    margin-top: 0;
+  }

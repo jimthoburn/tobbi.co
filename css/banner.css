@@ -1,0 +1,284 @@
+
+  .banner {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+    padding-bottom: 60vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .home .banner {
+    padding-bottom: 40%;
+    padding-bottom: 40vh;
+  }
+  @media (min-aspect-ratio: 1/1) {
+    .home .banner,
+    .banner {
+      padding-bottom: 60%;
+      padding-bottom: 60vh;
+    }
+    .ahoy + .banner {
+      padding-bottom: 80%;
+      padding-bottom: 80vh;
+    }
+  }
+  a.banner.next {
+    padding-bottom: 60%;
+    padding-bottom: 60vh;
+  }
+  .banner:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .banner h2 {
+    margin-top: 0;
+  }
+  .banner div {
+    background: rgb(252, 252, 249); /* @snow */
+    background: transparent;
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    padding: 0.375em 1.4em;
+  }
+
+  @supports (transform: translateY(0)) {
+    .banner div {
+      bottom: 50%;
+      transform: translateY(50%);
+
+      bottom: 2.4em;
+      transform: none;
+    }
+    a.banner div {
+      bottom: 10%;
+      transform: none;
+    }
+  }
+
+
+  /* Avoid breaking team names into two lines */
+  .banner div a {
+    display: inline-block;
+  }
+
+  /* Avoid breaking phrases into two lines */
+  .phrase {
+    display: inline-block;
+  }
+
+
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    .banner div a {
+      /* --wave-outline-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
+    }
+  }
+
+
+  @media (min-width: 55em) {
+    .banner div {
+      left: calc(50vw - 17.9em);
+    }
+  }
+  .banner div h1 {
+    margin-top: 0;
+    font-size: 2em;
+  }
+  @media (min-width: 22em) {
+    .banner div h1 {
+      font-size: 3em;
+    }
+  }
+
+  .home a.banner h3,
+  a.banner.next h1 {
+    font-size: 1.75em;
+  }
+
+  @media (min-width: 45em) {
+    .home a.banner h3,
+    .banner div h1 {
+      font-size: 5vmax;
+    }
+  }
+  .banner .credit {
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    background: rgb(51, 51, 51);
+    background: rgba(51, 51, 51, 0.85);
+    background: transparent;
+    color: rgb(252, 252, 249); /* @snow */
+    margin: 0;
+    font-size: 0.75em;
+    padding: 0 !important;
+  }
+  .banner .credit a {
+    display: block;
+    padding: 0.7em 1.4em;
+    color: inherit;
+    background-image: none;
+    text-decoration: none;
+  }
+  .banner .credit a b {
+    text-decoration: underline;
+  }
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    .banner .credit a b {
+      text-decoration: none;
+
+      /* --wave-outline-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
+
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 1em auto;
+    }
+    .home a.banner h3,
+    .container + .banner div h1 {
+      /* --wave-outline-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
+
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 1em auto;
+
+      padding: 0 0.35em 0.35em;
+    }
+    .home a.banner h3 + p,
+    .container + .banner div h1 + p {
+      margin-top: 0;
+      padding: 0.35em 0.7em 0;
+    }
+    @media (min-width: 45em) {
+      .home a.banner h3 + p,
+      .container + .banner div h1 + p {
+        padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
+      }
+    }
+  }
+  .home a.banner div h3,
+  .home a.banner div p,
+  .container + .banner div h1,
+  .container + .banner div h1 + p {
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .home a.banner:active div h3,
+  .home a.banner:active div p,
+  .home a.banner:focus div h3,
+  .home a.banner:focus div p,
+  .home a.banner div:hover h3,
+  .home a.banner div:hover p,
+  .container + .banner:active div h1,
+  .container + .banner:active div h1 + p,
+  .container + .banner:focus div h1,
+  .container + .banner:focus div h1 + p,
+  .container + .banner div:hover h1,
+  .container + .banner div:hover h1 + p,
+  .container + .banner div:hover ~ div h1,
+  .container + .banner div:hover ~ div h1 + p {
+    background-color: rgb(40, 155, 215);
+  }
+  a.banner {
+    color: inherit;
+  }
+  a.banner.next {
+    margin-top: 1.4em;
+  }
+
+  a.banner div:last-child {
+    transition: background-color 0.2s, color 0.2s;
+    background: rgba(1, 115, 175, 0.1);
+    background: #BFDAE5;
+    color: rgb(40, 155, 215);
+    background-color: rgb(40, 155, 215);
+    color: white;
+    background-color: rgb(51, 51, 51);
+    background-color: rgb(252, 252, 249); /* @snow */
+    color: rgb(51, 51, 51);
+  }
+  .home a.banner h3 {
+    margin-top: 0;
+  }
+  .home a.banner h3,
+  a.banner div:last-child h1 {
+    text-transform: none;
+    font-variant: normal;
+  }
+  @media (min-width: 45em) {
+    .home a.banner h3,
+    a.banner div:last-child h1 {
+      font-size: 4vmax;
+    }
+  }
+  a.banner div:last-child {
+    background-color: transparent;
+    color: white;
+  }
+  a.banner div:first-child {
+    top: 10%;
+    bottom: auto;
+  }
+  @media (min-width: 45em) {
+    .container + a.banner div:first-child {
+      top: 25%;
+    }
+    a.banner div:last-child {
+      top: 25%;
+      bottom: auto;
+      left: 50%;
+      left: calc(50vw - 2.9em);
+    }
+    .home a.banner div:last-child {
+      left: 50%;
+      margin-left: -17.9em;
+    }
+  }  
+  .home a.banner div:last-child {
+    left: 0;
+    right: auto;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .home a.banner div:last-child {
+    padding: 0;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .home a.banner h3,
+  .home a.banner p {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container > div a {
+    background-image: none;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (min-width: 25em) {
+    .container > div {
+      display: inline-block;
+      vertical-align: top;
+      width: 12em;
+      margin-right: 2.8em;
+    }
+  }

@@ -1,0 +1,50 @@
+
+  ul.action {
+    margin-top: 1.4em;
+  }
+  h2 + ul.action {
+    margin-top: 0.7em;
+  }
+  .action a {
+    display: inline-block;
+    padding: 0.7em 1em;
+    background-color: rgba(40, 155, 215, 0.2);
+    color: rgb(0, 115, 175);
+    border-radius: 0.25em;
+    background-image: none;
+    margin-bottom: 0.375em;
+    text-decoration: none;
+  }
+  .action a,
+  .action a:hover,
+  .action a:active,
+  .action a:focus {
+    background-color: rgba(40, 155, 215, 0.8);
+    color: white;
+  }
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    .action a,
+    .action a:hover,
+    .action a:active,
+    .action a:focus {
+      background-position: bottom;
+
+      /* --wave-filled-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 55 L -10 55 Z"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDU1IEwgLTEwIDU1IFoiPjwvcGF0aD48L3N2Zz4=');
+    }
+    .action a {
+      background-color: rgb(40, 155, 215);
+    }
+    .action a:hover,
+    .action a:active,
+    .action a:focus {
+      background-color: rgb(0, 115, 175);
+    }
+  }
+
+  .action li {
+    display: inline-block;
+    margin-right: 0.35em;
+    margin-bottom: 0.35em;
+  }
