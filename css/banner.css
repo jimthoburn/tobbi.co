@@ -71,44 +71,23 @@
   /* =Banner (Projects List)
   ----------------------------------------------- */
   .banner_list {
-    padding-bottom: 40%;
-    padding-bottom: 40vh;
+    padding-bottom: 0;
+    min-height: 40vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner_list .banner__title-container {
+    position: relative;
   }
   @media (min-aspect-ratio: 1/1) {
     .banner_list {
-      padding-bottom: 60%;
-      padding-bottom: 60vh;
       min-height: 70vh;
     }
   }
   .banner_list:before {
     background: rgba(25, 25, 25, 0.75);
-  }
-  .banner_list h3 {
-    margin-top: 0;
-  }
-  @media (min-width: 45em) {
-    .banner_list > div {
-      margin-left: -17.9em;
-    }
-  }
-  .banner_list > div {
-    left: 0;
-    right: auto;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 0;
-    bottom: auto;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .banner_list h3,
-  .banner_list p {
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
   }
 
 
@@ -117,7 +96,7 @@
 
   /* Make the banner taller on horizontal screens. */
   @media (min-aspect-ratio: 1/1) {
-    .ahoy + .banner {
+    .banner_details {
       padding-bottom: 80%;
       padding-bottom: 80vh;
     }
@@ -141,12 +120,15 @@
       box-sizing: border-box;
     }
   }
-  .banner_next div:first-child {
+  .banner__next-project-container {
     top: 10%;
     bottom: auto;
   }
   @media (min-width: 45em) {
-    .banner_next div:first-child {
+    .banner_next:before {
+      background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
+    }
+    .banner__next-project-container {
       top: 25%;
     }
     .banner_next .banner__title-container {
@@ -154,8 +136,5 @@
       bottom: auto;
       left: 50%;
       left: calc(50vw - 2.9em);
-    }
-    .banner_next:before {
-      background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
     }
   }
