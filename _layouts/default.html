@@ -16,68 +16,13 @@
   <meta property="og:description" content="{{ site.description }}" />
   {% endcomment %}
 
-  <script>
-    (function() {
+  <!-- for Windows 8 -->
+  <meta name="msapplication-TileImage" content="/images/ship.png" />
+  <meta name="msapplication-TileColor" content="rgb(240, 240, 240)" />
 
-      // KUDOS https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript#answer-4960020
-
-      // Generate a random number between 1 and 255
-      //var brightness = Math.floor(Math.random() * 255) + 1;
-
-      // Generate a random number between 1 and 1000
-      //var position = Math.floor(Math.random() * 1000) + 1;
-
-      // Generate a random number between 1 and 1000
-      function getRandomCloudDelay() {
-        return Math.floor(Math.random() * 1000) + 1;
-      }
-      document.documentElement.style.setProperty('--cloud-delay-one', getRandomCloudDelay() + 's');
-      document.documentElement.style.setProperty('--cloud-delay-two', getRandomCloudDelay() + 's');
-      document.documentElement.style.setProperty('--cloud-delay-three', getRandomCloudDelay() + 's');
-      document.documentElement.style.setProperty('--cloud-delay-four', getRandomCloudDelay() + 's');
-      document.documentElement.style.setProperty('--cloud-delay-five', getRandomCloudDelay() + 's');
-
-      function updateTime() {
-        // Generate a random number between 0 and 12
-        //var sunPosition = Math.floor(Math.random() * 12) + 0;
-        var now = new Date();
-        var hours = now.getHours() + (now.getMinutes() / 60);
-
-        //hours = 5;
-
-        if (hours >= 18 || hours < 6) {
-          document.documentElement.classList.add('night');
-        } else {
-          document.documentElement.classList.remove('night');
-        }
-
-        if (hours < 6) {
-          hours = hours + 6;
-        } else {
-          hours = hours - 6;
-        }
-
-        var sunPosition = (hours % 12) * 60 * 60; // The animation only supports 0-12 hours, at present // Adjust by six hours, so the sun will be half-way through the animation (instead of at the very end) at noon.
-
-        //sunPosition = 43200;
-
-        //document.documentElement.style.setProperty('--cloud-brightness', brightness);
-        //document.documentElement.style.setProperty('--cloud-position', position);
-        document.documentElement.style.setProperty('--sun-position', sunPosition);
-
-
-        if (sunPosition >= 21600) {
-          document.documentElement.style.setProperty('--sun-position-vertical', (((sunPosition / 21600) * (4.5)) - (4.5)) + 'em');
-        } else {
-          document.documentElement.style.setProperty('--sun-position-vertical', ((4.5) - ((sunPosition / 21600) * (4.5))) + 'em');
-        }
-      }
-
-      setInterval(updateTime, 60 * 1000); // Once per minute
-      updateTime();
-
-    })();
-  </script>
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+  {% endif %}
 
   <!-- https://www.zachleat.com/web/preload/ -->
   <link rel="preload" href="/fonts/goudybookletter1911.woff2" as="font" type="font/woff2" crossorigin />
@@ -90,13 +35,7 @@
   <!-- for iOS -->
   <link rel="apple-touch-icon"         href="/images/ship-240-240-240.png" />
 
-  <!-- for Windows 8 -->
-  <meta name="msapplication-TileImage" content="/images/ship.png" />
-  <meta name="msapplication-TileColor" content="rgb(240, 240, 240)" />
-
-  {% if page.redirect %}
-  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
-  {% endif %}
+  <script src="ahoy.js" async></script>
 </head>
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
 

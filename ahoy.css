@@ -3,18 +3,19 @@
   /* =Variables
   ----------------------------------------------- */
   :root {
-    --cloud-delay-one: 0s;
-    --cloud-delay-two: 0s;
+    --cloud-delay-one:   0s;
+    --cloud-delay-two:   0s;
     --cloud-delay-three: 0s;
-    --cloud-delay-four: 0s;
-    --cloud-delay-five: 0s;
+    --cloud-delay-four:  0s;
+    --cloud-delay-five:  0s;
+
     --sun-position: calc(-3 * 60 * 60s);
     --sun-position-vertical: 0.375em;
 
     --device-beta: 0;
     --device-gamma: 0;
-    --ship-position: var(--device-gamma);
 
+    --ship-position: var(--device-gamma);
   }
 
   @media (orientation: landscape) {
@@ -26,16 +27,9 @@
 
   /* =Elements
   ----------------------------------------------- */
+  /*
   html, body {
     min-height: 100%;
-  }
-
-  /*
-  @font-face {
-    font-family: "Mate";
-    src: url("/fonts/mate.woff2") format("woff2"), url("/fonts/mate.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
   }
   */
 
@@ -47,7 +41,8 @@
   }
 
   body {
-    font: 100%/1.4 "Goudy Bookletter 1911", Georgia, serif;
+    font: 100%/1.4 "Goudy Bookletter 1911", "Hoefler Text", "Times New Roman", Georgia, serif;
+
     margin: 0;
     padding: 0;
 
@@ -70,37 +65,31 @@
   }
   @media (min-width: 300px) {
     body {
-      font-size: 125%;
       font-size: 112.5%;
     }
   }
   @media (min-width: 600px) {
     body {
-      font-size: 150%;
       font-size: 125%;
     }
   }
   @media (min-width: 900px) {
     body {
-      font-size: 175%;
       font-size: 150%;
     }
   }
   @media (min-width: 1200px) {
     body {
-      font-size: 200%;
       font-size: 175%;
     }
   }
   @media (min-width: 1500px) {
     body {
-      font-size: 225%;
       font-size: 200%;
     }
   }
   @media (min-width: 2000px) {
     body {
-      font-size: 250%;
       font-size: 225%;
     }
   }
@@ -176,7 +165,6 @@
   }
 
   h1, h2, h3 {
-    font-family: "Goudy Bookletter 1911", Georgia, serif;
     font-weight: normal;
     line-height: 1;
     margin-top: 1em;
@@ -592,7 +580,6 @@
     margin-top: 0.7em;
   }
   .action a {
-    font-family: "Goudy Bookletter 1911", Georgia, serif;
     display: inline-block;
     padding: 0.7em 1em;
     background-color: rgba(40, 155, 215, 0.2);
@@ -764,7 +751,7 @@
       padding-bottom: 80vh;
     }
   }
-  a.banner:last-child {
+  a.banner.next {
     padding-bottom: 60%;
     padding-bottom: 60vh;
   }
@@ -814,6 +801,12 @@
     display: inline-block;
   }
 
+  /* Avoid breaking phrases into two lines */
+  .phrase {
+    display: inline-block;
+  }
+
+
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
     .banner div a {
       /* --wave-outline-light-blue */
@@ -839,7 +832,7 @@
   }
 
   .home a.banner h3,
-  a.banner:last-child h1 {
+  a.banner.next h1 {
     font-size: 1.75em;
   }
 
@@ -941,7 +934,7 @@
   a.banner {
     color: inherit;
   }
-  a.banner:last-child {
+  a.banner.next {
     margin-top: 1.4em;
   }
   /*
@@ -1081,10 +1074,24 @@
   }
 
 
+  /* =Projects
+  ----------------------------------------------- */
+  .projects,
+  .projects li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+
   /* =Home
   ----------------------------------------------- */
   .home > .container:last-child {
     padding-bottom: 5.6em;
+  }
+  .introduction .action {
+    float: right;
+    margin: 0.7em 0 0 0.7em;
   }
   /*
   .hello {
@@ -1143,7 +1150,7 @@
     background: linear-gradient(to top right, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
   }
   @media(min-width: 45em) {
-    .banner:last-child:before {
+    .banner.next:before {
       background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
     }
   }
