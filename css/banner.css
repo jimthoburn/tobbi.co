@@ -10,6 +10,8 @@
     padding-bottom: 60vh;
     background-size: cover;
     background-position: center;
+    color: inherit;
+    box-sizing: border-box;
   }
   .banner:before {
     content: "";
@@ -134,24 +136,24 @@
     background-color: rgb(40, 155, 215);
   }
 
-  .banner div + div {
+  .banner.next div + div {
     transition: background-color 0.2s, color 0.2s;
     background-color: rgb(51, 51, 51);
     background-color: rgb(252, 252, 249); /* @snow */
     color: rgb(51, 51, 51);
   }
   .projects .banner h3,
-  .banner div + div h1 {
+  .banner.next div + div h1 {
     text-transform: none;
     font-variant: normal;
   }
   @media (min-width: 45em) {
     .projects .banner h3,
-    .banner div + div h1 {
+    .banner.next div + div h1 {
       font-size: 4vmax;
     }
   }
-  .banner div + div {
+  .banner.next div + div {
     background-color: transparent;
     color: white;
   }
@@ -196,20 +198,6 @@
     color: white;
   }
 
-  a.banner {
-    color: inherit;
-  }
-  @media (min-aspect-ratio: 1/1) {
-    a.banner {
-      padding-top: 5em;
-      padding-top: 15vh;
-      padding-bottom: 5em;
-      padding-bottom: 15vh;
-      min-height: 70vh;
-      box-sizing: border-box;
-    }
-  }
-
 
   /* =Banner (Projects List)
   ----------------------------------------------- */
@@ -221,6 +209,7 @@
     .projects .banner {
       padding-bottom: 60%;
       padding-bottom: 60vh;
+      min-height: 70vh;
     }
   }
   .projects .banner:before {
@@ -230,7 +219,7 @@
     margin-top: 0;
   }
   @media (min-width: 45em) {
-    .banner div + div {
+    .banner.next div + div {
       top: 25%;
       bottom: auto;
       left: 50%;
@@ -288,6 +277,16 @@
     padding-bottom: 60%;
     padding-bottom: 60vh;
     margin-top: 1.4em;
+  }
+  @media (min-aspect-ratio: 1/1) {
+    .banner.next {
+      padding-top: 5em;
+      padding-top: 15vh;
+      padding-bottom: 5em;
+      padding-bottom: 15vh;
+      min-height: 70vh;
+      box-sizing: border-box;
+    }
   }
   .banner.next div:first-child {
     top: 10%;
