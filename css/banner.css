@@ -81,7 +81,7 @@
   .projects .banner:before {
     background: rgba(25, 25, 25, 0.75);
   }
-  .projects .banner h3 {
+  .banner h3 {
     margin-top: 0;
   }
   @media (min-width: 45em) {
@@ -110,7 +110,7 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  .projects .banner h3,
+  .banner h3,
   .projects .banner p {
     display: table;
     margin-left: auto;
@@ -126,14 +126,6 @@
       padding-bottom: 80%;
       padding-bottom: 80vh;
     }
-  }
-  .ahoy + .banner div h1,
-  .ahoy + .banner div p {
-    padding-left: 0 !important;
-  }
-  .ahoy + .banner div h1,
-  .banner.next div:first-child h2 {
-    background-image: none !important;
   }
 
 
