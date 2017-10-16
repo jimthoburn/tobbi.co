@@ -13,12 +13,14 @@
     font-size: 1.75em;
   }
 
-  /* SHIM: Make the banner type larger on medium size screens, but only on the project details page. (so no “h3” selector) */
+  /* SHIM: Make the project details page banner type larger on medium size screens */
+  /*
   @media (min-width: 22em) {
-    .banner h1 {
+    .ahoy + .banner h1 {
       font-size: 3em;
     }
   }
+  */
 
   @media (min-width: 45em) {
     .banner h1,
@@ -41,13 +43,13 @@
       padding: 0 0.35em 0.35em;
     }
     .banner h3 + p,
-    .banner.next div p {
+    .banner.next .with {
       margin-top: 0;
       padding: 0.35em 0.7em 0;
     }
     @media (min-width: 45em) {
       .banner h3 + p,
-      .banner.next div p {
+      .banner.next .with {
         padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
       }
     }
@@ -55,25 +57,25 @@
 
 
   .projects .banner h3,
-  .projects .banner div p,
+  .projects .banner .with,
   .banner.next h1,
-  .banner.next div p {
+  .banner.next .with {
     transition: background-color 0.2s, color 0.2s;
   }
   .projects .banner:active h3,
-  .projects .banner:active div p,
+  .projects .banner:active p,
   .projects .banner:focus h3,
-  .projects .banner:focus div p,
-  .projects .banner div:hover h3,
-  .projects .banner div:hover p,
+  .projects .banner:focus p,
+  .projects .banner > div:hover h3,
+  .projects .banner > div:hover p,
   .banner.next:active h1,
-  .banner.next:active div p,
+  .banner.next:active .with,
   .banner.next:focus h1,
-  .banner.next:focus div p,
+  .banner.next:focus .with,
   .banner.next div:hover h1,
   .banner.next div:hover p,
   .banner.next div:hover ~ h1,
-  .banner.next div:hover ~ div p {
+  .banner.next div:hover ~ .with {
     background-color: rgb(40, 155, 215);
   }
 
@@ -89,14 +91,13 @@
     }
   }
 
-
   .banner h1,
   .banner h2,
   .banner h3,
   .banner p {
     text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.375);
     background-color: transparent;
-    padding: 0.7rem 1.4rem !important;
+    padding: 0.7rem 1.4rem;
   }
   .banner p {
     position: relative;
@@ -117,12 +118,6 @@
       background-position: bottom;
       background-size: 1em auto;
     }
-    /*
-    .banner h3:last-child {
-      padding-bottom: 1.05em !important;
-      background-position: 50% 65% !important;
-    }
-    */
   }
 
 
@@ -130,10 +125,10 @@
   /* =Banner (Project Details)
   ----------------------------------------------- */
   .ahoy + .banner h1,
-  .ahoy + .banner div p {
-    padding-left: 0 !important;
+  .ahoy + .banner .with {
+    padding-left: 0;
   }
   .ahoy + .banner h1,
   .banner.next div:first-child h2 {
-    background-image: none !important;
+    background-image: none;
   }

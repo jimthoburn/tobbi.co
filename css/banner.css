@@ -25,7 +25,7 @@
     z-index: 0;
   }
 
-  .banner div {
+  .banner > div {
     background: rgb(252, 252, 249); /* @snow */
     background: transparent;
     color: white;
@@ -35,14 +35,14 @@
   }
 
   @supports (transform: translateY(0)) {
-    .banner div {
+    .banner > div {
       bottom: 50%;
       transform: translateY(50%);
 
       bottom: 2.4em;
       transform: none;
     }
-    .banner div {
+    .banner > div {
       bottom: 10%;
       transform: none;
     }
@@ -50,14 +50,14 @@
 
 
   @media (min-width: 55em) {
-    .banner div {
+    .banner > div {
       left: calc(50vw - 17.9em);
     }
   }
 
 
   @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
-    .banner div a {
+    .banner > div > a {
       /* --wave-outline-light-blue */
       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
       background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
@@ -85,11 +85,11 @@
     margin-top: 0;
   }
   @media (min-width: 45em) {
-    .projects .banner div {
+    .projects .banner > div {
       margin-left: -17.9em;
     }
   }
-  .projects .banner div {
+  .projects .banner > div {
     left: 0;
     right: auto;
     width: 100%;
@@ -111,7 +111,8 @@
 
   /* =Banner (Project Details)
   ----------------------------------------------- */
-  /* SHIM: Make the banner taller on portrait size screens, so it will be more likely to fit the title. */
+
+  /* Make the banner taller on horizontal screens. */
   @media (min-aspect-ratio: 1/1) {
     .ahoy + .banner {
       padding-bottom: 80%;
@@ -176,7 +177,7 @@
     color: rgb(252, 252, 249); /* @snow */
     margin: 0;
     font-size: 0.75em;
-    padding: 0 !important;
+    padding: 0;
   }
   .banner .credit a {
     display: block;
