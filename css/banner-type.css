@@ -43,39 +43,25 @@
       padding: 0 0.35em 0.35em;
     }
     .banner h3 + p,
-    .banner.next .with {
+    .banner.next .banner__with {
       margin-top: 0;
       padding: 0.35em 0.7em 0;
     }
     @media (min-width: 45em) {
       .banner h3 + p,
-      .banner.next .with {
+      .banner.next .banner__with {
         padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
       }
     }
   }
 
-
-  .projects .banner h3,
-  .projects .banner .with,
-  .banner.next h1,
-  .banner.next .with {
+  .banner__title-container {
     transition: background-color 0.2s, color 0.2s;
   }
-  .projects .banner:active h3,
-  .projects .banner:active p,
-  .projects .banner:focus h3,
-  .projects .banner:focus p,
-  .projects .banner > div:hover h3,
-  .projects .banner > div:hover p,
-  .banner.next:active h1,
-  .banner.next:active .with,
-  .banner.next:focus h1,
-  .banner.next:focus .with,
-  .banner.next div:hover h1,
-  .banner.next div:hover p,
-  .banner.next div:hover ~ h1,
-  .banner.next div:hover ~ .with {
+
+  .banner__title-container:hover,
+  .banner__title-container:active,
+  .banner__title-container:focus {
     background-color: rgb(40, 155, 215);
   }
 
@@ -121,11 +107,10 @@
   }
 
 
-
   /* =Banner (Project Details)
   ----------------------------------------------- */
   .ahoy + .banner h1,
-  .ahoy + .banner .with {
+  .ahoy + .banner .banner__with {
     padding-left: 0;
   }
   .ahoy + .banner h1,
