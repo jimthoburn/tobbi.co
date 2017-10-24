@@ -33,7 +33,7 @@
   }
   @media (min-width: 55em) {
     a.ahoy {
-      margin-left: calc(50vw - 16.5em);
+      margin-left: calc(50vw - 18em); /* 36em / 2 */
     }
   }
   a.ahoy h2 {

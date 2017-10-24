@@ -4,7 +4,7 @@
   .container {
     padding: 1.4em 0.7em 2.8em; /* base line height */    /* base line height / 2 */    /* base line height x 2 */
     margin: 0 auto;
-    max-width: 33em;
+    max-width: 36em;
 
     /* Test the vertical rhythm.
        KUDOS: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
