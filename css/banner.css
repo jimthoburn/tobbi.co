@@ -53,7 +53,7 @@
   @media (min-width: 55em) {
     .banner__title-container,
     .banner__next-project-container {
-      left: calc(50vw - 18.7em); /* 33em / 2 + 0.7em */
+      left: calc(50vw - 17.2em); /* 33em / 2 + 0.7em */
     }
   }
 
