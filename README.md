@@ -56,7 +56,7 @@ jekyll build --watch
 npm install
 ```
 
-3. Run the command…
+3. Run this command…
 
 ```
 npm run generate-images
