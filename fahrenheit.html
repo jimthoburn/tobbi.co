@@ -1,11 +1,22 @@
 ---
 layout: default
 title: Fahrenheit Studio
+figures:
+- caption: Fahrenheit Studio
+  url: http://www.fahrenheit.com
+- caption: Fahrenheit Studio
+  url: http://www.fahrenheit.com/what/mix/
+- caption: Case Study
+  url: http://www.fahrenheit.com/work/juliet/
+- caption: Case Study
+  url: http://www.fahrenheit.com/work/kttunstall/
+- caption: Case Study
+  url: http://www.fahrenheit.com/work/dwele/
 ---
 
 {% include ahoy.html %}
 
-  <div class="banner banner_details" style="background-image: url(/images/projects/fahrenheit.jpg); background-position: 25% 50%;">
+  <div class="banner banner_details" style="background-image: url(/images/fahrenheit/2048-wide/poster-b.jpg); background-position: 25% 50%;">
     <div class="banner__title-container">
       <h1 class="banner__title banner__title_details">Fahrenheit Studio</h1>
       <p class="banner__with">with the team at <a href="http://fahrenheit.com">Fahrenheit Studio</a></p>
@@ -25,21 +36,7 @@ title: Fahrenheit Studio
       <li><a href="http://fahrenheit.com">Fahrenheit Studio</a></li>
     </ul>
 
-    <figure>
-      <a href="http://www.fahrenheit.com"><img src="/images/fahrenheit/Screen Shot 2017-08-26 at 6.26.10 PM.png" width="500" alt="Fahrenheit Studio" /></a>
-    </figure>
-    <figure>
-      <a href="http://www.fahrenheit.com/what/mix/"><img src="/images/fahrenheit/Screen Shot 2017-08-26 at 6.27.21 PM.png" width="500" alt="Fahrenheit Studio" /></a>
-    </figure>
-    <figure>
-      <a href="http://www.fahrenheit.com/work/juliet/"><img src="/images/fahrenheit/Screen Shot 2017-08-26 at 6.30.04 PM.png" width="500" alt="Case Study" /></a>
-    </figure>
-    <figure>
-      <a href="http://www.fahrenheit.com/work/kttunstall/"><img src="/images/fahrenheit/Screen Shot 2017-08-26 at 6.30.22 PM.png" width="500" alt="Case Study" /></a>
-    </figure>
-    <figure>
-      <a href="http://www.fahrenheit.com/work/dwele/"><img src="/images/fahrenheit/Screen Shot 2017-08-26 at 6.30.31 PM.png" width="500" alt="Case Study" /></a>
-    </figure>
+    {% include figures.html %}
 
     <h2>Crew</h2>
 
@@ -56,10 +53,7 @@ title: Fahrenheit Studio
       <p><a href="http://www.fahrenheit.com/who/robert-weitz/">Robert Weitz</a></p>
     </div>
 
-    <figure id="robert">
-      <img src="/images/projects/fahrenheit-guitar.jpg" width="600" alt="Robert serenading me, as I work on the style sheets" />
-      <figcaption>Robert serenading me, as I work on the style sheets</figcaption>
-    </figure>
+    {% include figure-crew.html caption="Robert serenading me, as I work on the style sheets" %}
 
     <h2>Tools we used</h2>
 
@@ -90,7 +84,7 @@ title: Fahrenheit Studio
 
   </div>
 
-  <a href="/good-fest" class="banner banner_next" style="background-image: url(/images/projects/eab30c1d4cf4ea2d85fbed9b3da40cb6ccc06667.jpg=s2048x2048.jpeg); background-position: top;">
+  <a href="/good-fest" class="banner banner_next" style="background-image: url(/images/good-fest/2048-wide/poster-a.jpg); background-position: top;">
     <div class="banner__next-project-container">
       <h2 class="banner__next-project">Next project →</h2>
     </div>

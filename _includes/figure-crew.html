@@ -1,0 +1,5 @@
+{% capture basepath %}/images/{{ page.url | split: "/" | last }}{% endcapture %}
+<figure>
+  {% include image.html basepath=basepath filename="crew.jpg" alt=include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

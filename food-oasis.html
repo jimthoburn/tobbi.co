@@ -1,11 +1,20 @@
 ---
 layout: default
 title: Food Oasis Los Angeles
+figures:
+- caption: Food Oasis Los Angeles
+  url: https://foodoasis.la
+- caption: Map of healthy food locations
+  url: https://foodoasis.la/locations
+- caption: Organizations featured on Food Oasis
+  url: https://foodoasis.la/organizations/
+- caption: Food Oasis sponsors
+  url: https://foodoasis.la/#navigation
 ---
 
 {% include ahoy.html %}
 
-  <div class="banner banner_details" style="background-image: url(/images/projects/food-oasis-responsive.jpg); background-position: 25% 50%;">
+  <div class="banner banner_details" style="background-image: url(/images/food-oasis/2048-wide/poster-c.jpg); background-position: 25% 50%;">
     <div class="banner__title-container">
       <h1 class="banner__title banner__title_details">Food Oasis <span class="phrase">Los Angeles</span></h1>
       <p class="banner__with">with the volunteers at <a href="http://hackforla.nationbuilder.com/about" class="phrase">Code for America</a></p>
@@ -33,18 +42,7 @@ title: Food Oasis Los Angeles
       <li><a href="https://github.com/foodoasisla/site">GitHub Project</a></li>
     </ul>
 
-    <figure>
-      <a href="https://foodoasis.la"><img src="/images/food-oasis/Screen Shot 2017-09-07 at 12.17.18 AM.png" width="500" alt="Food Oasis Los Angeles" /></a>
-    </figure>
-    <figure>
-      <a href="https://foodoasis.la/locations"><img src="/images/food-oasis/Screen Shot 2017-09-07 at 12.17.47 AM.png" width="500" alt="Map of healthy food locations" /></a>
-    </figure>
-    <figure>
-      <a href="https://foodoasis.la/organizations/"><img src="/images/food-oasis/Screen Shot 2017-09-07 at 12.18.01 AM.png" width="500" alt="Organizations featured on Food Oasis" /></a>
-    </figure>
-    <figure>
-      <a href="https://foodoasis.la/#navigation"><img src="/images/food-oasis/Screen Shot 2017-09-07 at 12.19.27 AM.png" width="500" alt="Food Oasis sponsors" /></a>
-    </figure>
+    {% include figures.html %}
 
     <h2>Crew</h2>
 
@@ -93,8 +91,9 @@ title: Food Oasis Los Angeles
       </ul>
     </div>
 
+    {% capture basepath %}/images/{{ page.url | split: "/" | last }}{% endcapture %}
     <figure>
-      <img src="/images/projects/food-oasis-team.jpg" width="600" alt="" />
+      {% include image.html basepath=basepath filename="crew.jpg" alt="The Food Oasis team at La Kretz Innovation Campus" %}
       <figcaption>The Food Oasis team at <a href="http://laincubator.org/la-kretz-innovation-campus/">La Kretz Innovation Campus</a></figcaption>
     </figure>
 
@@ -151,7 +150,7 @@ title: Food Oasis Los Angeles
 
   </div>
 
-  <a href="/ctzn-app" class="banner banner_next" style="background-image: url(/images/projects/55ce0d52c180524eb3d2c6e8e0fabf630700.jpg=s2048x2048.jpeg); background-position: 50% 25%;">
+  <a href="/ctzn-app" class="banner banner_next" style="background-image: url(/images/ctzn-app/2048-wide/poster.jpg); background-position: 50% 25%;">
     <div class="banner__next-project-container">
       <h2 class="banner__next-project">Next project →</h2>
     </div>

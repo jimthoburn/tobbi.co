@@ -1,11 +1,20 @@
 ---
 layout: default
 title: OK the Store
+figures:
+- caption: OK the Store
+  url: https://web-beta.archive.org/web/20140802135613/okthestore.com
+- caption: Category page
+  url: https://web-beta.archive.org/web/20140803111027/http://okthestore.com/shop/category/gear
+- caption: Prototypes
+  url: http://okthestore.jimthoburn.com
+- caption: Item page prototype
+  url: http://okthestore.jimthoburn.com/product.html
 ---
 
 {% include ahoy.html %}
 
-  <div class="banner banner_details" style="background-image: url(/images/projects/ok-the-store.jpg)">
+  <div class="banner banner_details" style="background-image: url(/images/ok-the-store/2048-wide/poster-b.jpg)">
     <div class="banner__title-container">
       <h1 class="banner__title banner__title_details">OK the Store</h1>
       <p class="banner__with">with the team at <a href="https://barrelstrengthdesign.com">Barrel Strength Design</a></p>
@@ -29,18 +38,7 @@ title: OK the Store
       <li><a href="http://okthestore.jimthoburn.com">Web Prototypes</a></li>
     </ul>
 
-    <figure>
-      <a href="https://web-beta.archive.org/web/20140802135613/okthestore.com"><img src="/images/ok-the-store/Screen Shot 2017-08-26 at 6.16.31 PM.png" width="500" alt="Ok the Store" /></a>
-    </figure>
-    <figure>
-      <a href="https://web-beta.archive.org/web/20140803111027/http://okthestore.com/shop/category/gear"><img src="/images/ok-the-store/Screen Shot 2017-08-26 at 6.17.34 PM.png" width="500" alt="Category page" /></a>
-    </figure>
-    <figure>
-    <a href="http://okthestore.jimthoburn.com"><img src="/images/ok-the-store/Screen Shot 2017-09-07 at 1.03.45 AM.png" width="500" alt="Prototypes" /></a>
-    </figure>
-    <figure>
-      <a href="http://okthestore.jimthoburn.com/product.html"><img src="/images/ok-the-store/Screen Shot 2017-08-26 at 6.18.29 PM.png" width="500" alt="Item page prototype" /></a>
-    </figure>
+    {% include figures.html %}
 
     <h2>Crew</h2>
 
@@ -57,10 +55,7 @@ title: OK the Store
       <p><a href="https://www.instagram.com/okthestore/">OK the Store</a></p>
     </div>
 
-    <figure>
-      <img src="/images/projects/ok-the-store-diagram.jpg" width="600" alt="Ben has excellent handwriting" />
-      <figcaption>Ben has excellent handwriting</figcaption>
-    </figure>
+    {% include figure-crew.html caption="Ben has excellent handwriting" %}
 
     <h2>Tools we used</h2>
     <div>
@@ -89,7 +84,7 @@ title: OK the Store
 
   </div>
 
-  <a href="/jj-burns" class="banner banner_next" style="background-image: url(/images/projects/jj-burns.jpg)">
+  <a href="/jj-burns" class="banner banner_next" style="background-image: url(/images/jj-burns/2048-wide/poster-b.jpg)">
     <div class="banner__next-project-container">
       <h2 class="banner__next-project">Next project →</h2>
     </div>

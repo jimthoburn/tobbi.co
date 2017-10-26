@@ -1,11 +1,22 @@
 ---
 layout: default
 title: JJ Burns
+figures:
+- caption: JJ Burns & Company
+  url: http://jjburns.com
+- caption: Service page
+  url: http://jjburns.com/what-we-do/charitable-planning
+- caption: Team member page
+  url: http://jjburns.com/get-to-know-us/executive-team/jessica-evans
+- caption: Pattern Library
+  url: http://jjburns.com/assets/html/patterns/
+- caption: Layout Prototype
+  url: http://jjburns.com/assets/html/patterns/related.html
 ---
 
 {% include ahoy.html %}
 
-  <div class="banner banner_details" style="background-image: url(/images/projects/jj-burns.jpg); background-position: left;">
+  <div class="banner banner_details" style="background-image: url(/images/jj-burns/2048-wide/poster-b.jpg); background-position: left;">
     <div class="banner__title-container">
       <h1 class="banner__title banner__title_details">JJ Burns &amp; Company</h1>
       <p class="banner__with">with the team at <a href="http://fahrenheit.com">Fahrenheit Studio</a></p>
@@ -25,24 +36,7 @@ title: JJ Burns
       <li><a href="http://jjburns.com/assets/html/patterns/">Pattern library</a></li>
     </ul>
 
-    <figure>
-      <a href="http://jjburns.com"><img src="/images/jj-burns/Screen Shot 2017-09-07 at 1.06.00 AM.png" width="500" alt="JJ Burns &amp; Company" /></a>
-    </figure>
-    <figure>
-      <a href="http://jjburns.com/what-we-do/charitable-planning"><img src="/images/jj-burns/Screen Shot 2017-08-26 at 6.21.48 PM.png" width="500" alt="Service page" /></a>
-    </figure>
-    <figure>
-      <a href="http://jjburns.com/get-to-know-us/executive-team/jessica-evans"><img src="/images/jj-burns/Screen Shot 2017-08-26 at 6.22.32 PM.png" width="500" alt="Team member page" /></a>
-    </figure>
-    <figure>
-      <a href="http://jjburns.com/assets/html/patterns/"><img src="/images/jj-burns/Screen Shot 2017-09-07 at 1.07.51 AM.png" width="500" alt="Pattern Library" /></a>
-    </figure>
-    <figure>
-      <a href="http://jjburns.com/assets/html/patterns/related.html"><img src="/images/jj-burns/Screen Shot 2017-08-26 at 6.23.29 PM.png" width="500" alt="Layout Prototype" /></a>
-    </figure>
-
-
-
+    {% include figures.html %}
 
     <h2>Crew</h2>
 
@@ -63,10 +57,7 @@ title: JJ Burns
       <p><a href="https://barrelstrengthdesign.com">Ben Parizek</a></p>
     </div>
 
-    <figure id="robert">
-      <img src="/images/projects/jj-burns-cook.jpg" width="600" alt="Robert serving dinner to the production team" />
-      <figcaption>Robert serving dinner to the production team</figcaption>
-    </figure>
+    {% include figure-crew.html caption="Robert serving dinner to the production team" %}
 
     <h2>Tools we used</h2>
 
@@ -93,7 +84,7 @@ title: JJ Burns
 
   </div>
 
-  <a href="/fahrenheit" class="banner banner_next" style="background-image: url(/images/projects/fahrenheit.jpg)">
+  <a href="/fahrenheit" class="banner banner_next" style="background-image: url(/images/fahrenheit/2048-wide/poster-b.jpg)">
     <div class="banner__next-project-container">
       <h2 class="banner__next-project">Next project →</h2>
     </div>

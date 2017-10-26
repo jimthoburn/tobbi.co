@@ -1,0 +1,9 @@
+{% capture basepath %}/images/{{ page.url | split: "/" | last }}{% endcapture %}
+{% for figure in page.figures %}
+{% capture filename %}{{ forloop.index }}.png{% endcapture %}
+<figure>
+  <a href="{{ figure.url }}">
+    {% include image.html basepath=basepath filename=filename alt=figure.caption %}
+  </a>
+</figure>
+{% endfor %}

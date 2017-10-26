@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server '_site' --files '_site/*' --no-notify --no-open --https"
+    "start": "browser-sync start --server '_site' --files '_site/*' --no-notify --no-open --https",
+    "generate-images": "gulp"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/jimthoburn/tobbi.co#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.13"
+    "browser-sync": "^2.18.13",
+    "concurrent-transform": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-image-resize": "^0.12.0"
   }
 }

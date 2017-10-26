@@ -1,0 +1,12 @@
+<img
+  alt="{{ include.alt }}"
+  width="500"
+  src="{{ include.basepath }}/384-wide/{{ include.filename }}"
+  sizes="100vw"
+  srcset="
+    {{ include.basepath }}/384-wide/{{ include.filename }} 384w,
+    {{ include.basepath }}/512-wide/{{ include.filename }} 512w,
+    {{ include.basepath }}/768-wide/{{ include.filename }} 768w,
+    {{ include.basepath }}/1024-wide/{{ include.filename }} 1024w,
+    {{ include.basepath }}/1536-wide/{{ include.filename }} 1536w,
+    {{ include.basepath }}/2048-wide/{{ include.filename }} 2048w" />
