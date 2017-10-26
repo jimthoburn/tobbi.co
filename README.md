@@ -24,7 +24,7 @@ jekyll serve
 
 ## Using brower-sync
 
-I’m using [Node.js](https://nodejs.org) and [browser-sync](https://www.browsersync.io) to see changes without refreshing my browser, and to make it easy to use https locally. If you’d like to do that as well, here are some steps you can follow…
+I’m using [Node.js](https://nodejs.org) and [browser-sync](https://www.browsersync.io) to see changes without refreshing my browser, and to make it easy to use *https* locally. If you’d like to do that as well, here are some steps you can follow…
 
 1. Install [Node.js and NPM](https://nodejs.org/en/download/).
 
@@ -56,7 +56,7 @@ jekyll build --watch
 npm install
 ```
 
-3. Run the script that generates the images…
+3. Run the command…
 
 ```
 npm run generate-images
