@@ -51,14 +51,14 @@
     .container .screenshots {
       margin: 2.8em -1.4em;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-gap: 0.7em;
     }
     .container .screenshots figure {
       margin: 0;
       padding: 0;
-      width: calc(50vw - 0.35em);
-      height: calc(50vw - 0.35em);
+      width: 100vw;
+      height: 100vw;
       overflow: hidden;
     }
     .container .screenshots a {
@@ -66,8 +66,8 @@
     }
     .container .screenshots img {
       display: block;
-      width: 50vw;
-      height: 50vw;
+      width: 100vw;
+      height: 100vw;
       object-fit: cover;
       object-position: top right;
     }
@@ -83,7 +83,19 @@
 
     @media (min-width: 45em) {
       .container .screenshots {
+        grid-template-columns: 1fr 1fr;
         margin: 2.8em calc(-50vw + 16.5em);
+      }
+      .container .screenshots figure {
+        width: calc(50vw - 0.35em);
+        height: calc(50vw - 0.35em);
+      }
+      .container .screenshots img {
+        display: block;
+        width: 50vw;
+        height: 50vw;
+        object-fit: cover;
+        object-position: top right;
       }
     }
   }

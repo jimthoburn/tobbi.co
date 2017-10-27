@@ -2,7 +2,9 @@
   alt="{{ include.alt }}"
   width="500"
   src="{{ include.basepath }}/384-wide/{{ include.filename }}"
-  sizes="100vw"
+  sizes="150vw" {% comment %}
+                  SHIM: Assume the image will be wider than the viewport, since we’re scaling the images up to make them into squares
+                {% endcomment %}
   srcset="
     {{ include.basepath }}/384-wide/{{ include.filename }} 384w,
     {{ include.basepath }}/512-wide/{{ include.filename }} 512w,
