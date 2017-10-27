@@ -65,12 +65,12 @@
   }
 
   @supports (-webkit-initial-letter: 1) or (initial-letter: 1) {
-    .banner + .container p:first-child + p:first-letter {
+    .project-banner + .container p:first-child + p:first-letter {
       -webkit-initial-letter: 2;
       initial-letter: 2;
       margin-right: 0.25em;
     }
-    .banner + .container p:first-child + p a:first-letter {
+    .project-banner + .container p:first-child + p a:first-letter {
       -webkit-initial-letter: unset;
       initial-letter: unset;
       margin-right: unset;

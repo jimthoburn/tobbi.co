@@ -13,7 +13,7 @@
     background-size: 1.4em 1.4em;
     */
   }
-  .banner + .container p:first-child {
+  .project-banner + .container p:first-child {
     font-size: 1.2em;
     margin-bottom: 1.1666666667em;
   }
@@ -24,7 +24,7 @@
     .container:last-child {
       padding-bottom: 5.6em; /* double the usual padding */
     }
-    .banner + .container {
+    .project-banner + .container {
       padding-top: 1.4em;
     }
   }
@@ -35,7 +35,7 @@
     .container:last-child {
       padding-bottom: 5.6em;
     }
-    .banner + .container {
+    .project-banner + .container {
       padding-top: 2.8em;
     }
   }

@@ -1,0 +1,111 @@
+
+
+  /* =Project Summary
+  ----------------------------------------------- */
+  .project-list-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+
+    min-height: 40vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Make the.project-list-item taller on horizontal screens. */
+  @media (min-aspect-ratio: 1/1) {
+    .project-list-item {
+      min-height: 70vh;
+    }
+  }
+
+  .project-list-item:before {
+    content: "";
+    background: rgba(25, 25, 25, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .project-list-item__container {
+    bottom: 10%;
+    padding: 0.375em 1.4em;
+    position: relative;
+    left: auto;
+    text-align: center;
+  }
+
+
+  /* =Type
+  ----------------------------------------------- */
+  .project-list-item__title,
+  .project-list-item__company {
+    text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.375);
+    padding: 0.7rem 1.4rem;
+  }
+  .project-list-item__title {
+    margin-top: 0;
+    text-transform: inherit;
+    font-variant: inherit;
+    font-size: 1.75em;
+  }
+  .project-list-item__company {
+    margin-top: 0;
+    position: relative;
+    top: -1px;
+  }
+
+  @media (min-width: 45em) {
+    .project-list-item__title {
+      font-size: 4vmax;
+    }
+  }
+
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    .project-list-item__title {
+      /* --wave-outline-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
+
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 1em auto;
+
+      padding: 0 0.35em 0.35em;
+    }
+    .project-list-item__company {
+      margin-top: 0;
+      padding: 0.35em 0.7em 0;
+    }
+    @media (min-width: 22em) {
+      .project-list-item__company  {
+        padding: 0.35em 1em 0;
+      }
+    }
+    @media (min-width: 45em) {
+      .project-list-item__company {
+        padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
+      }
+    }
+  }
+
+  .project-list-item__container {
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .project-list-item__container:hover,
+  .project-list-item__container:active,
+  .project-list-item__container:focus {
+    background-color: rgb(40, 155, 215);
+  }
+

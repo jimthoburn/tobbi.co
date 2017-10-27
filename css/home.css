@@ -31,8 +31,8 @@
 
   /* =Projects
   ----------------------------------------------- */
-  .projects,
-  .projects > li {
+  .project-list,
+  .project-list > li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;

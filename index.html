@@ -9,35 +9,45 @@ class: home
 projects:
 - name: GOOD Fest
   company: Google &amp; GOOD Worldwide
+  url: /good-fest
   image: /images/good-fest/2048-wide/poster-b.jpg
   image_style: "background-position: bottom;"
 - name: 4th of July <span class="phrase">at Grand Park</span>
   company: The Music Center
+  url: /grand-park
   image: /images/grand-park/2048-wide/poster-a.jpg
 - name: 10 Days of Lending
   company: PayPal, Kiva, &amp; GOOD Worldwide
+  url: /kiva
   image: /images/kiva/2048-wide/poster-c.jpg
 - name: GOOD Worldwide
   company: Type/Code
+  url: /good
   image: /images/good/2048-wide/poster.jpg
 - name: Food Oasis <span class="phrase">Los Angeles</span>
   company: <span class="phrase">Code for America</span>
+  url: /food-oasis
   image: /images/food-oasis/2048-wide/poster-a.jpg
 - name: CTZN App
   company: GOOD Worldwide
+  url: /ctzn-app
   image: /images/ctzn-app/2048-wide/poster.jpg
   image_style: "background-position: 50% 25%;"
 - name: GOOD Community
+  url: /good-community
   image: /images/good-community/2048-wide/poster-b.jpg
   image_style: "background-position: bottom;"
 - name: OK the Store
   company: <span class="phrase">Barrel Strength Design</span>
+  url: /ok-the-store
   image: /images/ok-the-store/2048-wide/poster-a.jpg
 - name: JJ Burns &amp; Company
   company: <span class="phrase">Fahrenheit Studio</span>
+  url: /jj-burns
   image: /images/jj-burns/2048-wide/poster-a.jpg
   image_style: "background-position: 2% 50%;"
 - name: Fahrenheit Studio
+  url: /fahrenheit
   image: /images/fahrenheit/2048-wide/poster-a.jpg
 ---
 
@@ -69,14 +79,16 @@ projects:
 
   </div>
 
-  <ul class="projects">
+  <ul class="project-list">
     {% for project in page.projects %}
     <li>
-      <a href="/good-fest" class="banner banner_list" style="background-image: url({{ project.image }}); {{ project.image_style }}">
-        <div class="banner__title-container banner__title-container_link banner__title-container_list">
-          <h3 class="banner__title banner__title_link">{{ project.name }}</h3>
+      <a href="{{ project.url }}"
+        style="background-image: url({{ project.image }}); {{ project.image_style }}"
+        class="project-list-item">
+        <div class="project-list-item__container">
+          <h3 class="project-list-item__title">{{ project.name }}</h3>
           {% if project.company %}
-          <p class="banner__with banner__with_link">{{ project.company }}</p>
+          <p class="project-list-item__company">{{ project.company }}</p>
           {% endif %}
         </div>
       </a>
