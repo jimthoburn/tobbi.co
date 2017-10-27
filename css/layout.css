@@ -119,8 +119,16 @@
       vertical-align: top;
       width: 16.5em;
     }
-    .container > .screenshots ~ div:nth-of-type(2n+1) {
+    /* SHIM: Make the right column narrow so it won’t wrap */
+    .container > .screenshots ~ div + div,
+    .container > .screenshots ~ div + div + div + div,
+    .container > .screenshots ~ div + div + div + div + div + div {
       width: 12em;
+    }
+    .container > .screenshots ~ div + div + div,
+    .container > .screenshots ~ div + div + div + div + div,
+    .container > .screenshots ~ div + div + div + div + div + div + div {
+      width: 16.5em;
     }
   }
   .container > .screenshots ~ div ul,
