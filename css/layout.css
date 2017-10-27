@@ -44,24 +44,71 @@
   }
 
 
+  /* =Screenshot
+  ----------------------------------------------- */
+  @supports (display: grid) and (width: calc(1em)) and (object-fit: cover) {
+
+    .container .screenshots {
+      margin: 2.8em -1.4em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0.7em;
+    }
+    .container .screenshots figure {
+      margin: 0;
+      padding: 0;
+      width: calc(50vw - 0.35em);
+      height: calc(50vw - 0.35em);
+      overflow: hidden;
+    }
+    .container .screenshots a {
+      display: block;
+    }
+    .container .screenshots img {
+      display: block;
+      width: 50vw;
+      height: 50vw;
+      object-fit: cover;
+      object-position: top right;
+    }
+    .container .screenshots figure:nth-child(2n+1) img {
+      object-position: bottom left;
+    }
+    .container .screenshots figure:nth-child(3n+1) img {
+      object-position: bottom right;
+    }
+    .container .screenshots figure:nth-child(5n+1) img {
+      object-position: top left;
+    }
+
+    @media (min-width: 45em) {
+      .container .screenshots {
+        margin: 2.8em calc(-50vw + 16.5em);
+      }
+    }
+  }
+
+
   /* =Crew & Tools
   ----------------------------------------------- */
-  .container > div a {
+  .container > div:not(.screenshots) a {
     background-image: none;
     color: inherit;
     text-decoration: none;
   }
 
   @media (min-width: 25em) {
-    .container > div {
+    .container > div:not(.screenshots) {
       display: inline-block;
       vertical-align: top;
+      width: 16.5em;
+    }
+    .container > div:not(.screenshots):nth-of-type(2n+1) {
       width: 12em;
-      margin-right: 2.8em;
     }
   }
-  .container > div ul,
-  .container > div li {
+  .container > div:not(.screenshots) ul,
+  .container > div:not(.screenshots) li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;

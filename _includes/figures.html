@@ -1,4 +1,5 @@
 {% capture basepath %}/images/{{ page.url | split: "/" | last }}{% endcapture %}
+<div class="screenshots">
 {% for figure in page.figures %}
 {% capture filename %}{{ forloop.index }}.png{% endcapture %}
 <figure>
@@ -7,3 +8,4 @@
   </a>
 </figure>
 {% endfor %}
+</div>
