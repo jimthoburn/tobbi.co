@@ -107,24 +107,24 @@
 
   /* =Crew & Tools
   ----------------------------------------------- */
-  .container > div:not(.screenshots) a {
+  .container > .screenshots ~ div a {
     background-image: none;
     color: inherit;
     text-decoration: none;
   }
 
   @media (min-width: 25em) {
-    .container > div:not(.screenshots) {
+    .container > .screenshots ~ div {
       display: inline-block;
       vertical-align: top;
       width: 16.5em;
     }
-    .container > div:not(.screenshots):nth-of-type(2n+1) {
+    .container > .screenshots ~ div:nth-of-type(2n+1) {
       width: 12em;
     }
   }
-  .container > div:not(.screenshots) ul,
-  .container > div:not(.screenshots) li {
+  .container > .screenshots ~ div ul,
+  .container > .screenshots ~ divli {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
