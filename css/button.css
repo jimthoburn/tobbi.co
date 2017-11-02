@@ -55,5 +55,21 @@
   .action li {
     display: inline-block;
     margin-right: 0.35em;
-    margin-bottom: 0.35em;
+  }
+
+  ul.action {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .action li {
+    flex-grow: 1;
+  }
+  .action li a {
+    display: block;
+    text-align: center;
+  }
+  @media (min-width: 45em) {
+    .action li {
+      flex-basis: 45%;
+    }
   }
