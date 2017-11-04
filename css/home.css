@@ -17,7 +17,7 @@
     line-height: inherit;
     margin: 0;
   }
-  .introduction h2 {
+  .introduction h2:first-of-type {
     font-size: 2em;
     line-height: 1;
     margin-top: 0.7em;
