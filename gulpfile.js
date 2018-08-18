@@ -25,7 +25,8 @@ const FOLDER_NAMES = [
   "grand-park",
   "jj-burns",
   "kiva",
-  "ok-the-store"
+  "ok-the-store",
+  "la2050"
 ];
 
 function generateImages(size, imagePath) {
