@@ -61,13 +61,26 @@
       <p>alpha: <span id="alpha"></span></p>
       <p>beta: <span id="beta"></span></p>
       <p>gamma: <span id="gamma"></span></p>
+      */
 
+      /*
       document.getElementById("alpha").innerHTML = Math.round(alpha);
       document.getElementById("beta").innerHTML  = Math.round(beta);
       document.getElementById("gamma").innerHTML = Math.round(gamma);
       */
 
-      if (gamma > 35) {
+      const THRESHOLD = 35
+
+      if (gamma > THRESHOLD) {
+        document.documentElement.style.setProperty('--device-gamma', 1);
+      } else if (gamma < THRESHOLD * -1) {
+        document.documentElement.style.setProperty('--device-gamma', -1);
+      } else {
+        document.documentElement.style.setProperty('--device-gamma', 0);
+      }
+
+      /*
+      if (gamma > THRESHOLD) {
         document.documentElement.style.setProperty('--device-gamma', (beta > 90) ? -1 : 1);
       } else if (gamma < -35) {
         document.documentElement.style.setProperty('--device-gamma', (beta > 90) ? 1 : -1);
@@ -75,13 +88,14 @@
         document.documentElement.style.setProperty('--device-gamma', 0);
       }
 
-      if (beta > 35) {
+      if (beta > THRESHOLD) {
         document.documentElement.style.setProperty('--device-beta', -1);
-      } else if (beta < -35) {
+      } else if (betaa < THRESHOLD * -1) {
         document.documentElement.style.setProperty('--device-beta', 1);
       } else {
         document.documentElement.style.setProperty('--device-beta', 0);
       }
+      */
 
       throttle = undefined;
     };

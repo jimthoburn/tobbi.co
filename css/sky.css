@@ -323,7 +323,10 @@
     display: block;
     position: relative;
     transition: transform 4s;
+    transform: translateX(calc(var(--ship-position) * 15%));
+    /*
     transform: translateX(calc(var(--ship-position) * 15% - var(--ship-position) * 1.8666666667em));
+    */
 
     /*
     left: 0;
