@@ -14,8 +14,8 @@
     document.documentElement.style.setProperty('--cloud-delay-five',  getRandomCloudDelay() + 's');
 
     function updateTime() {
-      var now = new Date();
-      var hours = now.getHours() + (now.getMinutes() / 60);
+      let now = new Date();
+      let hours = now.getHours() + (now.getMinutes() / 60);
 
       if (hours >= 18 || hours < 6) {
         document.documentElement.classList.add('night');
@@ -29,14 +29,14 @@
         hours = hours - 6;
       }
 
-      var sunPosition = (hours % 12) * 60 * 60; // The animation only supports 0-12 hours, at present
+      let sunPosition = (hours % 12) * 60 * 60; // The animation only supports 0-12 hours, at present
                                                 // Adjust by six hours, so the sun will be half-way through
                                                 // the animation (instead of at the very end) at noon.
 
       document.documentElement.style.setProperty('--sun-position', sunPosition);
 
-      var sixHours = 6 * 60 * 60; // 21600 seconds
-      var sunVerticalRange = 4.5; // The sun can move up or down, within the range from zero through 4.5em
+      let sixHours = 6 * 60 * 60; // 21600 seconds
+      let sunVerticalRange = 4.5; // The sun can move up or down, within the range from zero through 4.5em
 
       if (sunPosition >= sixHours) {
         document.documentElement.style.setProperty('--sun-position-vertical', ((sunPosition / sixHours * sunVerticalRange) - sunVerticalRange) + 'em');
@@ -53,60 +53,58 @@
   (function() {
 
     function _onOrientationChange(e) {
-      var alpha = e.alpha;
-      var beta  = e.beta;
-      var gamma = e.gamma;
+      const ALPHA = e.alpha;
+      const BETA  = e.beta;
+      const GAMMA = e.gamma;
 
-      /*
-      <p>alpha: <span id="alpha"></span></p>
-      <p>beta: <span id="beta"></span></p>
-      <p>gamma: <span id="gamma"></span></p>
-      */
+      // You can test this by holding your device above you and facing the screen toward you
+      const DEVICE_UPSIDE_DOWN = (BETA > 90)
 
-      /*
-      document.getElementById("alpha").innerHTML = Math.round(alpha);
-      document.getElementById("beta").innerHTML  = Math.round(beta);
-      document.getElementById("gamma").innerHTML = Math.round(gamma);
-      */
+      // To help avoid changing the animation direction too often
+      const THRESHOLD = 25
 
-      const THRESHOLD = 35
-
-      if (gamma > THRESHOLD) {
-        document.documentElement.style.setProperty('--device-gamma', 1);
-      } else if (gamma < THRESHOLD * -1) {
-        document.documentElement.style.setProperty('--device-gamma', -1);
+      // Device is in portrait orientation
+      if (GAMMA > THRESHOLD) {
+        document.documentElement.style.setProperty('--device-gamma', DEVICE_UPSIDE_DOWN ? -1 : 1);
+      } else if (GAMMA < THRESHOLD * -1) {
+        document.documentElement.style.setProperty('--device-gamma', DEVICE_UPSIDE_DOWN ? 1 : -1);
       } else {
         document.documentElement.style.setProperty('--device-gamma', 0);
       }
 
-      /*
-      if (gamma > THRESHOLD) {
-        document.documentElement.style.setProperty('--device-gamma', (beta > 90) ? -1 : 1);
-      } else if (gamma < -35) {
-        document.documentElement.style.setProperty('--device-gamma', (beta > 90) ? 1 : -1);
-      } else {
-        document.documentElement.style.setProperty('--device-gamma', 0);
-      }
-
-      if (beta > THRESHOLD) {
+      // Device is in landscape orientation
+      if (BETA > THRESHOLD) {
         document.documentElement.style.setProperty('--device-beta', -1);
-      } else if (betaa < THRESHOLD * -1) {
+      } else if (BETA < THRESHOLD * -1) {
         document.documentElement.style.setProperty('--device-beta', 1);
       } else {
         document.documentElement.style.setProperty('--device-beta', 0);
       }
-      */
 
       throttle = undefined;
     };
-
-    var throttle = undefined;
+    
+    // Wait for the orientation to be stable and then respond
+    const WAIT_UNTIL_SECONDS = 1/10;
+    let throttle = undefined;
     function onOrientationChange(e) {
       if (throttle !== undefined) return;
       throttle = setTimeout(function() {
         _onOrientationChange(e);
-      }, 100);
+      }, WAIT_UNTIL_SECONDS * 1000);
     }
 
     window.addEventListener("deviceorientation", onOrientationChange, false);
+
+    /* For debugging
+    
+    <p>alpha: <span id="alpha"></span></p>
+    <p>beta: <span id="beta"></span></p>
+    <p>gamma: <span id="gamma"></span></p>
+
+    document.getElementById("alpha").innerHTML = Math.round(ALPHA);
+    document.getElementById("beta").innerHTML  = Math.round(BETA);
+    document.getElementById("gamma").innerHTML = Math.round(GAMMA);
+    
+    */
   })();
