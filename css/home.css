@@ -61,7 +61,8 @@
     padding-left: 0;
   }
   .social li {
-    display: inline;
+    display: inline-block;
     margin-right: 0.7em;
+    margin-bottom: 0.7em;
   }
 
