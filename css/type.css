@@ -14,8 +14,15 @@
     /* Wrap long words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
+  
+    font-size: calc(1vw + 1em);
   }
 
+  .ampersand {
+    color: rgb(40, 155, 215);
+  }
+
+  /*
   @media (min-width: 300px) {
     body {
       font-size: 112.5%;
@@ -46,6 +53,7 @@
       font-size: 225%;
     }
   }
+  */
 
   /* “Goudy Bookletter 1911” only contains a normal face */
   b, strong {

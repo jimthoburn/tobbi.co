@@ -18,11 +18,13 @@
     --ship-position: var(--device-gamma);
   }
 
+  /*
   @media (orientation: landscape) {
     :root {
       --ship-position: var(--device-beta);
     }
   }
+  */
 
 
 

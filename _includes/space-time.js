@@ -52,38 +52,87 @@
 
   (function() {
 
+    // EXPERIMENTAL: These properties have only been tested in WebKit on iOS
+
     function _onOrientationChange(e) {
       const ALPHA = e.alpha;
       const BETA  = e.beta;
       const GAMMA = e.gamma;
 
-      // You can test this by holding your device above you and facing the screen toward you
-      const DEVICE_UPSIDE_DOWN = (BETA > 90)
-
-      // To help avoid changing the animation direction too often
+      // To avoid changing the animation direction too often
       const THRESHOLD = 25
 
-      // Device is in portrait orientation
+      // You can test these properties by holding your device
+      // above you and facing the screen toward you
+      const PORTRAIT_FACING_DOWN  = (BETA > 90);
+      // const LANDSCAPE_FACING_DOWN = (GAMMA < 0);
+
+      // You can test this property tilting your device until it’s in landscape
+      // mode, positioning the top of the device so it’s on the right–
+      // and then repositioning the top of the device so it’s on the left
+      // const DEVICE_IS_LANDSCAPE_AND_RESTING_ON_SIDE_A = (ALPHA > 180);
+
+      function getGamma(value) {
+        if (PORTRAIT_FACING_DOWN) value = value * -1;
+        return value;
+      }
+      // function getBeta(value) {
+      //   if (DEVICE_IS_LANDSCAPE_AND_RESTING_ON_SIDE_A && LANDSCAPE_FACING_DOWN) value = value * -1;
+      //   return value;
+      // }
+
+      // Portrait orientation
+      
+      // Tilted right
       if (GAMMA > THRESHOLD) {
-        document.documentElement.style.setProperty('--device-gamma', DEVICE_UPSIDE_DOWN ? -1 : 1);
+        document.documentElement.style.setProperty('--device-gamma', getGamma(1));
+        
+      // Tilted left
       } else if (GAMMA < THRESHOLD * -1) {
-        document.documentElement.style.setProperty('--device-gamma', DEVICE_UPSIDE_DOWN ? 1 : -1);
+        document.documentElement.style.setProperty('--device-gamma', getGamma(-1));
+
+      // Neutral
       } else {
         document.documentElement.style.setProperty('--device-gamma', 0);
       }
 
-      // Device is in landscape orientation
+      /*
+      // Landscape orientation
+      
+      // Tilted right
       if (BETA > THRESHOLD) {
-        document.documentElement.style.setProperty('--device-beta', -1);
+        document.documentElement.style.setProperty('--device-beta', getBeta(1));
+      
+      // Tilted left
       } else if (BETA < THRESHOLD * -1) {
-        document.documentElement.style.setProperty('--device-beta', 1);
+        document.documentElement.style.setProperty('--device-beta', getBeta(-1));
+      
+      // Neutral
       } else {
         document.documentElement.style.setProperty('--device-beta', 0);
       }
+      */
 
       throttle = undefined;
+
+
+      // document.getElementById("alpha").innerHTML = Math.round(ALPHA);
+      // document.getElementById("beta").innerHTML  = Math.round(BETA);
+      // document.getElementById("gamma").innerHTML = Math.round(GAMMA);
+      /* For debugging
+      
+      <p>alpha: <span id="alpha"></span></p>
+      <p>beta: <span id="beta"></span></p>
+      <p>gamma: <span id="gamma"></span></p>
+
+      document.getElementById("alpha").innerHTML = Math.round(ALPHA);
+      document.getElementById("beta").innerHTML  = Math.round(BETA);
+      document.getElementById("gamma").innerHTML = Math.round(GAMMA);
+      
+      */
     };
-    
+
+
     // Wait for the orientation to be stable and then respond
     const WAIT_UNTIL_SECONDS = 1/10;
     let throttle = undefined;
@@ -95,16 +144,5 @@
     }
 
     window.addEventListener("deviceorientation", onOrientationChange, false);
-
-    /* For debugging
     
-    <p>alpha: <span id="alpha"></span></p>
-    <p>beta: <span id="beta"></span></p>
-    <p>gamma: <span id="gamma"></span></p>
-
-    document.getElementById("alpha").innerHTML = Math.round(ALPHA);
-    document.getElementById("beta").innerHTML  = Math.round(BETA);
-    document.getElementById("gamma").innerHTML = Math.round(GAMMA);
-    
-    */
   })();
