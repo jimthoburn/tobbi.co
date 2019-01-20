@@ -77,10 +77,12 @@
       -webkit-initial-letter: 2;
       initial-letter: 2;
       margin-right: 0.25em;
+      color: rgb(40, 155, 215);
     }
     .project-header + .container p:first-child + p a:first-letter {
       -webkit-initial-letter: unset;
       initial-letter: unset;
       margin-right: unset;
+      color: unset;
     }
   }
