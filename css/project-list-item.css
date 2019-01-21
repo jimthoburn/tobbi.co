@@ -58,6 +58,7 @@
     text-transform: inherit;
     font-variant: inherit;
     font-size: 1.75em;
+    color: inherit;
   }
   .project-list-item__company {
     margin-top: 0;

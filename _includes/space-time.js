@@ -1,17 +1,19 @@
   (function() {
 
     // Generate a random number between 1 and 1000
-    function getRandomCloudDelay() {
+    function getRandomDelay() {
 
       // KUDOS https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript#answer-4960020
       return Math.floor(Math.random() * 1000) + 1;
     }
 
-    document.documentElement.style.setProperty('--cloud-delay-one',   getRandomCloudDelay() + 's');
-    document.documentElement.style.setProperty('--cloud-delay-two',   getRandomCloudDelay() + 's');
-    document.documentElement.style.setProperty('--cloud-delay-three', getRandomCloudDelay() + 's');
-    document.documentElement.style.setProperty('--cloud-delay-four',  getRandomCloudDelay() + 's');
-    document.documentElement.style.setProperty('--cloud-delay-five',  getRandomCloudDelay() + 's');
+    document.documentElement.style.setProperty('--cloud-delay-one',   getRandomDelay() + 's');
+    document.documentElement.style.setProperty('--cloud-delay-two',   getRandomDelay() + 's');
+    document.documentElement.style.setProperty('--cloud-delay-three', getRandomDelay() + 's');
+    document.documentElement.style.setProperty('--cloud-delay-four',  getRandomDelay() + 's');
+    document.documentElement.style.setProperty('--cloud-delay-five',  getRandomDelay() + 's');
+    
+    document.documentElement.style.setProperty('--sun-delay',  getRandomDelay() + 's');
 
     function updateTime() {
       let now = new Date();

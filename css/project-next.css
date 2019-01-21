@@ -89,6 +89,7 @@
     margin-top: 0;
     text-transform: inherit;
     font-variant: inherit;
+    color: inherit;
   }
   .project-next__title {
     font-size: 1.75em;

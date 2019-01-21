@@ -8,6 +8,8 @@
     --cloud-delay-three : 691s;
     --cloud-delay-four  : 775s;
     --cloud-delay-five  : 168s;
+    
+    --sun-delay: 168s;
 
     --sun-position: calc(3 * 60 * 60);
     --sun-position-vertical: 1.375em;
@@ -120,6 +122,15 @@
     }
   }
 
+  @keyframes rotating {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .sun svg {
     width: 3.5em;
     height: 3.5em;
@@ -142,6 +153,14 @@
     animation-delay: calc(-3 * 60 * 60s);
     animation-delay: var(--sun-position);
     */
+    animation-name: rotating;
+    animation-duration: 640s; 
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+
+    animation-delay: -820s;
+    animation-delay: calc(var(--sun-delay) - 1820s);
 
     transition: top 0.2s, left 0.2s, margin-left 0.2s;
     top: 0.375em;
