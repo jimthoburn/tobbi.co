@@ -82,9 +82,7 @@
     display: table;
   } */
   
-  .home > #services h1,
-  .home > #projects h1,
-  .home > #hello    h1 {
+  .home > *:not(.introduction) > h1 {
     color: rgb(40, 155, 215);
   }
   
@@ -143,6 +141,7 @@
     list-style: none;
     margin-left: 0;
     padding-left: 0;
+    text-align: center;
   }
   .social li {
     display: inline-block;
