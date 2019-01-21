@@ -79,17 +79,17 @@
   }
   
   @media (min-width: calc(33em + 3.5em + 3.5em)) {
-    #services {
+    /* #services {
       padding-top: 25vh;
-    }
+    } */
     .services li {
       display: grid;
       grid-template-columns: min-content auto;
       grid-column-gap: 1.4em;
       grid-row-gap: 0;
       margin-right:  calc(0.7em * 16);
-      margin-top: 25vh;
-      margin-bottom: 25vh;
+      /* margin-top: 25vh;
+      margin-bottom: 25vh; */
     }
     .services img {
       grid-row: 1/3;
