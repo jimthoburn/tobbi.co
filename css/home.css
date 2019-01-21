@@ -74,6 +74,7 @@
   } */
   
   .home > #services h1,
+  .home > #projects h1,
   .home > #hello    h1 {
     color: rgb(40, 155, 215);
   }

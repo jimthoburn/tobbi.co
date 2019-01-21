@@ -67,28 +67,8 @@ projects:
 
     <p class="action"><a href="#hello">Say hello</a></p>
 
-    <p>If you’re building a web site or application, I can help you see your product through from <a href="#services" aria-label="Services">idea to production</a>.</p>
-
-    <p>Here are some <span class="phrase">projects and teams</span> <span class="phrase">I’ve worked with…</span></p>
-
+    <p>If you’re building a web site or application, I can help you see your project through from idea to production.</p>
   </div>
-
-  <ul class="project-list">
-    {% for project in page.projects %}
-    <li>
-      <a href="{{ project.url }}"
-        style="background-image: url({{ project.image }}); {{ project.image_style }}"
-        class="project-list-item">
-        <div class="project-list-item__container">
-          <h3 class="project-list-item__title">{{ project.name }}</h3>
-          {% if project.company %}
-          <p class="project-list-item__company">{{ project.company }}</p>
-          {% endif %}
-        </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
 
   <div class="container" id="services">
     <h1>Services</h1>
@@ -109,7 +89,7 @@ projects:
       <li>
         <img src="/images/icons/nounproject/lastspark/wheel.svg" width="100" height="100" alt="" />
         <h2>User interfaces</h2>
-        <p>Fast, robust, production-ready code <span class="ampersand">&amp;</span> style–responsive and accessible to anyone in your audience–built with care and industry best practices. <a href="http://www.goodinc.com/about/philosophy" aria-label="example universal design">See an example</a></p>
+        <p>Fast, robust, production-ready code <span class="ampersand">&amp;</span> style–responsive and accessible to anyone in your audience–built with care and industry best practices. <a href="http://www.goodinc.com/project/togetherthere_" aria-label="example user interface">See an example</a></p>
       </li>
       <li>
         <img src="/images/icons/nounproject/lastspark/treasure.svg" width="100" height="100" alt="" />
@@ -119,7 +99,7 @@ projects:
       <li>
         <img src="/images/icons/nounproject/lastspark/ship.svg" width="100" height="100" alt="" />
         <h2>Production sites</h2>
-        <p>Low-maintenance, static web sites and applications–that can be served with high availability, performance and security–along with any tools and services you need to run a successful product. <a href="https://tobbi.co/la2050/" aria-label="example static web site">See an example</a></p>
+        <p>Low-maintenance, static web sites and applications–that can be served with high availability, performance and security–along with any tools and services you need to run a successful project. <a href="https://tobbi.co/la2050/" aria-label="case study for a static web site">Read a case study</a></p>
       </li>
     </ul>
 
@@ -138,6 +118,26 @@ projects:
     -->
   </div>
 
+  <div class="container" id="projects">
+    <h1>Example projects</h1>
+  </div>
+  
+  <ul class="project-list">
+    {% for project in page.projects %}
+    <li>
+      <a href="{{ project.url }}"
+        style="background-image: url({{ project.image }}); {{ project.image_style }}"
+        class="project-list-item">
+        <div class="project-list-item__container">
+          <h3 class="project-list-item__title">{{ project.name }}</h3>
+          {% if project.company %}
+          <p class="project-list-item__company">{{ project.company }}</p>
+          {% endif %}
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
   <div class="container" id="hello">
 
     <h1>Say hello!</h1>
