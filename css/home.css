@@ -3,7 +3,12 @@
   /* =Home
   ----------------------------------------------- */
   .home > .container:last-child {
-    padding-bottom: 5.6em;
+    padding-bottom: 1.4em;
+  }
+  @media (min-width: 40em) {
+    .home > .container:last-child {
+      padding-bottom: 5.6em;
+    }
   }
 
 
@@ -83,7 +88,7 @@
     color: rgb(40, 155, 215);
   }
   
-  @media (min-width: calc(33em + 3.5em + 3.5em)) {
+  @media (min-width: 40em) {
     #services {
       padding-top: calc(0.7em * 4);
     }
