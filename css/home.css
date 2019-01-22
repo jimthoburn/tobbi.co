@@ -140,8 +140,9 @@
 
   /* =Hello
   ----------------------------------------------- */
-  .home #hello .action {
+  .icons .action {
     margin-top: 4.2em;
+    margin-bottom: 4.2em;
   }
 
 
@@ -173,7 +174,14 @@
   .home > .icons h1 {
     margin-top: 0;
     color: inherit;
+    font-size: 5vmax;
   }
+  .icons img {
+    dispay: inline-block;
+    width: calc(0.7em * 4);
+    height: calc(0.7em * 4);
+  }
+
   .home > .mission ul,
   .home > .mission li {
     list-style: none;
@@ -188,11 +196,6 @@
     color: rgb(40, 155, 215);
     display: block;
     text-align: center;
-  }
-  .icons img {
-    dispay: inline-block;
-    width: calc(0.7em * 4);
-    height: calc(0.7em * 4);
   }
 
 
