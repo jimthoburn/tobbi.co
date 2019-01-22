@@ -85,10 +85,17 @@
   .home > *:not(.introduction) > h1 {
     color: rgb(40, 155, 215);
   }
+
+  .services li:nth-child(2n) {
+    text-align: right;
+  }
+  .services li:nth-child(2n) img {
+    margin-left: auto;
+  }
   
   @media (min-width: 40em) {
     #services {
-      padding-top: calc(0.7em * 4);
+      padding-top: calc(0.7em * 8);
     }
     .services li {
       display: grid;
@@ -96,7 +103,7 @@
       grid-column-gap: 1.4em;
       grid-row-gap: 0;
       margin-right: calc(0.7em * 8);
-      margin-top: calc(0.7em * 4);
+      margin-top: calc(0.7em * 8);
       margin-bottom: calc(0.7em * 4);
     }
     .services img {
@@ -131,6 +138,13 @@
   }
 
 
+  /* =Hello
+  ----------------------------------------------- */
+  .home #hello .action {
+    margin-top: 4.2em;
+  }
+
+
   /* =Social
   ----------------------------------------------- */
   .social {
@@ -145,16 +159,47 @@
   }
   .social li {
     display: inline-block;
-    margin-right: 0.7em;
+    margin-right: 0.35em;
     margin-bottom: 0.7em;
+    margin-left: 0.35em;
+  }
+
+
+  /* =Icons
+  ----------------------------------------------- */
+  .home > .icons {
+    text-align: center;
+  }
+  .home > .icons h1 {
+    margin-top: 0;
+    color: inherit;
+  }
+  .home > .mission ul,
+  .home > .mission li {
+    list-style: none;
+  }
+  .home > .mission ul {
+    margin-top: 1.4em;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .home > .mission li + li::before {
+    content: "❦";
+    color: rgb(40, 155, 215);
+    display: block;
+    text-align: center;
+  }
+  .icons img {
+    dispay: inline-block;
+    width: calc(0.7em * 4);
+    height: calc(0.7em * 4);
   }
 
 
   /* =Credits
   ----------------------------------------------- */
-  .credit {
+  .home .credit {
     font-size: 0.75em;
-    text-align: right;
     text-align: center;
   }
 
