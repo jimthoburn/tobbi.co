@@ -15,14 +15,42 @@
     
     document.documentElement.style.setProperty('--sun-delay',  getRandomDelay() + 's');
 
+    function updateTheme() {
+
+      // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
+      if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('night');
+      } else if (matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.classList.remove('night');
+      }
+    }
+
     function updateTime() {
       let now = new Date();
       let hours = now.getHours() + (now.getMinutes() / 60);
 
-      if (hours >= 18 || hours < 6) {
-        document.documentElement.classList.add('night');
-      } else {
-        document.documentElement.classList.remove('night');
+      let hasNoColorSchemePreference = true;
+
+      // If dark mode is supported
+      // https://web.dev/prefers-color-scheme/
+      if (matchMedia('(prefers-color-scheme)').media !== 'not all') {
+
+        // If the user has selected light or dark
+        if (matchMedia('(prefers-color-scheme: light)').matches ||
+            matchMedia('(prefers-color-scheme: dark)').matches) {
+          hasNoColorSchemePreference = false;
+        }
+      }
+
+      // If the user hasn’t chosen dark or light mode
+      if (hasNoColorSchemePreference) {
+
+        // Choose a theme based on the time of day
+        if (hours >= 18 || hours < 6) {
+          document.documentElement.classList.add('night');
+        } else {
+          document.documentElement.classList.remove('night');
+        }
       }
 
       if (hours < 6) {
@@ -49,7 +77,9 @@
 
     setInterval(updateTime, 60 * 1000); // Once per minute
     updateTime();
-
+    updateTheme();
+    
+    matchMedia('(prefers-color-scheme: dark)').addListener(updateTheme);
   })();
 
   (function() {
