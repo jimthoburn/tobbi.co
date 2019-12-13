@@ -23,9 +23,9 @@ Here are a few ways you can improve the experience a user has while images are l
 * Show a preview of each image
 * Make image descriptions available
 
-You can see a demo of these techniques by switching on _network throttling_ in the developer tools for [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Throttling) or [Chrome](https://developers.google.com/web/tools/chrome-devtools/network/), and then visiting this URL:
+You can see a [demo of these techniques](https://pictures.tobbi.co/wildflowers/) by switching on _network throttling_ in the developer tools for [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Throttling) or [Chrome](https://developers.google.com/web/tools/chrome-devtools/network/), and then visiting this URL:
 
-https://pictures.tobbi.co/wildflowers/
+[Wildflowers of Joshua Tree, image loading demo](https://pictures.tobbi.co/wildflowers/)
 
 ![Network throttling in the developer tools for Firefox](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)
 
@@ -37,7 +37,7 @@ This may make the first few images a user is looking at load more quickly–part
 
 You can easily begin using the lazy loading technique, now that it’s built into the web platform:
  
-https://css-tricks.com/native-lazy-loading/
+[Native Lazy Loading on CSS Tricks](https://css-tricks.com/native-lazy-loading/)
 
 ```html
 <img loading="lazy" />
@@ -45,13 +45,13 @@ https://css-tricks.com/native-lazy-loading/
 
 And if it’s not yet implemented in a browser that you feel is important to your audience, you can manually apply the technique by following a guide like this one, from Google:
 
-https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+[Lazy Loading Images and Video, Web Fundamentals by Google](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/)
 
 ## Give images an [intrinsic](https://twitter.com/jensimmons/status/980980521848127488) size
 
 This will help browsers to lay out the page completely while the images are still loading, since it will know how wide and tall each image should be.
 
-https://wiki.developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping
+[Mapping the width and height attributes of media container elements to their aspect-ratio, MDN Web Docs by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
 
 ```html
 <img width="1500" height="1000" />
@@ -81,7 +81,7 @@ If you have a lot of images, you can use a tool like [node-exif](https://www.npm
 
 Similar to lazy loading, this will make images load noticeably faster on slow connections and saves bandwidth for users and servers (and perhaps also some dollars for your audience and yourself).
 
-https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+[Responsive images, MDN Web Docs by Mozilla](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 
 ```html
 <img srcset="
@@ -97,7 +97,7 @@ You can use a tool like [GraphicsMagick](https://github.com/topics/graphicsmagic
 
 This practice is about making images _appear_ to load faster, by showing a colorful preview of each image while it’s loading.
 
-https://css-tricks.com/the-blur-up-technique-for-loading-background-images/
+[The “Blur Up” Technique for Loading Background Images on CSS Tricks](https://css-tricks.com/the-blur-up-technique-for-loading-background-images/)
 
 If you’re already creating differently sized images for use in the [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) technique, you can easily generate one more tiny sized image for use as a preview. I found that a 16 pixel wide image works well–especially after it’s optimized with a tool like [ImageOptim](https://imageoptim.com).
 
@@ -135,7 +135,7 @@ If you have a lot of images, you may be able to get a head start writing descrip
 
 Here’s a project on GitHub that makes use of each of these techniques, that you can use a reference or starting point:
 
-https://github.com/jimthoburn/picture-gallery
+[Picture Gallery 🖼 ✨ on GitHub](https://github.com/jimthoburn/picture-gallery)
 
 The project also contains example code for automatically [generating images](https://github.com/jimthoburn/picture-gallery/blob/master/create/images.js) and [_width_ and _height_](https://github.com/jimthoburn/picture-gallery/blob/master/create/albums.js) data.
 
