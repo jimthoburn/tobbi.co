@@ -27,7 +27,7 @@ const FOLDER_NAMES = [
   "kiva",
   "ok-the-store",
   "la2050",
-  "writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web"
+  "writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web"
 ];
 
 function generateImages(size, imagePath) {

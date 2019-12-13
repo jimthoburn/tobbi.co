@@ -15,5 +15,5 @@ defaults:
     type: posts
   values:
     layout: post
-    permalink: /:title
+    permalink: /:title/
 permalink: pretty

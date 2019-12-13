@@ -1,42 +1,37 @@
 ---
-title: How to improve UX for images while they’re loading on the web
+title: Improving UX for images while they’re loading on the web
 date: 2019-12-06 12:00:00 -07:00
-image: /images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/wildflowers.jpg
+image: /images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/wildflowers.jpg
 ---
 
-<style>
-img {
-  max-width: 100%;
-  height: auto;
-}
-[class*="language"] {
-  max-width: 100%;
-  overflow: auto;
-}
-</style>
+This article is about a few different ways that you can improve the experience that someone has while they’re waiting for the images to load on your web site or application.
 
-Here are a few ways you can improve the experience a user has while images are loading on your web site or application.
+You can see a demo of these techniques by switching on [network throttling](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Throttling) in the developer tools for Firefox or Chrome, and then visiting this wildflower picture gallery:
 
-* Load images lazily
-* Give images an intrinsic size
-* Have a variety of image sizes available for differently sized screens
-* Show a preview of each image
-* Make image descriptions available
+[Wildflowers of Joshua Tree (demo)](https://pictures.tobbi.co/wildflowers/)
 
-You can see a [demo of these techniques](https://pictures.tobbi.co/wildflowers/) by switching on _network throttling_ in the developer tools for [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Throttling) or [Chrome](https://developers.google.com/web/tools/chrome-devtools/network/), and then visiting this URL:
+<figure markdown="1">
+[![Network throttling in the developer tools for Firefox](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)](https://pictures.tobbi.co/wildflowers/51-mastodon-peak/)
+</figure>
 
-[Wildflowers of Joshua Tree, image loading demo](https://pictures.tobbi.co/wildflowers/)
+There are five ideas suggested here, but don’t feel like you have to use all of them! Some are will be way more useful in certain contexts (especially _lazy loading_), and implementing even just one can make a big difference. In general, these techniques are useful for large images, long lists of images, and images that affect the layout of a web page.
 
-![Network throttling in the developer tools for Firefox](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)
+1. [Loading images lazily](#lazy-loading)
+2. [Giving images an intrinsic size](#intrinsic-sizing)
+3. [Making a variety of image sizes available for differently sized screens](#responsive-images)
+4. [Showing a preview of each image](#image-preview)
+5. [Making image descriptions available](#image-description)
 
-## Load images lazily
+<h2 id="lazy-loading">Loading images lazily</h2>
 
-This technique involves only loading images if they’re within the viewport or likely to be within the viewport the next time the user scrolls up or down. It’s super useful when applied to a list of images where only a few are visible at a time.
+This technique involves only loading images if they’re within the viewport or likely to be within the viewport the next time the user scrolls up or down. It’s super useful when applied to a list of images, where only a few are visible at a time.
+
+This should make the first few images a user is looking at load more quickly–particularly on a slow connection. It may also save bandwidth and some dollars for users of your web product.
 
 This may make the first few images a user is looking at load more quickly–particularly on a slow connection. It may also save bandwidth and some dollars for users of your web product.
 
 You can easily begin using the lazy loading technique, now that it’s built into the web platform:
- 
+
 [Native Lazy Loading on CSS Tricks](https://css-tricks.com/native-lazy-loading/)
 
 ```html
@@ -47,7 +42,7 @@ And if it’s not yet implemented in a browser that you feel is important to you
 
 [Lazy Loading Images and Video, Web Fundamentals by Google](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/)
 
-## Give images an [intrinsic](https://twitter.com/jensimmons/status/980980521848127488) size
+<h2 id="intrinsic-sizing">Giving images an <a href="https://twitter.com/jensimmons/status/980980521848127488">intrinsic</a> size</h2>
 
 This will help browsers to lay out the page completely while the images are still loading, since it will know how wide and tall each image should be.
 
@@ -77,7 +72,7 @@ If you have a lot of images, you can use a tool like [node-exif](https://www.npm
 }
 ```
 
-## Have a variety of image sizes available for differently sized screens
+<h2 id="responsive-images">Making a variety of image sizes available for differently sized screens</h2>
 
 Similar to lazy loading, this will make images load noticeably faster on slow connections and saves bandwidth for users and servers (and perhaps also some dollars for your audience and yourself).
 
@@ -93,7 +88,7 @@ Similar to lazy loading, this will make images load noticeably faster on slow co
 
 You can use a tool like [GraphicsMagick](https://github.com/topics/graphicsmagick) to automatically generate differently sized images. Or you can use a service like [Netlify Large Media](https://www.netlify.com/products/large-media/).
 
-## Show a preview of each image
+<h2 id="image-preview">Showing a preview of each image</h2>
 
 This practice is about making images _appear_ to load faster, by showing a colorful preview of each image while it’s loading.
 
@@ -115,19 +110,27 @@ img.preview {
 }
 ```
 
-![A blurry preview image with a variety of colors](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/image-preview.png)
+<figure markdown="1">
+![A blurry preview image with a variety of colors](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/image-preview.png)
+</figure>
 
-![The original image](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/image-loaded.png)
+<figure markdown="1">
+![The original image](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/image-loaded.png)
+</figure>
 
-## Make a description available for each image
+<h2 id="image-description">Making image descriptions available</h2>
 
-Adding an image description using the [_alt_ attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img) will help users who experience your web product with a tool like [Voice Over](http://www.apple.com/accessibility/voiceover/). It may also improve the visual experience, since most browsers display the description while the image is loading.
+Most browsers display the description stored in the [_alt_ attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img) while the image is loading.
 
 ```html
 <img alt="A lush group of plants with purple flowers, growing in the sunshine" />
 ```
 
-![Alternate text displayed on top of an image, loading on a web page](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/description.png)
+<figure markdown="1">
+![Alternate text displayed on top of an image, loading on a web page](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/description.png)
+</figure>
+
+Descriptions are also super important and helpful for people who experience your web product using tools like [Voice Over](http://www.apple.com/accessibility/voiceover/).
 
 If you have a lot of images, you may be able to get a head start writing descriptions by using something like [machine learning](https://stackoverflow.com/questions/44929055/generate-meaningful-image-description-based-on-image-labels). (I haven’t done this before myself, but would really like to try it!)
 
