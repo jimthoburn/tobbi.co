@@ -1,7 +1,7 @@
 ---
 title: How to improve UX for images while they’re loading on the web
 date: 2019-12-06 12:00:00 -07:00
-image: https://thepracticaldev.s3.amazonaws.com/i/mkizkmw8he268w6im380.png
+image: /images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/wildflowers.jpg
 ---
 
 <style>
@@ -27,7 +27,7 @@ You can see a demo of these techniques by switching on _network throttling_ in t
 
 https://pictures.tobbi.co/wildflowers/
 
-![Network throttling in the developer tools for Firefox](https://thepracticaldev.s3.amazonaws.com/i/bu1pczmsg22erqzun1x0.png)
+![Network throttling in the developer tools for Firefox](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)
 
 ## Load images lazily
 
@@ -115,9 +115,9 @@ img.preview {
 }
 ```
 
-![A blurry preview image with a variety of colors](https://thepracticaldev.s3.amazonaws.com/i/s3liy1q3bfz792lrodut.png)
+![A blurry preview image with a variety of colors](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/image-preview.png)
 
-![The original image](https://thepracticaldev.s3.amazonaws.com/i/zx7j4l0at8zmbxgtqv0f.png)
+![The original image](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/image-loaded.png)
 
 ## Make a description available for each image
 
@@ -127,7 +127,7 @@ Adding an image description using the [_alt_ attribute](https://developer.mozill
 <img alt="A lush group of plants with purple flowers, growing in the sunshine" />
 ```
 
-![Alternate text displayed on top of an image, loading on a web page](https://thepracticaldev.s3.amazonaws.com/i/stqr3isa2dhammjdo1ng.png)
+![Alternate text displayed on top of an image, loading on a web page](/images/writing/2019-12-06-improve-ux-for-images-while-loading-on-the-web/2048-wide/description.png)
 
 If you have a lot of images, you may be able to get a head start writing descriptions by using something like [machine learning](https://stackoverflow.com/questions/44929055/generate-meaningful-image-description-based-on-image-labels). (I haven’t done this before myself, but would really like to try it!)
 
