@@ -77,9 +77,9 @@
 
     setInterval(updateTime, 60 * 1000); // Once per minute
     updateTime();
-    updateTheme();
     
     matchMedia('(prefers-color-scheme: dark)').addListener(updateTheme);
+    updateTheme();
   })();
 
   (function() {
