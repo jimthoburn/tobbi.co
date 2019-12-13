@@ -142,3 +142,7 @@ The project also contains example code for automatically [generating images](htt
 ## More tips
 
 There are, no doubt, many more ways to improve the user experience while loading images on the web. If you have a tip I didn’t mention or an easier way of accomplishing any of the ideas above, please [feel free to comment](https://dev.to/jimthoburn/how-to-improve-ux-for-images-while-they-re-loading-on-the-web-3b12#comments). 🙂
+
+<div style="margin-top: 3em"></div>
+
+_This article is also published on [Dev](https://dev.to/jimthoburn/how-to-improve-ux-for-images-while-they-re-loading-on-the-web-3b12)._
