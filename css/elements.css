@@ -58,10 +58,14 @@
   figcaption {
     font-size: 0.75em;
   }
-  pre {
-    margin: 2.8em 0;
+  code {
     background: hsl(0, 0%, 95%);
+    padding: 0.35em;
+  }
+  pre code {
     padding: 0.7em;
+    margin: 2.8em 0;
     max-width: 100%;
     overflow: auto;
+    display: block;
   }

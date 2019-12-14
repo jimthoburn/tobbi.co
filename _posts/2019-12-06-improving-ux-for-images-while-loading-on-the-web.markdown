@@ -14,7 +14,7 @@ You can see a demo of these techniques by switching on [network throttling](http
 [![Network throttling in the developer tools for Firefox](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)](https://pictures.tobbi.co/wildflowers/51-mastodon-peak/)
 </figure>
 
-There are five ideas suggested here, but don’t feel like you have to use all of them! Some are will be way more useful in certain contexts (especially _lazy loading_), and implementing even just one can make a big difference. In general, these techniques are useful for large images, long lists of images, and images that affect the layout of a web page.
+There are five ideas suggested here, but don’t feel like you have to use all of them! Some will be way more useful in certain contexts (especially _lazy loading_), and implementing even just one can make a big difference. In general, these techniques are useful for large images, long lists of images, and images that affect the layout of a web page.
 
 1. [Loading images lazily](#lazy-loading)
 2. [Giving images an intrinsic size](#intrinsic-sizing)
@@ -27,8 +27,6 @@ There are five ideas suggested here, but don’t feel like you have to use all o
 This technique involves only loading images if they’re within the viewport or likely to be within the viewport the next time the user scrolls up or down. It’s super useful when applied to a list of images, where only a few are visible at a time.
 
 This should make the first few images a user is looking at load more quickly–particularly on a slow connection. It may also save bandwidth and some dollars for users of your web product.
-
-This may make the first few images a user is looking at load more quickly–particularly on a slow connection. It may also save bandwidth and some dollars for users of your web product.
 
 You can easily begin using the lazy loading technique, now that it’s built into the web platform:
 
@@ -44,9 +42,9 @@ And if it’s not yet implemented in a browser that you feel is important to you
 
 <h2 id="intrinsic-sizing">Giving images an <a href="https://twitter.com/jensimmons/status/980980521848127488">intrinsic</a> size</h2>
 
-This will help browsers to lay out the page completely while the images are still loading, since it will know how wide and tall each image should be.
+This will help browsers to lay out the page completely while the images are still loading, since it will know how wide and tall each image should be. Basically all you have to do is add a `width` and `height` attribute to each image and the browser will take care of the rest. You can learn more about it with this guide from Mozilla:
 
-[Mapping the width and height attributes of media container elements to their aspect-ratio, MDN Web Docs by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
+[Media container elements and aspect-ratio, by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
 
 ```html
 <img width="1500" height="1000" />
@@ -74,19 +72,46 @@ If you have a lot of images, you can use a tool like [node-exif](https://www.npm
 
 <h2 id="responsive-images">Making a variety of image sizes available for differently sized screens</h2>
 
-Similar to lazy loading, this will make images load noticeably faster on slow connections and saves bandwidth for users and servers (and perhaps also some dollars for your audience and yourself).
+Similar to lazy loading, this will make images load noticeably faster on slow connections and saves bandwidth for users and servers–and potentially some dollars for your audience and yourself.
 
-[Responsive images, MDN Web Docs by Mozilla](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+You can get started by adding a `srcset` attribute to your image element and giving it a few image sizes at different widths. If you want to go further, adding a `sizes` attribute can make a big difference in download size too.
 
 ```html
-<img srcset="
-  /images/500-wide/wildflowers.jpg 500w,
-  /images/1000-wide/wildflowers.jpg 1000w,
-  /images/1500-wide/wildflowers.jpg 1500w
-" />
+<img
+  src="
+    /images/500-wide/wildflowers.jpg"
+  srcset="
+    /images/500-wide/wildflowers.jpg 500w,
+    /images/1000-wide/wildflowers.jpg 1000w,
+    /images/1500-wide/wildflowers.jpg 1500w"
+  sizes="
+    (min-width: 35em) 50vw,
+    100vw"
+/>
 ```
 
-You can use a tool like [GraphicsMagick](https://github.com/topics/graphicsmagick) to automatically generate differently sized images. Or you can use a service like [Netlify Large Media](https://www.netlify.com/products/large-media/).
+The `srcset` attribute above is basically saying to the browser, “Hey! I have three different images for you to choose from, ranging from 500 pixels wide to 1,500 pixels wide. Please choose whichever one is best for your viewport size and device pixel ratio.”
+
+And the `sizes` attribute is saying, “I’ve included a CSS layout for this page that makes images either 50 or 100 percent of the viewport width, depending on how wide the viewport is. Please consider this information too when you choose one of the `srcset` images. I’m telling you this information now–since you’re awesome and you have a [lookahead preparser](https://cloudfour.com/thinks/the-real-conflict-behind-picture-and-srcset/) that needs this information to be stored in the HTML.”
+
+```css
+img {
+  width: 100vw;
+  height: auto;
+}
+
+@media (min-width: 35em) {
+  img {
+    width: 50vw;
+  }
+}
+```
+
+Be sure to keep the `src` attribute that you already have on the `img` element. This will provide a default image for browsers that don’t understand the `srcset` syntax. Any size image will be a good choice–even a big one. (Modern browsers will skip the `src`image and download a potentially smaller image from the `srcset` instead.)
+
+If you have a lot of images, you can use a tool like [GraphicsMagick](https://github.com/topics/graphicsmagick) to automatically generate differently sized images. Or you can use a service like [Netlify Large Media](https://www.netlify.com/products/large-media/).
+
+You can learn more in the [Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) guide from Mozilla or by listening to this [Implementing Responsive Images](https://thewebahead.net/99) podcast with Jen Simmons and Jason Grigsby.
 
 <h2 id="image-preview">Showing a preview of each image</h2>
 
