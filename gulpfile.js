@@ -16,18 +16,19 @@ const SIZES = [
   2048
 ];
 const FOLDER_NAMES = [
-  "ctzn-app",
-  "fahrenheit",
-  "food-oasis",
-  "good",
-  "good-community",
-  "good-fest",
-  "grand-park",
-  "jj-burns",
-  "kiva",
-  "ok-the-store",
-  "la2050",
-  "writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web"
+  // "ctzn-app",
+  // "fahrenheit",
+  // "food-oasis",
+  // "good",
+  // "good-community",
+  // "good-fest",
+  // "grand-park",
+  // "jj-burns",
+  // "kiva",
+  // "ok-the-store",
+  // "la2050",
+  // "writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web",
+  "writing/2020-01-14-serving-a-high-quality-user-experience"
 ];
 
 function generateImages(size, imagePath) {

@@ -4,14 +4,14 @@ date: 2019-12-06 12:00:00 -07:00
 image: /images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/wildflowers.jpg
 ---
 
-This article is about a few different ways that you can improve the experience that someone has while they’re waiting for the images to load on your web site or application.
+This post is about a few different ways that you can improve the experience someone has while they’re waiting for the images to load on your web site or application.
 
 You can see a demo of these techniques by switching on [network throttling](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Throttling) in the developer tools for Firefox or Chrome, and then visiting this wildflower picture gallery:
 
 [Wildflowers of Joshua Tree (demo)](https://pictures.tobbi.co/wildflowers/)
 
 <figure markdown="1">
-[![Network throttling in the developer tools for Firefox](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)](https://pictures.tobbi.co/wildflowers/51-mastodon-peak/)
+[![Network throttling in the developer tools for Firefox](https://tobbi.co/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/network-throttle.png)](https://pictures.tobbi.co/wildflowers/51-mastodon-peak/)
 </figure>
 
 There are five ideas suggested here, but don’t feel like you have to use all of them! Some will be way more useful in certain contexts (especially _lazy loading_), and implementing even just one can make a big difference. In general, these techniques are useful for large images, long lists of images, and images that affect the layout of a web page.
@@ -92,7 +92,7 @@ You can get started by adding a `srcset` attribute to your image element and giv
 
 The `srcset` attribute above is basically saying to the browser, “Hey! I have three different images for you to choose from, ranging from 500 pixels wide to 1,500 pixels wide. Please choose whichever one is best for your viewport size and device pixel ratio.”
 
-And the `sizes` attribute is saying, “I’ve included a CSS layout for this page that makes images either 50 or 100 percent of the viewport width, depending on how wide the viewport is. Please consider this information too when you choose one of the `srcset` images. I’m telling you this information now–since you’re awesome and you have a [lookahead preparser](https://cloudfour.com/thinks/the-real-conflict-behind-picture-and-srcset/) that needs this information to be stored in the HTML.”
+And the `sizes` attribute is saying, “I’ve included a CSS layout for this page that makes images either 50 or 100 percent of the viewport width, depending on how wide the viewport is. Please consider this information too when you choose one of the `srcset` images. I’m telling you this information now–since you’re awesome and you have a [lookahead preparser](https://cloudfour.com/thinks/the-real-conflict-behind-picture-and-srcset/) that needs this information to be stored somewhere in the HTML.”
 
 ```css
 img {
@@ -136,11 +136,11 @@ img.preview {
 ```
 
 <figure markdown="1">
-![A blurry preview image with a variety of colors](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/image-preview.png)
+![A blurry preview image with a variety of colors](https://tobbi.co/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/image-preview.png)
 </figure>
 
 <figure markdown="1">
-![The original image](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/image-loaded.png)
+![The original image](https://tobbi.co/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/image-loaded.png)
 </figure>
 
 <h2 id="image-description">Making image descriptions available</h2>
@@ -152,7 +152,7 @@ Most browsers display the description stored in the [_alt_ attribute](https://de
 ```
 
 <figure markdown="1">
-![Alternate text displayed on top of an image, loading on a web page](/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/description.png)
+![Alternate text displayed on top of an image, loading on a web page](https://tobbi.co/images/writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web/2048-wide/description.png)
 </figure>
 
 Descriptions are also super important and helpful for people who experience your web product using tools like [Voice Over](http://www.apple.com/accessibility/voiceover/).
@@ -170,7 +170,3 @@ The project also contains example code for automatically [generating images](htt
 ## More tips
 
 There are, no doubt, many more ways to improve the user experience while loading images on the web. If you have a tip I didn’t mention or an easier way of accomplishing any of the ideas above, please [feel free to comment](https://dev.to/jimthoburn/how-to-improve-ux-for-images-while-they-re-loading-on-the-web-3b12#comments). 🙂
-
-<div style="margin-top: 3em"></div>
-
-_This article is also published on [Dev](https://dev.to/jimthoburn/how-to-improve-ux-for-images-while-they-re-loading-on-the-web-3b12)._
