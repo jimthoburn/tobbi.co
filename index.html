@@ -71,26 +71,6 @@ projects:
   </div>
 
   <div class="container icons">
-    <img src="/images/icons/nounproject/lastspark/letter.svg" width="100" height="100" alt="" />
-    <h1>Writing</h1>
-  </div>
-  
-  <ul class="project-list">
-    {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}"
-        style="background-image: url({{ post.image }}); {{ post.image_style }}"
-        class="project-list-item">
-        <div class="project-list-item__container">
-          <h3 class="project-list-item__title" style="max-width: 13em">{{ post.title }}</h3>
-          <p class="project-list-item__company">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-        </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-
-  <div class="container icons">
     <img src="/images/icons/nounproject/lastspark/lighthouse.svg" width="100" height="100" alt="" />
     <h1>Example projects</h1>
   </div>
@@ -141,7 +121,27 @@ projects:
 
   </div>
 
-  <div class="container mission icons">
+  <div class="container icons" id="writing">
+    <img src="/images/icons/nounproject/lastspark/letter.svg" width="100" height="100" alt="" />
+    <h1>Writing</h1>
+  </div>
+  
+  <ul class="project-list">
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}"
+        style="background-image: url({{ post.image }}); {{ post.image_style }}"
+        class="project-list-item">
+        <div class="project-list-item__container">
+          <h3 class="project-list-item__title" style="max-width: 13em">{{ post.title }}</h3>
+          <p class="project-list-item__company">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="container mission icons" id="mission">
     <img src="/images/icons/nounproject/lastspark/map.svg" width="100" height="100" alt="" />
     <h2 style="margin-top: 0;">I love working on projects with a mission like…</h2>
     <ul>
@@ -155,7 +155,7 @@ projects:
   </div>
 
   <div class="container icons" id="hello">
-    <img src="/images/icons/nounproject/lastspark/letter.svg" width="100" height="100" alt="" />
+    <img src="/images/icons/nounproject/lastspark/bottle-letter.svg" width="100" height="100" alt="" />
 
     <h1>Say hello!</h1>
     <p class="action"><a href="mailto:hello@tobbi.co">hello@tobbi.co</a></p>

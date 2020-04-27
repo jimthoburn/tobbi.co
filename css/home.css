@@ -94,7 +94,8 @@
   }
   
   @media (min-width: 40em) {
-    #services {
+    #services,
+    #mission {
       padding-top: calc(0.7em * 8);
     }
     .services li {
