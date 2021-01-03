@@ -1,0 +1,32 @@
+# https://jekyllrb.com/docs/continuous-integration/github-actions/
+# https://github.com/helaili/jekyll-action
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    # Specify the source branch (optional)
+    branches:
+      - main
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - uses:  helaili/jekyll-action@v2
+      env:
+        # https://github.com/settings/tokens
+        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+
+      # Specify the target branch (optional)
+      with:
+        target_branch: 'gh-pages'
