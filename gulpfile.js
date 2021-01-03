@@ -27,8 +27,9 @@ const FOLDER_NAMES = [
   // "kiva",
   // "ok-the-store",
   // "la2050",
+  "thank-you-machine",
   // "writing/2019-12-06-improving-ux-for-images-while-loading-on-the-web",
-  "writing/2020-01-14-serving-a-high-quality-user-experience"
+  // "writing/2020-01-14-serving-a-high-quality-user-experience"
 ];
 
 function generateImages(size, imagePath) {
