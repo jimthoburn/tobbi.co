@@ -1,0 +1,101 @@
+---
+layout: default
+title: 500 Albums
+figures:
+- caption: Muddy Waters, 'The Anthology'
+  url: https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/muddy-waters-the-anthology-2-1062750/
+- caption: XState Visualizer
+  url: https://xstate.js.org/viz/?gist=5f70218520f8ec60a69cb10b1611ab1d
+  
+---
+
+{% include ahoy.html %}
+
+  <div class="project-header" style="background-image: url(/images/500-albums/2048-wide/poster.png);">
+    <div class="project-header__container">
+      <h1 class="project-header__title">500 Albums</h1>
+      <p class="project-header__company">with the teams at <a href="https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/">Rolling Stone</a> and <a href="https://pmc.com/">Penske Media</a>, sponsored by <a href="https://www.apple.com/apple-music/">Apple Music</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <p><em>The 500 greatest albums of all time</em> is a feature on the Rolling Stone web site, where visitors can read about and listen to songs that helped to shape modern music.</p>
+
+    <p>Our engineering lead, Amit, and I teamed up to create a user interface for the music list in React, and integrate it with WordPress. We connected it to the <a href="https://developer.apple.com/documentation/applemusicapi">Apple Music API</a>, so visitors could listen to songs from the list. And we used a finite state machine to manage interactions between the user, the API, and multiple players on the page.</p>
+
+    <p>The project was completed in a short time frame, going from prototype to launch in a few weeks.</p>
+
+    <h2>Visit the project</h2>
+
+    <ul class="action">
+      <li><a href="https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/">The 500 greatest albums of all time</a></li>
+    </ul>
+
+    {% include figures.html %}
+
+    <h2>Crew</h2>
+
+    <div>
+      <h3>Strategy</h3>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/rcabison">Rosalie Cabison</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Engineering</h3>
+      <ul>
+        <li>Amit Gupta</li>
+      </ul>
+    </div>
+
+    <h2 id="tools">Tools we used</h2>
+
+    <div>
+      <h3>User Interface</h3>
+      <ul>
+        <!-- <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">HTML</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">CSS</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">JavaScript</a></li> -->
+        <li><a href="https://reactjs.org/">React</a></li>
+        <li><a href="https://sass-lang.com/">Sass</a></li>
+        <li><a href="https://github.com/davidkpiano/xstate">XState</a></li>
+        <li><a href="https://developer.apple.com/musickit/">MusicKit</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Workflow</h3>
+      <ul>
+        <li><a href="https://varyingvagrantvagrants.org/">VVV</a></li>
+        <li><a href="https://nodejs.org">Node.js</a></li>
+        <li><a href="https://bitbucket.org">Bitbucket</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Templates &amp; Content</h3>
+      <ul>
+        <li><a href="https://wordpress.org/">WordPress</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Music</h3>
+      <ul>
+        <li><a href="https://developer.apple.com/documentation/applemusicapi">Apple Music API</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <a href="/thank-you-machine" class="project-next" style="background-image: url(/images/thank-you-machine/2048-wide/poster-b.png);">
+    <div class="project-next__direction">
+      <h2>Next project →</h2>
+    </div>
+    <div class="project-next__container">
+      <h3 class="project-next__title">Thank You Machine</h3>
+      <p class="project-next__company">with the teams at Zendesk and <span class="phrase">One Darnley Road</span></p>
+    </div>
+  </a>
