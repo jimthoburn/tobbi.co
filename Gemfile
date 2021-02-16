@@ -13,7 +13,10 @@ source 'https://rubygems.org'
 #
 # Set a Ruby version to finish installation and start using commands
 #
-# $ rbenv local 2.0.0-p247
+# $ rbenv local 3.0.0
+#
+# Install the newest version of RubyGems
+# $ gem update --system
 
 gem 'jekyll', '~> 4.2'
 
