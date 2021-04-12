@@ -1,0 +1,74 @@
+
+  /* =Elements
+  ----------------------------------------------- */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3 {
+    font-weight: normal;
+    line-height: 1;
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.4em;
+    line-height: 1.25;
+    margin-top: 1.5em;
+  }
+  h3 {
+    margin-top: 1.25em;
+    font-size: 0.85em;
+    line-height: 1;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    /* color: rgb(40, 155, 215); */
+  }
+  p,
+  ol,
+  ul {
+    margin-top: 0.7em; /* base line height (1.4) / 2 */
+    margin-bottom: 0;
+  }
+
+  h3 + ul,
+  h3 + p {
+    margin-top: 0.35em; /* base line height (1.4) / 4 */
+  }
+  small {
+    display: inline-block;
+    font-size: 0.75em;
+    line-height: 0.9333333334; /* base line height (1.4) / font size (0.75em) / 2 */
+  }
+  small a {
+    color: inherit;
+  }
+
+  figure {
+    margin: 2.8em 0 0 0;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    font-size: 0.75em;
+  }
+  code {
+    background: hsl(0, 0%, 95%);
+    padding: 0.35em;
+  }
+  .night code {
+    background: hsl(0, 0%, 5%);
+  }
+  pre code {
+    padding: 0.7em;
+    margin: 2.8em 0;
+    max-width: 100%;
+    overflow: auto;
+    display: block;
+  }

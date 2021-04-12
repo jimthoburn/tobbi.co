@@ -1,0 +1,152 @@
+
+
+  /* =Project Next
+  ----------------------------------------------- */
+  .project-next {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+    padding-bottom: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    margin-top: 1.4em;
+  }
+
+  @media (min-aspect-ratio: 1/1) {
+    .project-next {
+      padding-top: 5em;
+      padding-top: 15vh;
+      padding-bottom: 5em;
+      padding-bottom: 15vh;
+      min-height: 70vh;
+      box-sizing: border-box;
+    }
+  }
+
+  .project-next:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to top right, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .project-next__container,
+  .project-next__direction {
+    position: absolute;
+    bottom: 10%;
+    padding: 0.375em 1.4em;
+  }
+
+  .project-next__direction {
+    top: 10%;
+    bottom: auto;
+  }
+
+  /* Position the “Next Project” text and the title horizontally */
+  @media (min-width: 45em) {
+    .project-next:before {
+      background: linear-gradient(to bottom left, rgba(25, 25, 25, 0.75), rgba(25, 25, 25, 0.5) 66.666%, rgba(25, 25, 25, 0.25));
+    }
+    .project-next__direction {
+      top: 25%;
+      padding-left: 0;
+    }
+    .project-next__container {
+      top: 25%;
+      bottom: auto;
+      left: 50%;
+      left: calc(50vw - 1.9em);
+    }
+  }
+
+  /* Adjust to compensate for the extra padding on big screens */
+  @media (min-width: 55em) {
+    .project-next__direction {
+      left: calc(50vw - 17.2em); /* 33em / 2 + 0.7em */
+    }
+  }
+
+
+  /* =Type
+  ----------------------------------------------- */
+  .project-next__title,
+  .project-next__company,
+  .project-next__direction > h2 {
+    text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.375);
+    padding: 0.7rem 1.4rem;
+  }
+  .project-next__title,
+  .project-next__direction > h2 {
+    margin-top: 0;
+    text-transform: inherit;
+    font-variant: inherit;
+    color: inherit;
+  }
+  .project-next__title {
+    font-size: 1.75em;
+  }
+  .project-next__company {
+    margin-top: 0;
+    position: relative;
+    top: -1px;
+  }
+
+  @media (min-width: 22em) {
+    .project-next__title {
+      font-size: 2.5em;
+    }
+  }
+
+  @media (min-width: 45em) {
+    .project-next__title {
+      font-size: 4vmax;
+    }
+  }
+
+  /* OPTIONAL: Show a wavy link */
+  @supports (background-image: url('data:image/svg+xml;utf8,<svg></svg>')) {
+    .project-next__title {
+      /* --wave-outline-light-blue */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 25" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(80, 195, 255)" d="M -10 0 Q 50 25, 110 0 L 110 10 Q 50 35, -10 10"></path></svg>');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9InJnYig4MCwgMTk1LCAyNTUpIiBkPSJNIC0xMCAwIFEgNTAgMjUsIDExMCAwIEwgMTEwIDEwIFEgNTAgMzUsIC0xMCAxMCI+PC9wYXRoPjwvc3ZnPg==');
+
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 1.1em auto;
+
+      padding: 0 0.35em 0.35em;
+    }
+    .project-next__company {
+      margin-top: 0;
+      padding: 0.35em 0.7em 0;
+    }
+    @media (min-width: 22em) {
+      .project-next__company  {
+        padding: 0.35em 1em 0;
+      }
+    }
+    @media (min-width: 45em) {
+      .project-next__company {
+        padding: 0.35em 1.4vmax 0; /* 4vmax * 0.35 */
+      }
+    }
+  }
+
+  .project-next__container {
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .project-next__container:hover,
+  .project-next__container:active,
+  .project-next__container:focus {
+    background-color: rgb(40, 155, 215);
+  }

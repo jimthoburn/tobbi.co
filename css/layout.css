@@ -1,0 +1,152 @@
+
+  /* =Layout
+  ----------------------------------------------- */
+  .container {
+    padding: 1.4em 0.7em 2.8em; /* base line height */    /* base line height / 2 */    /* base line height x 2 */
+    margin: 0 auto;
+    max-width: 33em;
+
+    /* Test the vertical rhythm.
+       KUDOS: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
+
+    background-image: linear-gradient(rgba(0, 0, 0, .1) 50%, transparent 50%, transparent);
+    background-size: 1.4em 1.4em;
+    */
+  }
+  .project-header + .container p:first-child {
+    font-size: 1.2em;
+    margin-bottom: 1.1666666667em;
+  }
+  @media (min-width: 20em) {
+    .container {
+      padding: 2.8em 1.4em;
+    }
+    .container:last-child {
+      padding-bottom: 5.6em; /* double the usual padding */
+    }
+    .project-header + .container {
+      padding-top: 1.4em;
+    }
+  }
+  @media (min-width: 30em) {
+    .container {
+      padding-bottom: 2.8em;
+    }
+    .container:last-child {
+      padding-bottom: 5.6em;
+    }
+    .project-header + .container {
+      padding-top: 2.8em;
+    }
+  }
+  .container + .container > h1:first-child {
+    margin-top: 0;
+  }
+
+
+  /* =Screenshot
+  ----------------------------------------------- */
+  @supports (display: grid) and (width: calc(1em)) and (object-fit: cover) {
+
+    .container .screenshots {
+      margin: 2.8em -1.4em;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 0.7em;
+    }
+    .container .screenshots figure {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vw;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .night .container .screenshots figure {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .container .screenshots a {
+      display: block;
+      position: relative;
+    }
+    .container .screenshots a::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      background: linear-gradient(to top right, rgba(25, 25, 25, 0.1), rgba(25, 25, 25, 0.025));
+    }
+    .container .screenshots img {
+      display: block;
+      width: 100vw;
+      height: 100vw;
+      object-fit: cover;
+      object-position: top right;
+    }
+    .container .screenshots figure:nth-child(2n+1) img {
+      object-position: bottom left;
+    }
+    .container .screenshots figure:nth-child(3n+1) img {
+      object-position: bottom right;
+    }
+    .container .screenshots figure:nth-child(5n+1) img {
+      object-position: top left;
+    }
+
+    @media (min-width: 45em) {
+      .container .screenshots {
+        grid-template-columns: 1fr 1fr;
+        margin: 2.8em calc(-50vw + 16.5em);
+      }
+      .container .screenshots figure {
+        width: calc(50vw - 0.35em);
+        height: calc(50vw - 0.35em);
+      }
+      .container .screenshots img {
+        display: block;
+        width: 50vw;
+        height: 50vw;
+        object-fit: cover;
+        object-position: top right;
+      }
+    }
+  }
+
+
+  /* =Crew & Tools
+  ----------------------------------------------- */
+  .container > .screenshots ~ div a {
+    background-image: none;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (min-width: 25em) {
+    .container > .screenshots ~ div {
+      display: inline-block;
+      vertical-align: top;
+      width: 16.5em;
+    }
+    /* SHIM: Make the right column narrow so it won’t wrap */
+    .container > .screenshots ~ div + div,
+    .container > .screenshots ~ div + div + div + div,
+    .container > .screenshots ~ div + div + div + div + div + div {
+      width: 12em;
+    }
+    .container > .screenshots ~ div + div + div,
+    .container > .screenshots ~ div + div + div + div + div,
+    .container > .screenshots ~ div + div + div + div + div + div + div {
+      width: 16.5em;
+    }
+  }
+  .container > .screenshots ~ div ul,
+  .container > .screenshots ~ divli {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+

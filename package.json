@@ -1,0 +1,28 @@
+{
+  "name": "git-tobbi",
+  "version": "1.0.0",
+  "description": "This is my personal web site: https://tobbi.co",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server '_site' --files '_site/*' --no-notify --no-open --https",
+    "generate-images": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimthoburn/tobbi.co.git"
+  },
+  "author": "jim@tobbi.co",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jimthoburn/tobbi.co/issues"
+  },
+  "homepage": "https://github.com/jimthoburn/tobbi.co#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "concurrent-transform": "^1.0.0",
+    "gm": "^1.23.1",
+    "gulp": "^4.0.2",
+    "gulp-image-resize": "^0.13.1"
+  }
+}
