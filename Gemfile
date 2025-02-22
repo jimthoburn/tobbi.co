@@ -9,16 +9,16 @@ source 'https://rubygems.org'
 #
 # install a Ruby version:
 #
-# $ rbenv install 3.0.0
+# $ rbenv install 3.4.2
 #
 # Set a Ruby version to finish installation and start using commands
 #
-# $ rbenv local 3.0.0
+# $ rbenv local 3.4.2
 #
 # Install the newest version of RubyGems
 # $ gem update --system
 
-gem 'jekyll', '~> 4.2'
+gem 'jekyll', '~> 4.4.1'
 
 # https://github.com/jekyll/jekyll/issues/8523
 gem "webrick", "~> 1.7"
