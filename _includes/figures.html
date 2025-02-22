@@ -2,10 +2,16 @@
 <div class="screenshots">
 {% for figure in page.figures %}
 {% capture filename %}{{ forloop.index }}.png{% endcapture %}
+{% if figure.url %}
 <figure>
   <a href="{{ figure.url }}">
     {% include image.html basepath=basepath filename=filename alt=figure.caption %}
   </a>
 </figure>
+{% else %}
+<figure>
+  {% include image.html basepath=basepath filename=filename alt=figure.caption %}
+</figure>
+{% endif %}
 {% endfor %}
 </div>
