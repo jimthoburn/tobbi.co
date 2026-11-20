@@ -9,11 +9,11 @@ source 'https://rubygems.org'
 #
 # install a Ruby version:
 #
-# $ rbenv install 3.4.2
+# $ rbenv install 3.4.13
 #
 # Set a Ruby version to finish installation and start using commands
 #
-# $ rbenv local 3.4.2
+# $ rbenv local 3.4.13
 #
 # Install the newest version of RubyGems
 # $ gem update --system
